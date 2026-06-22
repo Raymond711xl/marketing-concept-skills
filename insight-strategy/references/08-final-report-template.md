@@ -19,6 +19,8 @@ Use this structure for the final deliverable.
 - Strategy status: Final / Provisional
 - Input package sufficiency: Sufficient / Partial / Thin
 - Missing brand facts:
+- Strategy Readiness Pack: present / absent / partial
+- User confirmation needed:
 - Recommended rollback, if any:
 
 ## 1. Executive Summary
@@ -26,7 +28,7 @@ Use this structure for the final deliverable.
 - Core fact pattern:
 - Core human truth:
 - Core cultural tension:
-- Recommended strategic idea:
+- Recommended Idea Platform:
 
 ## 2. Level 1 - Fact Layer: Themes & Signals
 
@@ -58,7 +60,7 @@ Use this structure for the final deliverable.
 - Evidence trail:
 - Confidence:
 
-## 5. Level 4 - Strategic Decision: Strategic Idea Platform
+## 5. Level 4 - Strategic Decision: Idea Platform
 
 ### Brand Truth And Proof Edge
 
@@ -66,9 +68,10 @@ Use this structure for the final deliverable.
 - Product / experience proof:
 - Brand behavior / history:
 - Competitive distinction:
+- User confirmation needed:
 - Missing inputs:
 
-### Candidate Strategic Ideas
+### Candidate Idea Platforms
 
 1. Because [audience] is caught between [what is] and [what should be], [Brand]
    should stand for [strategic belief] and prove it through [proof edge].
@@ -79,7 +82,7 @@ Use this structure for the final deliverable.
 
 ### Recommended Direction
 
-- Recommended strategic idea:
+- Recommended Idea Platform:
 - Status: Final / Provisional
 - Why this one:
 - Strategic implications:

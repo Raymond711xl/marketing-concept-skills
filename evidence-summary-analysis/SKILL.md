@@ -1,6 +1,6 @@
 ---
 name: evidence-summary-analysis
-description: Summarize, normalize, classify, and prepare an evidence pool produced by research, competitive research, visual research, social listening, campaign research, interviews, comments, reviews, or user-provided materials. Use when the user needs sourced material organized into evidence patterns, category summaries, visual/material observations, campaign evidence summaries, evidence gaps, or a structured handoff for a downstream strategy or insight skill. This skill consumes evidence; it does not perform open web research, create insight themes, infer human truths, make cultural judgments, or make final brand strategy decisions.
+description: Summarize, normalize, classify, and prepare an evidence pool produced by research, competitive research, visual research, social listening, campaign research, interviews, comments, reviews, or user-provided materials. Use when the user needs sourced material organized into evidence patterns, category summaries, visual/material observations, campaign evidence summaries, evidence gaps, frontstage content strips, Strategy Readiness Pack, or a structured handoff for a downstream strategy or insight skill. This skill consumes evidence; it does not perform open web research, create insight themes, infer human truths, make cultural judgments, or make final brand strategy decisions.
 ---
 
 # Evidence Summary Analysis
@@ -12,6 +12,11 @@ This skill sits between research collection and strategy:
 ```text
 web-evidence-collector -> evidence-summary-analysis -> insight-strategy
 ```
+
+When run by `concept-strategy-controller`, this skill usually follows
+`web-evidence-collector` automatically as part of the Evidence Preparation
+stage. Do not ask the user to separately approve summary unless the controller
+explicitly selected audit mode.
 
 ## Language And Market Defaults
 
@@ -30,6 +35,8 @@ Do:
 - Classify evidence by source type, category, material type, topic tag, audience label, confidence, and evidence value.
 - Summarize evidence across video, offline activation, marketing, PR, and visual materials.
 - Extract repeated evidence patterns, category contrasts, material patterns, source skews, and evidence gaps.
+- Turn evidence preparation into frontstage content strips for controller display.
+- Produce a Strategy Readiness Pack containing brand hard-data candidates and downstream readiness notes.
 - Preserve source trails and short raw quotes.
 - Produce a structured handoff for downstream strategy or insight work.
 
@@ -39,7 +46,7 @@ Do not:
 - Bypass login, paywalls, anti-bot controls, private groups, or platform restrictions.
 - Copy full articles, full reports, full comment threads, or full social posts.
 - Treat brand-owned claims as consumer truth.
-- Create insight themes, human truths, motive inferences, cultural tensions, strategic recommendations, positioning, Big Idea, brand strategy, or campaign strategy. Those belong to `insight-strategy` or later strategy/concept skills.
+- Create insight themes, human truths, motive inferences, cultural tensions, strategic recommendations, positioning, Idea Platform, brand strategy, or campaign strategy. Those belong to `insight-strategy` or later strategy/concept skills.
 
 ## Input Contract
 
@@ -101,6 +108,8 @@ Required for downstream strategy:
 - `confidence`
 
 If required fields are missing, preserve the item but mark the missing fields clearly.
+
+When the input contains `Brand Hard Data Track`, preserve it and summarize it separately from consumer or third-party evidence. Official brand claims can become brand hard-data candidates, but they are not consumer truth.
 
 ## Source Level Handling
 
@@ -180,13 +189,31 @@ Before summarizing, check:
 - Are there enough items for the requested categories?
 - Are sources diverse or dominated by one platform?
 - Are brand-owned sources separated from third-party and consumer sources?
+- Are brand hard-data candidates present for brand philosophy, slogan, chronology, founder statements, product proof, service proof, brand behavior, or competitor distinction?
 - Are dates and URLs traceable?
 - Are visual or social materials accessible, restricted, or user-needed?
 - Are any claims based only on search snippets or weak evidence?
 
 Continue with caveats if the evidence is thin.
 
-### 4. Category Summary
+### 4. Frontstage Content Strips
+
+Create compact content strips after the coverage audit. These are the main
+frontstage result for the controller, not a replacement for the full cleaned
+evidence pool.
+
+Use this strip set by default:
+
+- `来源覆盖内容条`: what source groups were used and whether coverage is enough.
+- `强证据模式内容条`: the strongest repeated evidence pattern.
+- `品牌硬信息内容条`: useful brand philosophy, slogan, chronology, proof, behavior, or competitor-difference candidates.
+- `证据缺口内容条`: missing or weak evidence that may affect strategy.
+- `进入策略判断内容条`: whether the package is ready for `insight-strategy`, ready with caveats, or should return to collection.
+
+Keep each strip short and evidence-bound. Do not infer human truths or cultural
+tensions inside these strips.
+
+### 5. Category Summary
 
 Summarize only categories requested by the user, or all available categories when unspecified.
 
@@ -269,7 +296,7 @@ When social platforms cannot be fully accessed, include one short key phrase, th
 Full social content requires platform access; use the link for manual verification.
 ```
 
-### 5. Evidence Pattern Inventory
+### 6. Evidence Pattern Inventory
 
 After category summaries, synthesize:
 
@@ -285,14 +312,31 @@ After category summaries, synthesize:
 
 Keep the inventory evidence-bound. Do not name insight themes, infer motives, produce human truths, make cultural judgments, or jump directly to strategy.
 
-### 6. Output Handoff
+### 7. Strategy Readiness Pack
+
+Before handing off to `insight-strategy`, produce a Strategy Readiness Pack:
+
+- Brand truth candidates: evidence-bound candidates only
+- Proof edge candidates: product, service, behavior, or experience proof
+- Brand behavior evidence: repeated actions, campaign behavior, public commitments, operating behavior
+- Competitor distinction: what competitors claim or do differently
+- User confirmation needed: official brief, slogan, brand book, chronology, founder statement, or proof points that need validation
+- Readiness status: ready / ready with caveats / needs more evidence
+
+This pack is not strategy. It is the hard-data bridge that lets `insight-strategy`
+work without discovering basic Level 4 inputs too late.
+
+### 8. Output Handoff
 
 End with a downstream handoff containing:
 
+- Frontstage content strips
+- Evidence brief box summary when provided by upstream collection
 - Cleaned evidence pool
 - Category summary tables
 - Evidence pattern inventory
 - Evidence gaps
+- Strategy Readiness Pack
 - Confidence notes
 - Strategy handoff notes clearly labeled as evidence-only, not insight
 
@@ -323,8 +367,17 @@ Use this structure unless the user asks for another format:
 | Brand-owned vs third-party separation | clear / mixed / weak | |
 | Social/platform restrictions | none / some / significant | |
 | Visual evidence coverage | strong / medium / weak | |
+| Brand hard-data coverage | strong / medium / weak | |
 
-## 3. Category Summaries
+## 3. Frontstage Content Strips
+
+- 来源覆盖内容条:
+- 强证据模式内容条:
+- 品牌硬信息内容条:
+- 证据缺口内容条:
+- 进入策略判断内容条:
+
+## 4. Category Summaries
 
 ### Video
 
@@ -351,7 +404,7 @@ Use this structure unless the user asks for another format:
 | Item | Material type | Source | Visual observation | Screenshot status | Confidence |
 | --- | --- | --- | --- | --- | --- |
 
-## 4. Evidence Pattern Inventory
+## 5. Evidence Pattern Inventory
 
 ### Pattern 1: [Name]
 
@@ -360,12 +413,21 @@ Use this structure unless the user asks for another format:
 - What remains uncertain:
 - Confidence:
 
-## 5. Evidence Gaps
+## 6. Strategy Readiness Pack
+
+- Brand truth candidates:
+- Proof edge candidates:
+- Brand behavior evidence:
+- Competitor distinction:
+- User confirmation needed:
+- Readiness status:
+
+## 7. Evidence Gaps
 
 | Gap | Why it matters | Suggested collector task |
 | --- | --- | --- |
 
-## 6. Downstream Strategy Handoff
+## 8. Downstream Strategy Handoff
 
 ### Strong evidence patterns
 
@@ -379,7 +441,7 @@ Use this structure unless the user asks for another format:
 
 - 
 
-## 7. Cleaned Evidence Pool
+## 9. Cleaned Evidence Pool
 
 ### Evidence 1
 - Source type:
@@ -404,6 +466,8 @@ Use this structure unless the user asks for another format:
 - Screenshot status:
 - Key fact:
 - Evidence value:
+- Brand hard data type:
+- Needs user confirmation:
 - Limitation / restriction:
 ```
 
@@ -425,15 +489,18 @@ For downstream strategy skills, output a clean evidence pool plus concise summar
 
 Preferred handoff order:
 
-1. Evidence coverage check
-2. Category summaries
-3. Evidence pattern inventory
-4. Evidence gaps
-5. Cleaned evidence pool
+1. Frontstage content strips
+2. Evidence coverage check
+3. Category summaries
+4. Evidence pattern inventory
+5. Strategy Readiness Pack
+6. Evidence gaps
+7. Cleaned evidence pool
 
 If the user asks for a quick version, provide only:
 
+- Frontstage content strips
 - Top evidence patterns
-- Category summary table
+- Strategy Readiness Pack
 - Evidence gaps
 - Cleaned evidence pool

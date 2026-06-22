@@ -4,7 +4,7 @@ Use this reference whenever the controller needs to preserve project memory, han
 
 The backstage dossier is the complete structured memory of the project. It may be long. The frontstage output should remain short.
 
-The dossier is not automatically a file. By default, the controller maintains it as structured project memory and shows only the relevant portion in the conversation. When the user asks to view it, show the requested section in chat. When the user asks to export it, create a Markdown file such as `backstage-dossier-[project-name].md`.
+By default, the controller should export or maintain a Markdown dossier for real projects, while showing only the relevant portion in the conversation. Exporting a dossier means writing structured project memory to a file; it does not mean printing the whole dossier into chat.
 
 ## Two Output Layers
 
@@ -13,6 +13,8 @@ The dossier is not automatically a file. By default, the controller maintains it
 Use this for user-facing progress:
 
 - Current conclusion
+- Content strips for the current stage
+- Evidence brief box when evidence preparation finishes
 - Why it matters
 - Key evidence or reasoning
 - Confidence
@@ -33,11 +35,14 @@ Use this for downstream work and user inspection:
 - Evidence pool
 - Cleaned evidence pool
 - Source coverage and restrictions
+- Evidence preparation brief
+- Brand hard data track
 - Category summaries
 - Evidence pattern inventory
+- Strategy readiness pack
 - Insight map
 - Strategy candidates
-- Big Idea records
+- Idea Platform records
 - Concept records
 - Open questions and caveats
 
@@ -63,7 +68,26 @@ Compression should reduce reading burden, not remove evidence, uncertainty, sour
 
 ## 3. Evidence Base
 
+### Evidence Preparation Brief
+
+- Mode: default / audit
+- Brief status:
+- Full evidence pool file:
+- User confirmation status:
+
 ### Source Coverage
+
+### Brand Hard Data Track
+
+- Brand philosophy / vision:
+- Slogan / brand claim:
+- Brand chronology:
+- Founder or leadership statement:
+- Product proof:
+- Service / experience proof:
+- Brand behavior:
+- Competitor distinction:
+- Confirmation status:
 
 ### Evidence Pool
 
@@ -71,9 +95,26 @@ Compression should reduce reading burden, not remove evidence, uncertainty, sour
 
 ## 4. Evidence Summary
 
+### Frontstage Content Strips
+
+- Source coverage strip:
+- Strong evidence pattern strip:
+- Brand hard data strip:
+- Evidence gap strip:
+- Strategy readiness strip:
+
 ### Category Summaries
 
 ### Evidence Pattern Inventory
+
+### Strategy Readiness Pack
+
+- Brand truth candidates:
+- Proof edge candidates:
+- Brand behavior evidence:
+- Competitor distinction:
+- User confirmation needed:
+- Recommended next step:
 
 ### Cleaned Evidence Pool
 
@@ -87,13 +128,14 @@ Compression should reduce reading burden, not remove evidence, uncertainty, sour
 
 ### Level 4 - Strategic Decision
 
-## 6. Big Idea Records
+## 6. Idea Platform Records
 
-### Big Idea 1
+### Idea Platform 1
 
 - Statement:
 - Cultural tension answered:
 - Brand truth used:
+- Proof edge:
 - Why the brand can own it:
 - Emotional charge:
 - Strategic implications:
@@ -129,6 +171,15 @@ Compression should reduce reading burden, not remove evidence, uncertainty, sour
 - Stop:
 ```
 
+## Dossier Export Rules
+
+- Default export location: `dossiers/[project-slug]/backstage-dossier.md`.
+- If no project slug exists, create one from the working title.
+- Do not print the full dossier in chat unless the user asks to view it.
+- Update only changed sections when possible.
+- Do not overwrite a materially different previous dossier without preserving a dated copy, such as `backstage-dossier-YYYYMMDD-HHMM.md`.
+- If filesystem export is unavailable on a platform, keep the dossier as structured chat memory and offer a copyable Markdown block only when requested.
+
 ## Downstream Handoff Packet
 
 Whenever handing work to a specialist skill, send this packet:
@@ -158,7 +209,9 @@ Never send only a short summary when original user input or complete evidence ex
 
 - Add new evidence to the evidence base, not to strategy sections.
 - Add cleaned and summarized material to evidence summary, not directly to insights.
+- Add brand hard data candidates to `Brand Hard Data Track` and mark whether they are user-supplied, publicly collected, or still need confirmation.
+- Add evidence-preparation content strips and the evidence brief box to frontstage sections, not as a substitute for the full evidence pool.
 - Add Level 1-4 thinking only after `insight-strategy` or a focused strategy pass.
-- Mark provisional strategy when brand facts, product proof, brand history, or competitor difference are thin.
+- Mark provisional strategy when brand truth, proof edge, brand behavior, or competitor difference are thin.
 - Keep contradictory evidence visible.
 - Keep source IDs or source names attached to major claims.

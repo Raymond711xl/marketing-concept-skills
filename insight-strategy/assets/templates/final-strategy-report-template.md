@@ -5,6 +5,8 @@
 - Strategy status:
 - Input package sufficiency:
 - Missing brand facts:
+- Strategy Readiness Pack:
+- User confirmation needed:
 - Recommended rollback:
 
 ## Level 1 - Fact Layer
@@ -19,7 +21,7 @@
 - Product proof:
 - Brand behavior / history:
 - Competitor difference:
-- Strategic idea candidates:
+- Idea Platform candidates:
 - Recommendation status:
 
 ## Confidence & Caveats

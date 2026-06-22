@@ -35,7 +35,9 @@ Use:
 
 ## Strategic Honesty
 
-If the input package does not contain enough brand truth, product proof,
-repeated brand behavior, audience proof, or competitor difference, Level 4 can
-still produce candidates but cannot pretend to be final. The final report must
-mark the strategy as provisional and recommend a rollback path.
+If the input package or Strategy Readiness Pack does not contain enough brand
+truth, product proof, repeated brand behavior, audience proof, or competitor
+difference, Level 4 can still produce candidates but cannot pretend to be final.
+The final report must mark the strategy as provisional and recommend a rollback
+path or user-confirmation point. Do not treat this as a sudden blocker if the
+upstream evidence-preparation stage already marked the hard-data gap.

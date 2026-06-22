@@ -1,6 +1,6 @@
 ---
 name: insight-strategy
-description: Transform an evidence pool, research notes, interviews, comments, reviews, competitive findings, campaign brief, or other sourced material into brand insight and strategy. Use when the user wants themes, signals, human truths, cultural tensions, brand truth, strategic idea candidates, campaign strategy, positioning direction, or an insight-to-strategy report. This skill consumes prepared evidence; it does not perform open web research unless another research skill or the user provides the evidence pool.
+description: Transform an evidence pool, research notes, interviews, comments, reviews, competitive findings, campaign brief, or other sourced material into brand insight and strategy. Use when the user wants themes, signals, human truths, cultural tensions, brand truth, Idea Platform candidates, campaign strategy, positioning direction, or an insight-to-strategy report. This skill consumes prepared evidence; it does not perform open web research unless another research skill or the user provides the evidence pool.
 ---
 
 # Insight Strategy
@@ -10,6 +10,10 @@ core job is not to collect more information; it is to read the brief, brand
 context, competitor context, evidence pool, or raw-evidence report already
 provided by the user or upstream research skill, separate fact from inference,
 and climb from signals to cultural tension to a brand strategy decision.
+
+In this system, `Idea Platform` is the formal term for the strategic platform
+often called a Big Idea in advertising workflows. Use `Idea Platform` as the
+working term because it becomes the foundation for later Concept development.
 
 ## Language And Market Defaults
 
@@ -54,7 +58,7 @@ Follow the four-level ladder in order:
    using What is / What should be / Why now. Use
    `references/05-level3-cultural-judgment.md`.
 4. **Level 4: Strategic Decision** - connect cultural tension with brand truth
-   and proof edge to derive strategic idea platform candidates. Use
+   and proof edge to derive Idea Platform candidates. Use
    `references/06-level4-strategic-decision.md`.
 
 Before finalizing, apply `references/07-evidence-confidence-rules.md`.
@@ -72,6 +76,10 @@ For the final deliverable, use `references/08-final-report-template.md`.
   not conclusions.
 - Keep divergent and convergent thinking separate: expand in Levels 1-3, choose
   in Level 4.
+- Treat `Strategy Readiness Pack` as the preferred bridge into Level 4 when it
+  exists. If brand hard data is still thin, continue with a provisional
+  recommendation and name the upstream collection or user-confirmation gap
+  instead of stopping the workflow.
 
 ## Resource Map
 
@@ -84,8 +92,8 @@ For the final deliverable, use `references/08-final-report-template.md`.
   Level 2 motive inference.
 - `assets/templates/cultural-tension-record-template.md` - one-card structure
   for a Level 3 cultural tension.
-- `assets/templates/strategic-idea-record-template.md` - one-card structure for
-  the Level 4 strategic idea platform.
+- `assets/templates/idea-platform-record-template.md` - one-card structure for
+  the Level 4 Idea Platform.
 - `assets/templates/concept-record-template.md` - one-card structure for
   campaign or creative concept development after strategy is chosen.
 - `assets/templates/evidence-matrix-template.csv` - structured evidence index

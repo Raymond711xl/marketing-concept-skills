@@ -1,4 +1,4 @@
 interface:
   display_name: "Evidence Summary Analysis"
   short_description: "Normalize evidence into patterns and handoff"
-  default_prompt: "Use $evidence-summary-analysis to clean, classify, summarize, and prepare this evidence pool for downstream insight strategy."
+  default_prompt: "Use $evidence-summary-analysis to turn this evidence pool into content strips, evidence patterns, and a Strategy Readiness Pack."

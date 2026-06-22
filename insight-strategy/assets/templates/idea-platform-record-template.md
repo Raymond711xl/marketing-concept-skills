@@ -1,10 +1,10 @@
-# Strategic Idea Record
+# Idea Platform Record
 
-Use this as the Level 4 working card for a strategic idea or campaign platform.
+Use this as the Level 4 working card for an Idea Platform or campaign platform.
 
 - Record ID:
 - Candidate name:
-- Strategic idea statement:
+- Idea Platform statement:
 - Cultural tension answered:
 - Audience shift:
 - Brand truth:

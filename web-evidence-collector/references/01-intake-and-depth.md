@@ -18,6 +18,7 @@ Accept this structure when provided:
 - Categories:
 - Depth: light / standard / deep / exhaustive
 - Existing materials:
+- Brand hard data leads: official brief / brand book / website / philosophy / vision / slogan / chronology / founder statement / product proof / service proof / brand behavior / competitor distinction
 - Downstream destination:
 - Subagent mode approved: yes / no / ask user
 - Notes:
@@ -31,13 +32,22 @@ Ask at most three fallback questions only if the task packet or user request is 
 
 1. **Target**: What should be researched: brand, campaign, event, competitor set, product, industry, or platform behavior?
 2. **Depth and categories**: Which categories should be included: visual, video, offline activation, marketing, PR, social, reports, competitor examples? Which depth: light, standard, deep, or exhaustive?
-3. **Existing material and constraints**: Does the user already have links, screenshots, exports, keywords, priority platforms, geography, time range, or sources to avoid?
+3. **Existing material and constraints**: Does the user already have links, screenshots, exports, official brand materials, keywords, priority platforms, geography, time range, or sources to avoid?
 
 If the user is unsure, propose a default:
 
 ```text
 I will start with standard collection across visual, video, offline activation, marketing, PR, and social leads, then mark evidence gaps.
 ```
+
+For brand or strategy projects, add a Brand Hard Data Track by default. Search for public candidates for:
+
+- Brand philosophy, vision, mission, values, slogan, and brand claim
+- Brand chronology, founder or leadership statements, and important public speeches
+- Product proof, service proof, user-visible experience proof, and brand behavior
+- Competitor claims, category conventions, and visible differentiation
+
+If the user has official materials, treat them as privileged leads. If not, collect public candidates and mark them as `needs user confirmation`.
 
 ## Depth Presets
 
@@ -59,6 +69,7 @@ I will start with standard collection across visual, video, offline activation, 
 | PR | 3 | 5 | 8-12 |
 | Social leads | 3-5 | 5-10 | 10-20 |
 | Reports / market context | 1-2 | 3-5 | 6-10 |
+| Brand hard data | 3-5 | 5-8 | 8-12 |
 
 ## Scope Rules
 

@@ -11,7 +11,7 @@ These can live inside the skill because they are project-specific structures:
 - Evidence pool and evidence matrix templates
 - Human truth record
 - Cultural tension record
-- Strategic idea record
+- Idea Platform record
 - Concept record
 - Starter topic-tag taxonomy
 - Small starter marker list used by the optional raw-evidence preparation script
@@ -25,7 +25,7 @@ Treat these as optional external materials:
 
 - Full Chinese emotion or sentiment lexicon
 - Full English emotion lexicon
-- Internal strategic idea, strategy, or concept-record templates
+- Internal Idea Platform, strategy, or concept-record templates
 - Historical campaign decks and case studies
 - Brand books, product proof libraries, or proprietary research
 

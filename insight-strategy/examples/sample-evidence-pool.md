@@ -1,5 +1,17 @@
 # Evidence Pool
 
+## Brand Hard Data Track
+
+- Brand philosophy / vision: not supplied
+- Slogan / brand claim: not supplied
+- Brand chronology: not supplied
+- Founder / leadership statement: not supplied
+- Product proof: sample product experience reduces pressure; needs confirmation
+- Service / experience proof: not supplied
+- Brand behavior: not supplied
+- Competitor distinction: competitor frames the category around efficiency and self-discipline
+- User confirmation needed: brand truth, official proof edge, and product behavior
+
 ## Evidence 1
 
 - Source type: platform-comment

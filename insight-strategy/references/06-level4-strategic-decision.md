@@ -3,18 +3,19 @@
 Level 4 answers: **What should the brand choose, stand for, and prove after
 seeing the cultural tension?**
 
-This is the strategic decision layer. Use the Strategic Idea Platform model as
+This is the strategic decision layer. Use the Idea Platform model as
 the default strategy model.
 
 At this stage, do not ingest new materials. Use the brief, brand context,
-competitor context, and evidence pool already assembled in the input package.
+competitor context, Strategy Readiness Pack, and evidence pool already assembled
+in the input package.
 If the package is not sufficient for a final decision, mark the result as
 provisional and recommend which upstream step should be revisited.
 
 ## Core Model
 
 ```text
-Strategic Idea Platform = Cultural Tension x Brand Truth x Proof Edge
+Idea Platform = Cultural Tension x Brand Truth x Proof Edge
 ```
 
 The strongest strategy lives where a real cultural tension meets something the
@@ -23,8 +24,9 @@ brand can credibly believe, repeatedly do, and visibly prove.
 ## Step 1: Identify Brand Truth
 
 Use the brand history, product truth, founder belief, repeated behavior,
-audience role, competitive difference, service experience, and proof points
-already present in the input package.
+audience role, competitive difference, service experience, proof points, and
+Brand Hard Data Track already present in the input package or Strategy
+Readiness Pack.
 
 Ask:
 
@@ -34,8 +36,8 @@ Ask:
 - What can this brand say or do that competitors cannot credibly own?
 
 Do not invent brand truth. If the package does not support it, mark the strategy
-as provisional and state which upstream input is missing. Do not pause Level 4
-to request new files unless the user explicitly wants to go back.
+as provisional and state which upstream hard-data input is missing. Do not pause
+Level 4 to request new files unless the user explicitly wants to go back.
 
 ## Step 2: Connect Tensions To Proof Edge
 
@@ -46,7 +48,7 @@ For each Level 3 cultural tension:
 - Is the connection distinctive, or could any competitor claim it?
 - What behavior, product, service, campaign, or platform could prove it?
 
-## Step 3: Draft Strategic Idea Candidates
+## Step 3: Draft Idea Platform Candidates
 
 Use this decision structure:
 
@@ -64,7 +66,7 @@ Chinese version:
 
 Create 2-3 candidates. Each candidate should include:
 
-- Strategic idea statement
+- Idea Platform statement
 - Cultural tension it answers
 - Brand truth it draws from
 - Proof edge that makes it ownable

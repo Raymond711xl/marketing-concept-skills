@@ -15,6 +15,7 @@ Use this Markdown structure for final handoff.
 - Requested depth:
 - Collection date:
 - Downstream destination: evidence-summary-analysis / insight-strategy / user review
+- Evidence preparation mode: default / audit
 - Known inputs used:
 - Controller task packet used: yes / no
 - Subagent mode: recommended / approved / declined / not needed / unavailable
@@ -55,17 +56,40 @@ Use this Markdown structure for final handoff.
 - Gaps / restrictions:
 - Evidence IDs produced:
 
-## 5. Source Coverage
+## 5. Evidence Brief Box
+
+- Evidence readiness: ready / partial / weak
+- Source coverage summary:
+- Most reliable source groups:
+- Brand hard-data candidates:
+- Major restrictions:
+- Missing evidence:
+- Full evidence pool / dossier path:
+
+## 6. Source Coverage
 
 | Area | Target count | Collected count | Source spread | Strongest source level | Confidence | Notes |
 | --- | ---: | ---: | --- | --- | --- | --- |
 
-## 6. Campaign Linkage Map
+## 7. Brand Hard Data Track
+
+| Hard data type | Candidate evidence | Source / URL | Source type | Confidence | Needs user confirmation |
+| --- | --- | --- | --- | --- | --- |
+| Brand philosophy / vision | | | | | |
+| Slogan / brand claim | | | | | |
+| Brand chronology | | | | | |
+| Founder / leadership statement | | | | | |
+| Product proof | | | | | |
+| Service / experience proof | | | | | |
+| Brand behavior | | | | | |
+| Competitor distinction | | | | | |
+
+## 8. Campaign Linkage Map
 
 | Campaign / message | Linkage status | Related evidence IDs | Channels represented | Missing channels | Notes |
 | --- | --- | --- | --- | --- | --- |
 
-## 7. Collection Statistics
+## 9. Collection Statistics
 
 | Metric | Value | Evidence basis |
 | --- | ---: | --- |
@@ -82,12 +106,12 @@ Use this Markdown structure for final handoff.
 | Standalone items | | |
 | Restricted / user-needed items | | |
 
-## 8. Concept Repetition Check
+## 10. Concept Repetition Check
 
 | Campaign / message | Evidence count | Channels | Brands | Repetition pattern | Completeness |
 | --- | ---: | --- | --- | --- | --- |
 
-## 9. Skew And Completeness Check
+## 11. Skew And Completeness Check
 
 | Check | Status | Evidence | Risk for downstream analysis | Suggested next collection |
 | --- | --- | --- | --- | --- |
@@ -99,12 +123,12 @@ Use this Markdown structure for final handoff.
 | Visual evidence coverage | | | | |
 | Campaign linkage completeness | | | | |
 
-## 10. Gaps And Restrictions
+## 12. Gaps And Restrictions
 
 | Gap / restriction | Why it matters | Suggested next action |
 | --- | --- | --- |
 
-## 11. Evidence Pool
+## 13. Evidence Pool
 
 ### Evidence 1
 
@@ -132,6 +156,8 @@ Use this Markdown structure for final handoff.
 - Screenshot status:
 - Key fact:
 - Evidence value:
+- Brand hard data type:
+- Needs user confirmation:
 - Related evidence:
 - Linkage status:
 - Metric / count:
@@ -143,6 +169,8 @@ Use this Markdown structure for final handoff.
 If the user asks for quick output, include only:
 
 1. Source Coverage
-2. Campaign Linkage Map
-3. Gaps And Restrictions
-4. Evidence Pool
+2. Evidence Brief Box
+3. Brand Hard Data Track
+4. Campaign Linkage Map
+5. Gaps And Restrictions
+6. Evidence Pool

@@ -19,6 +19,9 @@ Include what is available:
   founder belief, service proof, experience proof, and audience proof
 - `competitor_context`: key competitors or substitutes, their claims, category
   conventions, and visible differentiation
+- `strategy_readiness_pack`: upstream evidence-summary bridge for Level 4,
+  including brand truth candidates, proof edge candidates, brand behavior
+  evidence, competitor distinction, and user-confirmation needs
 - `evidence_pool`: sourced evidence items from research, social platforms,
   interviews, reviews, reports, news, or event feedback
 
@@ -49,6 +52,7 @@ Before analysis, check:
 
 - What brief and brand context are already available?
 - What public or research-derived brand facts are already in the package?
+- Is there a Strategy Readiness Pack from evidence summary?
 - What competitor or category context is already available?
 - Is there enough evidence to support at least 4-6 themes?
 - Are sources diverse enough, or dominated by one platform or viewpoint?
@@ -79,14 +83,18 @@ research skill first when fresh external evidence is needed.
 ## Brand Facts Handling
 
 Levels 1-3 can usually proceed from the evidence pool. Level 4 uses the brand
-context and brand facts already present in the input package.
+context, brand facts, and Strategy Readiness Pack already present in the input
+package.
 
 Do not perform new information intake during Level 4. If Level 4 reveals that
 the package lacks brand truth, product proof, repeated brand behavior, audience
-proof, or competitor difference, mark the strategy provisional and recommend
-rollback to:
+proof, or competitor difference, do not treat this as a sudden hard stop. Mark
+the strategy provisional and recommend rollback to:
 
 - brief clarification,
 - brand-material collection,
 - competitor research, or
 - evidence-pool expansion.
+
+Prefer this wording: "The strategy can proceed as provisional; final approval
+requires user confirmation or additional evidence for [specific hard-data gap]."

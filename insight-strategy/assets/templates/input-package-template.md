@@ -27,6 +27,15 @@
 - Audience proof:
 - Known constraints:
 
+## Strategy Readiness Pack
+
+- Brand truth candidates:
+- Proof edge candidates:
+- Brand behavior evidence:
+- Competitor distinction:
+- User confirmation needed:
+- Readiness status:
+
 ## Competitor Context
 
 - Key competitors or substitutes:

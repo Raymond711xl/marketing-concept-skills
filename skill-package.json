@@ -1,0 +1,62 @@
+{
+  "name": "marketing-concept-skill",
+  "display_name": "慢策",
+  "english_display_name": "Marketing Concept Skill",
+  "slogan": "写方案的前半程，有 AI 陪你慢慢跑。",
+  "version": "0.7.0",
+  "status": "draft-alpha",
+  "license": "MIT",
+  "default_language": "zh-CN",
+  "default_market_context": "China / Chinese web",
+  "entry_skill": "concept-strategy-controller",
+  "core_flow": [
+    "Brief",
+    "Evidence Collection",
+    "Evidence Summary",
+    "Insight Strategy",
+    "Idea Platform",
+    "Concept"
+  ],
+  "skills": [
+    {
+      "name": "concept-strategy-controller",
+      "role": "controller",
+      "path": "concept-strategy-controller"
+    },
+    {
+      "name": "web-evidence-collector",
+      "role": "evidence_collection",
+      "path": "web-evidence-collector"
+    },
+    {
+      "name": "evidence-summary-analysis",
+      "role": "evidence_summary",
+      "path": "evidence-summary-analysis"
+    },
+    {
+      "name": "insight-strategy",
+      "role": "insight_strategy",
+      "path": "insight-strategy"
+    }
+  ],
+  "stage_commands": [
+    "进入：证据采集",
+    "进入：证据摘要",
+    "进入：策略洞察",
+    "进入：Idea Platform",
+    "进入：Concept",
+    "查看：资料池",
+    "回退到：证据摘要",
+    "继续"
+  ],
+  "migration": {
+    "planned_targets": [
+      "Claude",
+      "Chinese IDE / Agent software"
+    ],
+    "cloud_validation_status": "not-tested",
+    "future_shared_references": [
+      "shared-references/chinese-working-protocol.md"
+    ]
+  }
+}

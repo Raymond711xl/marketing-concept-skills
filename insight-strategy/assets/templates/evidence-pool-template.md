@@ -10,6 +10,18 @@
 - Excluded source types:
 - Known limitations:
 
+## Brand Hard Data Track
+
+- Brand philosophy / vision:
+- Slogan / brand claim:
+- Brand chronology:
+- Founder / leadership statement:
+- Product proof:
+- Service / experience proof:
+- Brand behavior:
+- Competitor distinction:
+- User confirmation needed:
+
 ## Evidence 1
 
 - Source type:

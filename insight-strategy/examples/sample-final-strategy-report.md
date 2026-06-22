@@ -7,9 +7,12 @@ feel accepted without constant self-improvement. A provisional strategic
 direction is to help the brand stand for humane permission rather than another
 productivity demand.
 
+Strategy Readiness Pack: partial. Product proof and competitor distinction are
+usable as candidates, but brand truth still needs user confirmation.
+
 ## Level 4 - Strategic Decision
 
-### Candidate Strategic Idea
+### Candidate Idea Platform
 
 Because people feel trapped between constant self-improvement and the need to
 feel already enough, [Brand] should stand for humane permission and prove it

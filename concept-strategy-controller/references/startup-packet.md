@@ -10,7 +10,8 @@ The packet should:
 
 - Preserve the user's original wording.
 - Clarify the working target and desired endpoint.
-- Diagnose whether the project starts from zero research, messy materials, a structured evidence pool, existing insight, or an existing Big Idea / Concept.
+- Diagnose whether the project starts from zero research, messy materials, a structured evidence pool, existing insight, or an existing Idea Platform / Concept.
+- Identify Level 4 hard-data needs early, especially brand philosophy, vision, slogan, chronology, founder statements, product proof, service proof, brand behavior, and competitor distinction.
 - Make missing inputs visible without blocking unnecessarily.
 - Give downstream skills enough context to work without re-asking broad intake questions.
 
@@ -28,9 +29,12 @@ The packet should:
 - Target audience:
 - Current known materials:
 - Existing evidence status: none / messy / structured / analyzed
+- Evidence preparation mode: default / audit
+- Brand hard data status: supplied / public candidates needed / user confirmation needed / unknown
+- Brand hard data leads: philosophy / vision / slogan / chronology / founder statement / product proof / service proof / brand behavior / competitor distinction
 - Priority platforms or source types:
 - Forbidden sources or constraints:
-- Desired endpoint: evidence / insight strategy / Big Idea / Concept
+- Desired endpoint: evidence / insight strategy / Idea Platform / Concept
 - Recommended route:
 - Output language:
 - Missing inputs:
@@ -55,7 +59,7 @@ Use these labels:
 | `none` | User has only a question, brand, market, or loose brief | Evidence collection first |
 | `messy` | User has links, notes, screenshots, exports, or unstructured research | Evidence summary first |
 | `structured` | User has a usable evidence pool, listening report, or research handoff | Insight strategy first |
-| `analyzed` | User already has themes, insights, Big Idea, or Concept | Focused strategy / reverse audit |
+| `analyzed` | User already has themes, insights, Idea Platform, or Concept | Focused strategy / reverse audit |
 
 ## First Response Checklist
 
@@ -64,13 +68,16 @@ The first response should include:
 1. `Brief 快照`
 2. `起点判断`
 3. `推荐路径`
-4. `如何介入`
-5. `当前需要补充的信息`
+4. `证据准备模式`
+5. `如何介入`
+6. `当前需要补充的信息`
 
 Include this intervention explanation in the first response:
 
 ```text
-你可以随时输入阶段指令来单独深入讨论，例如「进入：证据摘要」「进入：策略洞察」「进入：Big Idea」「进入：Concept」「查看：资料池」。总控会暂停推进，把用户原话、当前判断和完整资料池一起带入该环节，不会只转发压缩摘要。
+你可以随时输入阶段指令来单独深入讨论，例如「进入：证据摘要」「进入：策略洞察」「进入：Idea Platform」「进入：Concept」「查看：资料池」。总控会暂停推进，把用户原话、当前判断和完整资料池一起带入该环节，不会只转发压缩摘要。
 ```
 
 Ask at most three questions. If the missing information is not blocking, state a default and proceed.
+
+When brand hard data is missing, do not ask the user to define abstract brand truth. Ask whether official materials exist, such as brand book, website, slogan, chronology, founder statement, campaign archive, product proof, service proof, or competitor list. If not supplied, mark them as public collection leads and proceed.

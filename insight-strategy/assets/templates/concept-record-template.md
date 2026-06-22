@@ -1,11 +1,11 @@
 # Concept Record
 
-Use this after a strategic idea is chosen and the work moves into campaign,
+Use this after an Idea Platform is chosen and the work moves into campaign,
 content, product-experience, or creative concept development.
 
 - Record ID:
 - Concept name:
-- Strategic idea source:
+- Idea Platform source:
 - Target audience:
 - Audience problem:
 - Promise:
@@ -19,4 +19,3 @@ content, product-experience, or creative concept development.
 - What to test:
 - Decision: Keep / Revise / Reject
 - Notes:
-

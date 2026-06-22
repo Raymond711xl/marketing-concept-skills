@@ -1,6 +1,6 @@
 ---
 name: web-evidence-collector
-description: Collect, verify, and structure public web evidence for brand, campaign, competitor, visual-material, video, offline activation, marketing, PR, social-platform, market, or event research. Use when the user or a controller skill needs sourced materials, screenshots or visual leads, short quotes, platform-based collection shards, campaign linkage mapping, source coverage, evidence gaps, or a downstream-ready evidence pool for evidence-summary-analysis or insight-strategy. This skill performs collection and evidence control only; it does not produce final strategy, positioning, Big Idea, or insight conclusions.
+description: Collect, verify, and structure public web evidence for brand, campaign, competitor, visual-material, video, offline activation, marketing, PR, social-platform, market, or event research. Use when the user or a controller skill needs sourced materials, screenshots or visual leads, short quotes, brand hard-data candidates, platform-based collection shards, campaign linkage mapping, source coverage, evidence gaps, an evidence brief, or a downstream-ready evidence pool for evidence-summary-analysis or insight-strategy. This skill performs collection and evidence control only; it does not produce final strategy, positioning, Idea Platform, or insight conclusions.
 ---
 
 # Web Evidence Collector
@@ -34,11 +34,12 @@ Do:
 - Capture links, dates, source names, source levels, short raw quotes, factual summaries, visual observations, screenshot status, and access restrictions.
 - Preserve social-platform leads with a short key phrase plus link when full access, screenshots, or quotation is restricted.
 - Build a campaign linkage map that connects related video, offline, marketing, PR, visual, and social evidence under the same campaign/message when the evidence supports the link.
+- Collect brand hard-data candidates when relevant: brand philosophy, vision, slogan, brand claim, chronology, founder or leadership statements, product proof, service proof, brand behavior, and competitor distinction.
 - Output source coverage, collection statistics, skew warnings, gaps, restrictions, and a downstream-compatible Evidence Pool.
 
 Do not:
 
-- Produce final insights, cultural tensions, brand strategy, positioning, creative Big Idea, or campaign recommendations.
+- Produce final insights, cultural tensions, brand strategy, positioning, Idea Platform, or campaign recommendations.
 - Treat brand-owned claims as audience truth.
 - Treat search snippets, aggregator pages, or social captions as confirmed facts unless traced to stronger sources.
 - Bypass login, paywalls, private groups, CAPTCHAs, anti-bot controls, API access controls, or platform terms.
@@ -52,7 +53,7 @@ Do not:
 4. Collect by platform-first shards, with material-category focus inside each shard. Read `references/03-collection-workflow.md` and, when relevant, `references/05-material-categories.md`.
 5. Track campaign links and evidence skew. Read `references/06-campaign-linkage-map.md` and `references/07-coverage-and-statistics.md`.
 6. Handle social, API, and access boundaries. Read `references/08-social-platform-boundaries.md`.
-7. Output the handoff. Use `references/04-evidence-pool-contract.md` and `references/09-output-template.md`.
+7. Output the evidence brief and handoff. Use `references/04-evidence-pool-contract.md` and `references/09-output-template.md`.
 
 ## Intake Defaults
 
@@ -60,7 +61,7 @@ If a controller task packet gives enough detail, proceed. If not, ask no more th
 
 - What target should be researched: brand, campaign, event, competitor set, product, or market?
 - Which categories and depth: visual, video, offline activation, marketing, PR, social, reports; light, standard, deep, or exhaustive?
-- What is already known or supplied: links, screenshots, platform exports, time range, geography, priority platforms, or forbidden sources?
+- What is already known or supplied: links, screenshots, platform exports, official brand materials, time range, geography, priority platforms, or forbidden sources?
 
 When the user does not specify depth, state the standard default and proceed unless they object:
 
@@ -82,12 +83,24 @@ Always end with a Markdown handoff containing:
 2. `Depth and Query Plan`
 3. `Subagent Collection Plan` when recommended or used
 4. `Evidence Shards` when subagents or platform shards were used
-5. `Source Coverage`
-6. `Campaign Linkage Map`
-7. `Collection Statistics`
-8. `Skew and Completeness Check`
-9. `Gaps and Restrictions`
-10. `Evidence Pool`
+5. `Evidence Brief Box`
+6. `Source Coverage`
+7. `Brand Hard Data Track`
+8. `Campaign Linkage Map`
+9. `Collection Statistics`
+10. `Skew and Completeness Check`
+11. `Gaps and Restrictions`
+12. `Evidence Pool`
+
+The `Evidence Brief Box` is the frontstage source summary for controller display. It should include:
+
+- Source coverage in one short paragraph or table
+- Most reliable source groups
+- Major restrictions and missing evidence
+- Brand hard-data candidates found
+- Full evidence pool / dossier path when available
+
+Do not place final insights or strategy in the evidence brief.
 
 The `Evidence Pool` must keep the downstream core fields first:
 
@@ -117,6 +130,8 @@ Then add collector-specific fields when available:
 - `Screenshot status`
 - `Key fact`
 - `Evidence value`
+- `Brand hard data type`
+- `Needs user confirmation`
 - `Related evidence`
 - `Limitation / restriction`
 
@@ -125,6 +140,7 @@ Then add collector-specific fields when available:
 - Keep each evidence item focused on one fact, observation, quote, or traceable material.
 - Use `Observation`-style wording for visuals when there is no quote.
 - Use campaign/message labels as collection aids, not strategic conclusions.
+- Use brand hard-data labels as evidence aids, not final brand truth. Mark official claims and publicly inferred candidates separately.
 - Mark inferred relationships as `tentative` unless multiple sources support the linkage.
 - If requested evidence is unavailable, say what was searched, what was found, and what user-provided material would improve coverage.
 - Keep the output machine-readable enough for `evidence-summary-analysis` to normalize without re-researching.
