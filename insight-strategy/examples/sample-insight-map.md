@@ -6,7 +6,7 @@
 
 - Evidence says: People value brands that acknowledge emotional fatigue.
 - Raw voices: "不想再被催着变优秀"
-- Source spread: social
+- Source spread: platform comments, competitor archive
 - Confidence: medium
 
 ## Level 2 - Motive Inference

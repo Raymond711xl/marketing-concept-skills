@@ -21,9 +21,9 @@
 
 ## Brand Facts
 
-- Brand's Best Self hypothesis:
+- Brand truth hypothesis:
 - Product / service / experience proof:
-- Brand history / founder belief / repeated behavior:
+- Brand behavior / history / founder belief:
 - Audience proof:
 - Known constraints:
 
@@ -42,8 +42,10 @@
 - Source name:
 - Date:
 - URL or citation:
+- Audience / segment:
 - Raw quote:
 - Summary:
 - Topic tag:
-- Audience:
+- Insight lens:
+- Matched keywords:
 - Confidence:

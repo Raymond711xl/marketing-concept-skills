@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a tiny CSV and run the optional social listening cleaner."""
+"""Create a tiny CSV and run the optional raw evidence preparation adapter."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ from pathlib import Path
 
 def main() -> None:
     root = Path(__file__).resolve().parent
-    script = root / "phase1_social_listening_cleaning.py"
+    script = root / "prepare_raw_evidence.py"
     with tempfile.TemporaryDirectory() as tmp:
         tmpdir = Path(tmp)
         sample = tmpdir / "sample.csv"

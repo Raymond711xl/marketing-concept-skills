@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Convert raw social comments into a first-pass evidence pool Markdown file.
+"""Convert raw text rows into a first-pass evidence pool Markdown file.
 
 This is an optional adapter for Insight Strategy. It performs mechanical
-preparation only: reading comments, deduping, token counting, simple emotion
-scanning, and raw voice extraction.
+preparation only: reading text rows, deduping, token counting, simple language
+marker scanning, and raw voice extraction.
 """
 
 from __future__ import annotations
@@ -31,14 +31,14 @@ TEXT_COLUMNS = [
 
 LIKE_COLUMNS = ["like", "likes", "upvotes", "赞", "点赞", "点赞数"]
 
-DEFAULT_EMOTIONS = {
-    "焦虑": ("anxiety", "identity", 3),
-    "压力": ("pressure", "social_role", 3),
-    "孤独": ("loneliness", "emotional_lack", 3),
-    "安全感": ("security", "emotional_lack", 3),
-    "自由": ("freedom", "lifestyle", 2),
-    "松弛": ("relief", "lifestyle", 2),
-    "被看见": ("recognition", "identity", 3),
+DEFAULT_MARKERS = {
+    "焦虑": ("anxiety", "self_identity", 3),
+    "压力": ("pressure", "social_position", 3),
+    "孤独": ("loneliness", "belonging", 3),
+    "安全感": ("security", "belonging", 3),
+    "自由": ("freedom", "life_design", 2),
+    "松弛": ("relief", "life_design", 2),
+    "被看见": ("recognition", "self_identity", 3),
 }
 
 DEFAULT_STOPWORDS = {
@@ -155,19 +155,19 @@ def main() -> None:
         )
 
     token_counts: Counter[str] = Counter()
-    emotion_hits: dict[str, list[str]] = defaultdict(list)
+    marker_hits: dict[str, list[str]] = defaultdict(list)
     for item in comments:
         text = str(item["text"])
         token_counts.update(tokenize(text, stopwords))
-        for term in DEFAULT_EMOTIONS:
+        for term in DEFAULT_MARKERS:
             if term in text:
-                emotion_hits[term].append(text)
+                marker_hits[term].append(text)
 
     top_comments = sorted(comments, key=lambda x: int(x["likes"]), reverse=True)[:100]
     top_tokens = token_counts.most_common(25)
 
     out = []
-    out.append(f"# {args.brand} Phase 1 Social Listening Initial Wash\n")
+    out.append(f"# {args.brand} Raw Evidence Preparation Report\n")
     out.append("## Dataset Overview\n")
     out.append(f"- Source: {args.source}")
     out.append(f"- Input file: {input_path.name}")
@@ -181,12 +181,12 @@ def main() -> None:
         out.append(f"- {word}: {count}")
     out.append("")
 
-    out.append("## Emotion And Tension Scan\n")
-    for term, hits in emotion_hits.items():
-        emotion, domain, weight = DEFAULT_EMOTIONS[term]
-        out.append(f"- {term}: emotion={emotion}, domain={domain}, weight={weight}, hits={len(hits)}")
-    if not emotion_hits:
-        out.append("- No built-in emotion terms detected. Treat this as absence of script hits, not absence of emotion.")
+    out.append("## Need And Tension Marker Scan\n")
+    for term, hits in marker_hits.items():
+        marker, domain, weight = DEFAULT_MARKERS[term]
+        out.append(f"- {term}: marker={marker}, domain={domain}, weight={weight}, hits={len(hits)}")
+    if not marker_hits:
+        out.append("- No built-in language markers detected. Treat this as absence of script hits, not absence of feeling or tension.")
     out.append("")
 
     out.append("## Raw Voice Excerpts\n")
@@ -201,20 +201,22 @@ def main() -> None:
     for i, item in enumerate(top_comments[:20], start=1):
         text = str(item["text"]).replace("\n", " ")
         out.append(f"### Evidence {i}")
-        out.append(f"- Source type: social")
+        out.append(f"- Source type: platform-comment")
         out.append(f"- Source name: {args.source}")
         out.append(f"- Date: unknown")
         out.append(f"- URL or citation: {input_path.name} row {item['row']}")
+        out.append(f"- Audience / segment: unknown")
         out.append(f"- Raw quote: \"{text}\"")
         out.append(f"- Summary: To be interpreted in Level 1")
         out.append(f"- Topic tag: to-be-coded")
-        out.append(f"- Audience: unknown")
+        out.append(f"- Insight lens: to-be-coded")
+        out.append(f"- Matched keywords: to-be-coded")
         out.append(f"- Confidence: medium")
         out.append("")
 
     out.append("## Limitations\n")
     out.append("- This is mechanical preparation, not final insight.")
-    out.append("- Emotion detection uses a small starter lexicon and must be checked against raw voice.")
+    out.append("- Marker detection uses a small starter lexicon and must be checked against raw voice.")
     out.append("- Missing audience, platform, and date metadata should be filled before strategic decisions.")
 
     output_path = Path(args.output_file)

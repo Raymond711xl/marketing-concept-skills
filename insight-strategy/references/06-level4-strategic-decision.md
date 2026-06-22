@@ -1,10 +1,10 @@
 # Level 4: Strategic Decision
 
-Level 4 answers: **What should the brand believe, choose, and say after seeing
-the cultural tension?**
+Level 4 answers: **What should the brand choose, stand for, and prove after
+seeing the cultural tension?**
 
-This is the strategic decision layer. Use the Brand Big IdeaL model as the
-default strategy model.
+This is the strategic decision layer. Use the Strategic Idea Platform model as
+the default strategy model.
 
 At this stage, do not ingest new materials. Use the brief, brand context,
 competitor context, and evidence pool already assembled in the input package.
@@ -14,30 +14,30 @@ provisional and recommend which upstream step should be revisited.
 ## Core Model
 
 ```text
-Brand Big IdeaL = Cultural Tension ∩ Brand's Best Self
+Strategic Idea Platform = Cultural Tension x Brand Truth x Proof Edge
 ```
 
-The strongest strategy lives where a real cultural tension intersects with a
-truth the brand can authentically own.
+The strongest strategy lives where a real cultural tension meets something the
+brand can credibly believe, repeatedly do, and visibly prove.
 
-## Step 1: Identify Brand's Best Self
+## Step 1: Identify Brand Truth
 
 Use the brand history, product truth, founder belief, repeated behavior,
-audience role, competitive difference, and proof points already present in the
-input package.
+audience role, competitive difference, service experience, and proof points
+already present in the input package.
 
 Ask:
 
-- When is the brand most itself?
-- What does the brand believe when it is not merely selling?
+- What does the brand repeatedly show, not merely claim?
+- What does the brand believe when it is not just selling?
 - What product or experience truth can support that belief?
 - What can this brand say or do that competitors cannot credibly own?
 
-Do not invent Brand's Best Self. If the package does not support it, mark the
-strategy as provisional and state which upstream input is missing. Do not pause
-Level 4 to request new files unless the user explicitly wants to go back.
+Do not invent brand truth. If the package does not support it, mark the strategy
+as provisional and state which upstream input is missing. Do not pause Level 4
+to request new files unless the user explicitly wants to go back.
 
-## Step 2: Connect Tensions To Brand Truth
+## Step 2: Connect Tensions To Proof Edge
 
 For each Level 3 cultural tension:
 
@@ -46,38 +46,42 @@ For each Level 3 cultural tension:
 - Is the connection distinctive, or could any competitor claim it?
 - What behavior, product, service, campaign, or platform could prove it?
 
-## Step 3: Draft Brand Big IdeaL Candidates
+## Step 3: Draft Strategic Idea Candidates
 
-Use this sentence structure:
+Use this decision structure:
 
 ```text
-[Brand] believes the world would be a better place if ...
+Because [audience] is caught between [what is] and [what should be],
+[Brand] should stand for [strategic belief] and prove it through [proof edge].
 ```
 
 Chinese version:
 
 ```text
-[品牌] 相信，如果……，这个世界会变得更美好。
+因为[人群]正被夹在[现实]与[理想]之间，[品牌]应该代表[战略信念]，
+并通过[可证明优势]让这件事变得可信。
 ```
 
 Create 2-3 candidates. Each candidate should include:
 
-- Big IdeaL statement
+- Strategic idea statement
 - Cultural tension it answers
-- Brand's Best Self it draws from
+- Brand truth it draws from
+- Proof edge that makes it ownable
 - Proof points
 - Strategic implications
 - Risks or weaknesses
 
 ## Step 4: Check Candidates
 
-Use the five checks:
+Use the six checks:
 
-1. Does it create a strong emotional reaction?
-2. Does it feel like a thought worth owning?
-3. Is it distinctive versus competitors?
-4. Does it fit the strategy perfectly?
-5. Can it last for years, not just one campaign?
+1. Tension fit: does it answer a real cultural pressure from Level 3?
+2. Brand fit: can the brand credibly stand there?
+3. Proof fit: can product, service, behavior, or channel evidence prove it?
+4. Distinction: is it hard for competitors to claim in the same way?
+5. Audience shift: does it change what the audience can feel, believe, or do?
+6. Longevity: can it guide more than one execution or campaign burst?
 
 ## Step 5: Recommend
 
@@ -92,7 +96,7 @@ Use these when the strategy cannot be finalized:
 
 - `brief rollback`: the task, audience, business problem, or success criteria
   are unclear
-- `brand facts rollback`: Brand's Best Self, product proof, brand history, or
+- `brand facts rollback`: brand truth, product proof, brand behavior, or
   audience relationship is too thin
 - `competitor rollback`: category conventions or competitor claims are unclear
 - `evidence rollback`: the cultural tension is not sufficiently supported

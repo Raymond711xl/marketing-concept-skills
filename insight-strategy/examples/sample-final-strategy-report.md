@@ -9,9 +9,11 @@ productivity demand.
 
 ## Level 4 - Strategic Decision
 
-### Candidate Big IdeaL
+### Candidate Strategic Idea
 
-[Brand] believes the world would be a better place if people could feel worthy
-before they become better.
+Because people feel trapped between constant self-improvement and the need to
+feel already enough, [Brand] should stand for humane permission and prove it
+through product experiences that reduce pressure rather than add another task.
 
-Confidence: provisional because full Brand's Best Self inputs are missing.
+Confidence: provisional because full brand truth and proof-edge inputs are
+missing.

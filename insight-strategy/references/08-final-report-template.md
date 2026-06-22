@@ -26,7 +26,7 @@ Use this structure for the final deliverable.
 - Core fact pattern:
 - Core human truth:
 - Core cultural tension:
-- Recommended Brand Big IdeaL:
+- Recommended strategic idea:
 
 ## 2. Level 1 - Fact Layer: Themes & Signals
 
@@ -58,27 +58,28 @@ Use this structure for the final deliverable.
 - Evidence trail:
 - Confidence:
 
-## 5. Level 4 - Strategic Decision: Brand Big IdeaL
+## 5. Level 4 - Strategic Decision: Strategic Idea Platform
 
-### Brand's Best Self
+### Brand Truth And Proof Edge
 
 - Brand truth:
 - Product / experience proof:
-- Brand history / repeated behavior:
+- Brand behavior / history:
 - Competitive distinction:
 - Missing inputs:
 
-### Candidate Big IdeaL Statements
+### Candidate Strategic Ideas
 
-1. [Brand] believes the world would be a better place if ...
+1. Because [audience] is caught between [what is] and [what should be], [Brand]
+   should stand for [strategic belief] and prove it through [proof edge].
    - Tension answered:
    - Brand truth:
-   - Proof:
-   - 5-check result:
+   - Proof edge:
+   - 6-check result:
 
 ### Recommended Direction
 
-- Recommended Big IdeaL:
+- Recommended strategic idea:
 - Status: Final / Provisional
 - Why this one:
 - Strategic implications:

@@ -1,4 +1,4 @@
 interface:
   display_name: "Insight Strategy"
   short_description: "Turn evidence pools into insight and strategy"
-  default_prompt: "Use $insight-strategy to turn this evidence pool into themes, human truths, cultural tensions, and a strategic Big Idea."
+  default_prompt: "Use $insight-strategy to turn this evidence pool into themes, human truths, cultural tensions, and a strategic idea platform."

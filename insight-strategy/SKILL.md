@@ -1,15 +1,15 @@
 ---
 name: insight-strategy
-description: Transform an evidence pool, social listening report, research notes, interviews, comments, reviews, competitive findings, or other sourced material into brand insight and strategy. Use when the user wants themes, signals, human truths, cultural tensions, Brand's Best Self, Brand Big IdeaL candidates, strategic recommendations, or an insight-to-strategy report. This skill consumes evidence; it does not perform open web research unless another research skill or the user provides the evidence pool.
+description: Transform an evidence pool, research notes, interviews, comments, reviews, competitive findings, campaign brief, or other sourced material into brand insight and strategy. Use when the user wants themes, signals, human truths, cultural tensions, brand truth, strategic idea candidates, campaign strategy, positioning direction, or an insight-to-strategy report. This skill consumes prepared evidence; it does not perform open web research unless another research skill or the user provides the evidence pool.
 ---
 
 # Insight Strategy
 
 Use this skill to turn an already-prepared input package into strategy. The
 core job is not to collect more information; it is to read the brief, brand
-context, competitor context, evidence pool, or listening report already provided
-by the user or upstream research skill, separate fact from inference, and climb
-from signals to cultural tension to a brand strategy decision.
+context, competitor context, evidence pool, or raw-evidence report already
+provided by the user or upstream research skill, separate fact from inference,
+and climb from signals to cultural tension to a brand strategy decision.
 
 ## Language And Market Defaults
 
@@ -29,14 +29,14 @@ inputs as the working package:
 - Brand facts from the user, public brand materials, or upstream research
 - Competitor difference and category context from upstream research
 - A structured evidence pool from a research or competitive-research skill
-- A social listening initial-wash report with high-frequency words, emotion
-  scan, and raw consumer voices
+- A raw-evidence preparation report with high-frequency signals, language
+  markers, and raw consumer voices
 - Interview notes, comments, reviews, survey open ends, event feedback, or
   other sourced material that includes traceable quotes or observations
 
-If the user only provides raw tabular social comments, optionally run
-`scripts/phase1_social_listening_cleaning.py` and follow
-`references/02-optional-social-listening-cleaning.md` before entering Level 1.
+If the user only provides raw tabular consumer text, optionally run
+`scripts/prepare_raw_evidence.py` and follow
+`references/02-optional-raw-evidence-preparation.md` before entering Level 1.
 This is an input-adaptation step, not a separate strategy stage.
 
 ## Workflow
@@ -53,8 +53,8 @@ Follow the four-level ladder in order:
 3. **Level 3: Cultural Judgment** - synthesize cross-theme cultural tensions
    using What is / What should be / Why now. Use
    `references/05-level3-cultural-judgment.md`.
-4. **Level 4: Strategic Decision** - connect cultural tension with Brand's Best
-   Self and derive Brand Big IdeaL candidates. Use
+4. **Level 4: Strategic Decision** - connect cultural tension with brand truth
+   and proof edge to derive strategic idea platform candidates. Use
    `references/06-level4-strategic-decision.md`.
 
 Before finalizing, apply `references/07-evidence-confidence-rules.md`.
@@ -65,7 +65,7 @@ For the final deliverable, use `references/08-final-report-template.md`.
 - Preserve the source trail. Every major claim should trace back to evidence.
 - Label inference strength honestly: high, medium, low, or speculative.
 - Use only the information already in the input package during Level 4. If
-  Brand's Best Self, product proof, brand history, or competitor difference is
+  brand truth, product proof, brand behavior, or competitor difference is
   insufficient, mark the strategy provisional and recommend a rollback to brief
   or research instead of inventing missing facts.
 - Do not treat high-frequency words as insight by themselves. They are signals,
@@ -80,6 +80,19 @@ For the final deliverable, use `references/08-final-report-template.md`.
 - `assets/templates/evidence-pool-template.md` - evidence-only handoff format
   from research skills.
 - `assets/templates/insight-map-template.md` - working structure for Levels 1-3.
+- `assets/templates/human-truth-record-template.md` - one-card structure for a
+  Level 2 motive inference.
+- `assets/templates/cultural-tension-record-template.md` - one-card structure
+  for a Level 3 cultural tension.
+- `assets/templates/strategic-idea-record-template.md` - one-card structure for
+  the Level 4 strategic idea platform.
+- `assets/templates/concept-record-template.md` - one-card structure for
+  campaign or creative concept development after strategy is chosen.
+- `assets/templates/evidence-matrix-template.csv` - structured evidence index
+  for large research packages.
 - `assets/templates/final-strategy-report-template.md` - final report skeleton.
-- `assets/lexicons/` - starter lexicons used only by the optional social
-  listening cleaning script.
+- `assets/lexicons/` - starter lexicons used only by the optional raw-evidence
+  preparation script.
+- `assets/lexicons/topic-tag-taxonomy.csv` - starter tags for evidence coding.
+- `references/09-materials-and-licensing.md` - boundary rules for missing
+  templates, proprietary references, and third-party lexicons.

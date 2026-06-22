@@ -2,8 +2,7 @@
 
 An input package is the bridge between upstream coordination/research and this
 insight strategy skill. It can be assembled from a client brief, public brand
-information, competitor research, social listening material, and an evidence
-pool.
+information, competitor research, raw consumer material, and an evidence pool.
 
 This skill should not wait until Level 4 to discover basic brand facts. Brand
 context belongs at the start.
@@ -16,11 +15,11 @@ Include what is available:
   constraints, and success criteria
 - `brand_context`: brand/product name, what it does, current positioning,
   public claims, channels, tone, known audience relationship
-- `brand_facts`: Brand's Best Self hypotheses, product proof, brand history,
-  repeated behavior, founder belief, service or experience proof
+- `brand_facts`: brand truth hypotheses, product proof, brand behavior, history,
+  founder belief, service proof, experience proof, and audience proof
 - `competitor_context`: key competitors or substitutes, their claims, category
   conventions, and visible differentiation
-- `evidence_pool`: sourced evidence items from research, social listening,
+- `evidence_pool`: sourced evidence items from research, social platforms,
   interviews, reviews, reports, news, or event feedback
 
 Do not require every field for every task. Use what exists, but be honest about
@@ -30,14 +29,17 @@ what its absence means.
 
 Each evidence item should contain as many of these fields as possible:
 
-- `source_type`: news, report, brand-owned, competitor, social, review,
-  interview, event feedback, survey, forum, customer service, or other
+- `source_type`: news, report, brand-owned, competitor, platform-comment,
+  review, interview, event feedback, survey, forum, customer service, or other
 - `source_name`: publication, platform, company, interviewee group, or dataset
 - `date`: publication, collection, or interview date if known
 - `url_or_citation`: URL, file name, page, interview ID, or other trace
 - `raw_quote`: original wording, observation, or data point
 - `summary`: concise meaning of the item
 - `topic_tag`: initial topic label
+- `insight_lens`: need, pain-point, driver, barrier, risk, opportunity, or
+  other analysis lens
+- `matched_keywords`: important words, phrases, claims, or language markers
 - `audience`: who the evidence represents
 - `confidence`: high, medium, low, or speculative
 
@@ -64,7 +66,7 @@ whether the strategic output must remain provisional.
 Treat these as valid evidence pools after light normalization:
 
 - Competitive research outputs
-- Social listening initial-wash reports
+- Platform monitoring or raw-evidence preparation reports
 - News or report digests
 - Interview notes with quotes
 - Open-ended survey responses
@@ -80,8 +82,9 @@ Levels 1-3 can usually proceed from the evidence pool. Level 4 uses the brand
 context and brand facts already present in the input package.
 
 Do not perform new information intake during Level 4. If Level 4 reveals that
-the package lacks Brand's Best Self, product proof, brand history, or competitor
-difference, mark the strategy provisional and recommend rollback to:
+the package lacks brand truth, product proof, repeated brand behavior, audience
+proof, or competitor difference, mark the strategy provisional and recommend
+rollback to:
 
 - brief clarification,
 - brand-material collection,

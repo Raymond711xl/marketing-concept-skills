@@ -15,11 +15,11 @@
 
 ## Level 4 - Strategic Decision
 
-- Brand's Best Self:
+- Brand truth:
 - Product proof:
-- Brand history:
+- Brand behavior / history:
 - Competitor difference:
-- Brand Big IdeaL candidates:
+- Strategic idea candidates:
 - Recommendation status:
 
 ## Confidence & Caveats
