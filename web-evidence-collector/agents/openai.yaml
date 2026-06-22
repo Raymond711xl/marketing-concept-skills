@@ -1,0 +1,4 @@
+interface:
+  display_name: "Web Evidence Collector"
+  short_description: "Collect traceable evidence pools"
+  default_prompt: "Use $web-evidence-collector to collect sourced evidence for this brand or campaign and output a downstream-ready evidence pool."

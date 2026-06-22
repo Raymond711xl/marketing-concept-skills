@@ -1,0 +1,9 @@
+term,emotion,tension_domain,weight
+焦虑,anxiety,identity,3
+羡慕,envy,social_role,2
+孤独,loneliness,emotional_lack,3
+自由,freedom,lifestyle,2
+压力,pressure,social_role,3
+松弛,relief,lifestyle,2
+被看见,recognition,identity,3
+安全感,security,emotional_lack,3
