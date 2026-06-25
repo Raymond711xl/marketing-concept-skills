@@ -10,7 +10,7 @@ Downstream skills need to know whether video, offline, marketing, PR, visual, an
 
 Treat evidence as related when one or more are true:
 
-- Same campaign name, event name, hashtag, slogan, creative concept, or product launch.
+- Same campaign name, event name, hashtag, slogan, repeated message, or product launch.
 - Official source explicitly connects the assets.
 - Same landing page links to the video, event, promotion, or PR release.
 - Same release window and repeated campaign language across channels.
@@ -18,7 +18,7 @@ Treat evidence as related when one or more are true:
 
 Use `confirmed` only for explicit links. Use `likely` or `tentative` for inferred links.
 
-## Concept Labels
+## Campaign / Message Labels
 
 Create short descriptive labels to organize collection, such as:
 
@@ -30,7 +30,7 @@ Premium craft origin story
 Limited-edition collaboration
 ```
 
-Do not treat these labels as final insights. They are routing labels for downstream summary.
+Do not treat these labels as final insights or creative concepts. They are routing labels for downstream summary.
 
 ## Campaign Chain Table
 
@@ -58,9 +58,9 @@ For each campaign/message, report which channels were found:
 
 This helps identify whether collection is complete or skewed.
 
-## Repetition Check
+## Campaign / Message Repetition Check
 
-Track whether the same concept appears across:
+Track whether the same campaign/message appears across:
 
 - Multiple materials in one campaign
 - Multiple campaigns by one brand

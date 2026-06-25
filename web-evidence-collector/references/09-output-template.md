@@ -1,9 +1,88 @@
 # Output Template
 
-Use this Markdown structure for final handoff.
+Use the default frontstage handoff unless the user/controller asks for the full backend dossier, subagents were used and need audit, or downstream processing needs the complete file.
+
+## Default Frontstage Handoff
+
+Use this compact Markdown structure for normal user/controller display.
 
 ```markdown
 # Web Evidence Collection: [Topic]
+
+## 1. Collection Readiness
+
+- Status: ready / partial / thin / blocked
+- Target:
+- Scope:
+- Collection date:
+- Requested categories:
+- Requested depth:
+- Evidence count:
+- Source mix:
+- Restricted / user-needed items:
+- Linked campaign chains:
+- Subagent mode: recommended / approved / declined / not needed / unavailable
+- Downstream next step: evidence-summary-analysis
+
+## 2. Evidence Brief Box
+
+- Evidence readiness:
+- Source coverage summary:
+- Most reliable source groups:
+- Brand hard-data candidates:
+- Major restrictions:
+- Missing evidence:
+- Evidence pool status: included below / attached in backend dossier / unavailable
+
+## 3. Source Coverage
+
+| Area | Collected count | Source spread | Strongest source level | Confidence | Notes |
+| --- | ---: | --- | --- | --- | --- |
+| Visual | | | | | |
+| Video | | | | | |
+| Offline activation | | | | | |
+| Marketing | | | | | |
+| PR | | | | | |
+| Social | | | | | |
+| Reports / context | | | | | |
+
+## 4. Brand Hard Data Track
+
+| Hard data type | Candidate evidence | Source / URL | Confidence | Needs user confirmation |
+| --- | --- | --- | --- | --- |
+| Brand philosophy / vision | | | | |
+| Slogan / brand claim | | | | |
+| Brand chronology | | | | |
+| Founder / leadership statement | | | | |
+| Product proof | | | | |
+| Service / experience proof | | | | |
+| Brand behavior | | | | |
+| Competitor distinction | | | | |
+
+## 5. Key Campaign / Competitor Linkage
+
+| Campaign / message | Linkage status | Related evidence IDs | Channels represented | Missing channels |
+| --- | --- | --- | --- | --- |
+
+## 6. Gaps And Restrictions
+
+| Gap / restriction | Why it matters | Suggested next action |
+| --- | --- | --- |
+
+## 7. Evidence Pool Handoff
+
+- Evidence pool: included below / stored in backend dossier / not enough evidence
+- Core schema compatibility: evidence-summary-analysis
+- Do not skip next skill: evidence-summary-analysis should normalize and summarize this pool before insight-strategy
+- Recommended next skill: evidence-summary-analysis
+```
+
+## Backend Dossier
+
+Use this full structure when the user asks for the full dossier, when collection needs auditability, when subagents were used, or when writing a complete backend handoff.
+
+```markdown
+# Web Evidence Collection Backend Dossier: [Topic]
 
 ## 1. Collection Brief
 
@@ -14,7 +93,7 @@ Use this Markdown structure for final handoff.
 - Requested categories:
 - Requested depth:
 - Collection date:
-- Downstream destination: evidence-summary-analysis / insight-strategy / user review
+- Downstream destination: evidence-summary-analysis
 - Evidence preparation mode: default / audit
 - Known inputs used:
 - Controller task packet used: yes / no
@@ -64,7 +143,7 @@ Use this Markdown structure for final handoff.
 - Brand hard-data candidates:
 - Major restrictions:
 - Missing evidence:
-- Full evidence pool / dossier path:
+- Evidence pool status:
 
 ## 6. Source Coverage
 
@@ -94,6 +173,7 @@ Use this Markdown structure for final handoff.
 | Metric | Value | Evidence basis |
 | --- | ---: | --- |
 | Total evidence items | | |
+| Source mix | | |
 | Brand-owned items | | |
 | Third-party media items | | |
 | Social lead items | | |
@@ -106,7 +186,7 @@ Use this Markdown structure for final handoff.
 | Standalone items | | |
 | Restricted / user-needed items | | |
 
-## 10. Concept Repetition Check
+## 10. Campaign / Message Repetition Snapshot
 
 | Campaign / message | Evidence count | Channels | Brands | Repetition pattern | Completeness |
 | --- | ---: | --- | --- | --- | --- |
@@ -164,13 +244,9 @@ Use this Markdown structure for final handoff.
 - Limitation / restriction:
 ```
 
-## Quick Version
+## Output Rule
 
-If the user asks for quick output, include only:
-
-1. Source Coverage
-2. Evidence Brief Box
-3. Brand Hard Data Track
-4. Campaign Linkage Map
-5. Gaps And Restrictions
-6. Evidence Pool
+- The frontstage handoff is for reading and controller display.
+- The backend dossier is for audit, continuation, and downstream skill processing.
+- The Evidence Pool is the core result and must be preserved even when the frontstage layer is compact.
+- The normal next skill is `evidence-summary-analysis`; do not jump directly to `insight-strategy` unless the user explicitly overrides the workflow.

@@ -77,20 +77,19 @@ This collection spans multiple platforms/material types. I recommend subagent co
 
 ## Output Contract
 
-Always end with a Markdown handoff containing:
+Always produce a two-layer Markdown handoff: a compact frontstage handoff for the user/controller, and a backend dossier for downstream skills.
 
-1. `Collection Brief`
-2. `Depth and Query Plan`
-3. `Subagent Collection Plan` when recommended or used
-4. `Evidence Shards` when subagents or platform shards were used
-5. `Evidence Brief Box`
-6. `Source Coverage`
-7. `Brand Hard Data Track`
-8. `Campaign Linkage Map`
-9. `Collection Statistics`
-10. `Skew and Completeness Check`
-11. `Gaps and Restrictions`
-12. `Evidence Pool`
+### Default Frontstage Handoff
+
+Show this layer by default. Keep it short and readable:
+
+1. `Collection Readiness`
+2. `Evidence Brief Box`
+3. `Source Coverage`
+4. `Brand Hard Data Track` when relevant
+5. `Key Campaign / Competitor Linkage`
+6. `Gaps and Restrictions`
+7. `Evidence Pool Handoff`
 
 The `Evidence Brief Box` is the frontstage source summary for controller display. It should include:
 
@@ -98,17 +97,56 @@ The `Evidence Brief Box` is the frontstage source summary for controller display
 - Most reliable source groups
 - Major restrictions and missing evidence
 - Brand hard-data candidates found
-- Full evidence pool / dossier path when available
+- Evidence pool status and handoff note
 
 Do not place final insights or strategy in the evidence brief.
 
+Compress frontstage statistics to four items only:
+
+- Total evidence items
+- Source mix
+- Restricted / user-needed items
+- Linked campaign chains
+
+Do not expand query plans, subagent task tables, shard search logs, long statistics tables, or repetition tables in the frontstage layer unless the user asks for the full dossier.
+
+### Backend Dossier
+
+Keep the full dossier available for downstream processing. Include these sections when full output is requested, when subagents were used, or when handing files to the next skill:
+
+1. `Collection Brief`
+2. `Depth and Query Plan`
+3. `Subagent Collection Plan` when recommended or used
+4. `Evidence Shards` when subagents or platform shards were used
+5. `Evidence Brief Box`
+6. `Source Coverage`
+7. `Brand Hard Data Track` when relevant
+8. `Campaign Linkage Map`
+9. `Collection Statistics`
+10. `Campaign / Message Repetition Snapshot`
+11. `Skew and Completeness Check`
+12. `Gaps and Restrictions`
+13. `Evidence Pool`
+
+The `Evidence Pool` is the core result. Always preserve it for downstream use even when the frontstage handoff is compact.
+
+Do not skip `evidence-summary-analysis`. The normal downstream order is:
+
+```text
+web-evidence-collector -> evidence-summary-analysis -> insight-strategy
+```
+
+If the user or controller asks for strategy output, hand off the Evidence Pool to `evidence-summary-analysis` first unless the user explicitly overrides the workflow.
+
 The `Evidence Pool` must keep the downstream core fields first:
 
+- `Evidence ID`
 - `Source type`
 - `Source name`
 - `Date`
 - `URL or citation`
 - `Raw quote`
+- `Observation`
 - `Summary`
 - `Topic tag`
 - `Audience`
@@ -116,7 +154,6 @@ The `Evidence Pool` must keep the downstream core fields first:
 
 Then add collector-specific fields when available:
 
-- `Evidence ID`
 - `Source level`
 - `Category`
 - `Publisher / platform`
@@ -152,7 +189,7 @@ Then add collector-specific fields when available:
 - `references/03-collection-workflow.md` - search, verification, capture, and evidence-item workflow.
 - `references/04-evidence-pool-contract.md` - downstream-compatible schema.
 - `references/05-material-categories.md` - collection fields for visual, video, offline, marketing, PR, social, and reports.
-- `references/06-campaign-linkage-map.md` - related-evidence chains across channels and campaign concepts.
+- `references/06-campaign-linkage-map.md` - related-evidence chains across channels and campaign/message labels.
 - `references/07-coverage-and-statistics.md` - coverage metrics, skew checks, and completeness warnings.
 - `references/08-social-platform-boundaries.md` - Xiaohongshu, Weibo, Douyin, Zhihu, Bilibili, WeChat public account, and other dynamic-platform handling.
 - `references/09-output-template.md` - final Markdown handoff template.

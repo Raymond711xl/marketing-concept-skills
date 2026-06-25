@@ -1,6 +1,14 @@
 # Evidence Pool Contract
 
-This schema is the handoff bridge into `evidence-summary-analysis` and `insight-strategy`.
+This schema is the handoff bridge into `evidence-summary-analysis` first, then `insight-strategy`.
+
+Normal downstream order:
+
+```text
+web-evidence-collector -> evidence-summary-analysis -> insight-strategy
+```
+
+Do not skip `evidence-summary-analysis` unless the user explicitly overrides the workflow.
 
 ## Required Core Fields
 
@@ -41,6 +49,8 @@ Add these when available:
 - Screenshot status:
 - Key fact:
 - Evidence value:
+- Brand hard data type:
+- Needs user confirmation:
 - Related evidence:
 - Linkage status:
 - Metric / count:
@@ -77,6 +87,18 @@ Linkage status:
 
 ```text
 confirmed / likely / tentative / standalone / unknown
+```
+
+Brand hard data type:
+
+```text
+brand philosophy / vision / slogan / brand claim / chronology / founder statement / leadership statement / product proof / service proof / brand behavior / competitor distinction / other
+```
+
+Needs user confirmation:
+
+```text
+yes / no / unknown
 ```
 
 ## Confidence Rules

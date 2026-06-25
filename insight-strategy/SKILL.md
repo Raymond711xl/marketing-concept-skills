@@ -61,6 +61,17 @@ Follow the four-level ladder in order:
    and proof edge to derive Idea Platform candidates. Use
    `references/06-level4-strategic-decision.md`.
 
+When the user asks for alternative strategic models, model comparison, or a
+named strategy framework, read `references/10-strategy-models-library.md` during
+Level 4 and use it only to select or contrast derivation routes. Keep
+`Idea Platform = Cultural Tension x Brand Truth x Proof Edge` as the governing
+logic unless the user explicitly chooses another route.
+
+When the user asks to develop campaign concepts, concept territories, message
+architecture, or communication claims after an Idea Platform is chosen, read
+`references/11-concept-and-message-house-guide.md` and use
+`assets/templates/concept-record-template.md`.
+
 Before finalizing, apply `references/07-evidence-confidence-rules.md`.
 For the final deliverable, use `references/08-final-report-template.md`.
 
@@ -85,6 +96,8 @@ For the final deliverable, use `references/08-final-report-template.md`.
 
 - `assets/templates/input-package-template.md` - preferred handoff format into
   this skill.
+- `assets/templates/brand-facts-pack-template.md` - preferred Level 4 hard-data
+  bridge for brand truth, proof, behavior, and competitor distinction.
 - `assets/templates/evidence-pool-template.md` - evidence-only handoff format
   from research skills.
 - `assets/templates/insight-map-template.md` - working structure for Levels 1-3.
@@ -96,11 +109,23 @@ For the final deliverable, use `references/08-final-report-template.md`.
   the Level 4 Idea Platform.
 - `assets/templates/concept-record-template.md` - one-card structure for
   campaign or creative concept development after strategy is chosen.
+- `references/10-strategy-models-library.md` - optional model-selection library
+  for Level 4 derivation routes and contrast candidates.
+- `references/11-concept-and-message-house-guide.md` - Concept and Message
+  House workflow after an Idea Platform is selected.
 - `assets/templates/evidence-matrix-template.csv` - structured evidence index
   for large research packages.
 - `assets/templates/final-strategy-report-template.md` - final report skeleton.
 - `assets/lexicons/` - starter lexicons used only by the optional raw-evidence
   preparation script.
+- `assets/lexicons/motive-taxonomy.csv` - starter need, fear, desire, pressure,
+  and fatigue markers for Level 2 inference.
 - `assets/lexicons/topic-tag-taxonomy.csv` - starter tags for evidence coding.
+- `assets/lexicons/synonym-map.csv` - starter canonical-term mapping for
+  repeated variants.
+- `assets/lexicons/platform-slang.csv` - starter explanations for platform and
+  category language.
+- `assets/lexicons/README-lexicon-sourcing.md` - rules for expanding lexicons
+  from real project corpora without bundling unclear third-party dictionaries.
 - `references/09-materials-and-licensing.md` - boundary rules for missing
   templates, proprietary references, and third-party lexicons.

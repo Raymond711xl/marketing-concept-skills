@@ -1,0 +1,9 @@
+platform,term,observed_meaning,normalize_to,term_type,notes
+小红书,闭眼入,"low-risk recommendation / trusted enough to buy without much checking",低风险信任,slang,"Check whether it is genuine trust or copied seeding language"
+小红书,种草,"being influenced or persuaded by content",内容影响,slang,"Can be positive, skeptical, or ironic"
+小红书,拔草,"deciding not to buy after research or bad experience",放弃购买,slang,"Often useful for barrier analysis"
+天猫,回购,"repeat purchase",复购行为,behavior,"Strong signal when tied to product reason"
+抖音,上头,"strong immediate attraction or addictive interest",即时吸引,slang,"Can indicate appeal without durable trust"
+B站,避雷,"warning others to avoid a product or claim",风险提醒,slang,"Map to barrier or risk depending on quote"
+通用,PUA,"pressure, guilt, or manipulation in communication",压力沟通,slang,"Use carefully; often marks anti-pressure sentiment"
+

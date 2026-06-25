@@ -437,18 +437,23 @@ Visual 5 条、Video 3 条、Offline 3 条、Marketing 5 条、PR 5 条、Social
 - 对 search-only 或 access-limited 证据降低 confidence。
 - 如果某一平台 shard 过度主导，需要标记平台偏科。
 
-## 9. 输出结构建议
+## 9. 已调整后的输出结构
 
-根据总控 Skill 的反馈，`web-evidence-collector` 的输出需要分成两层：
+正式英文文件现在采用两层输出：
 
-1. 前台交付：给用户和总控看的轻量摘要。
-2. 后台资料库：给 `evidence-summary-analysis` 和 `insight-strategy` 使用的完整 Evidence Pool。
+1. 前台交付：给用户和总控 Skill 快速阅读。
+2. 后台资料库：给 `evidence-summary-analysis` 和后续 `insight-strategy` 使用。
 
-不建议每次都在前台展示过长的统计表、重复概念表和搜索日志。
+这次调整的核心不是删掉资料，而是把展示顺序变轻：
+
+```text
+前台轻摘要；
+后台保留完整 Evidence Pool 和完整 dossier。
+```
 
 ### 9.1 前台默认交付
 
-前台保留五个部分即可：
+前台默认只展示以下七个部分：
 
 ```markdown
 # Web Evidence Collection: [Topic]
@@ -458,10 +463,15 @@ Visual 5 条、Video 3 条、Offline 3 条、Marketing 5 条、PR 5 条、Social
 - Status: ready / partial / thin / blocked
 - Target:
 - Scope:
+- Collection date:
+- Requested categories:
+- Requested depth:
 - Evidence count:
 - Source mix:
+- Restricted / user-needed items:
+- Linked campaign chains:
 - Subagent mode:
-- Backend dossier:
+- Downstream next step: evidence-summary-analysis
 
 ## 2. Evidence Brief Box
 
@@ -471,7 +481,7 @@ Visual 5 条、Video 3 条、Offline 3 条、Marketing 5 条、PR 5 条、Social
 - Brand hard-data candidates:
 - Major restrictions:
 - Missing evidence:
-- Full evidence pool / dossier path:
+- Evidence pool status:
 
 ## 3. Source Coverage
 
@@ -488,7 +498,7 @@ Visual 5 条、Video 3 条、Offline 3 条、Marketing 5 条、PR 5 条、Social
 | Campaign / message | Linkage status | Related evidence IDs | Channels represented | Missing channels |
 | --- | --- | --- | --- | --- |
 
-## 6. Gaps & Restrictions
+## 6. Gaps And Restrictions
 
 | Gap / restriction | Why it matters | Suggested next action |
 | --- | --- | --- |
@@ -496,13 +506,14 @@ Visual 5 条、Video 3 条、Offline 3 条、Marketing 5 条、PR 5 条、Social
 ## 7. Evidence Pool Handoff
 
 - Evidence pool:
-- Core schema compatibility:
-- Recommended next skill:
+- Core schema compatibility: evidence-summary-analysis
+- Do not skip next skill:
+- Recommended next skill: evidence-summary-analysis
 ```
 
 ### 9.2 后台完整资料库
 
-后台可保留完整结构：
+后台完整资料库保留以下结构：
 
 - Collection Brief
 - Depth And Query Plan
@@ -518,31 +529,41 @@ Visual 5 条、Video 3 条、Offline 3 条、Marketing 5 条、PR 5 条、Social
 - Gaps And Restrictions
 - Evidence Pool
 
-### 9.3 需要压缩的部分
+后台资料库用于审计、继续调研和下游 Skill 处理，不默认全部展示给用户。
 
-以下内容不建议默认展开：
+### 9.3 前台统计压缩
+
+前台只展示四项统计：
+
+- total evidence items
+- source mix
+- restricted / user-needed items
+- linked campaign chains
+
+以下内容不默认展开：
 
 - 长搜索计划
 - 子代理详细任务表
-- 大量 Collection Statistics
-- 长表格形式的重复概念检查
-- 每个平台完整 Search Log
+- shard search log
+- 完整 Collection Statistics
+- 长表格形式的重复检查
+- 全量 Evidence Pool 明细
 
-它们可以保留在后台资料库中，或在用户要求“完整资料池/全量 dossier/调研过程”时再展开。
+这些内容保留在后台 dossier，用户要求“完整资料池”“全量 dossier”“调研过程”时再展开。
 
-## 10. Campaign / Message Repetition
+## 10. Campaign / Message Repetition Snapshot
 
-原来称为 `Concept Repetition Check`，建议改成：
+正式英文文件已将旧的 `Concept Repetition Check` 改为：
 
 ```text
 Campaign / Message Repetition Snapshot
 ```
 
-原因是后续还有专门的 concept / strategy Skill。如果这里继续使用 `Concept`，容易让下游误以为该 Skill 已经做了创意概念提炼。
+这样做是为了避免它和后续 concept / strategy Skill 混淆。
 
 这里的作用只是采集层判断：
 
-- 同一个 campaign message 是否在不同渠道重复出现。
+- 同一个 campaign/message 是否在不同渠道重复出现。
 - 一个 campaign 是否包含多个 message。
 - 某个 message 是否被多个竞品重复使用。
 - 是否只有 PR 多、视觉少，或只有社媒多、官方来源少。
@@ -556,11 +577,13 @@ Campaign / Message Repetition Snapshot
 | New Year family reunion | 5 | video, PR, social | Brand A | repeated across launch materials | medium |
 ```
 
-这不是洞察，只是证据整理。
+这不是洞察，也不是创意概念命名，只是证据整理和链路标注。
 
 ## 11. Evidence Pool 结构
 
-每条证据都应优先保留下游通用字段：
+Evidence Pool 现在被定义为真正的核心结果。
+
+每条证据优先保留下游通用字段：
 
 ```markdown
 ### Evidence 1
@@ -578,7 +601,7 @@ Campaign / Message Repetition Snapshot
 - Confidence:
 ```
 
-然后再添加采集层扩展字段：
+然后添加采集层扩展字段：
 
 ```markdown
 - Source level:
@@ -594,6 +617,8 @@ Campaign / Message Repetition Snapshot
 - Screenshot status:
 - Key fact:
 - Evidence value:
+- Brand hard data type:
+- Needs user confirmation:
 - Related evidence:
 - Linkage status:
 - Metric / count:
@@ -609,10 +634,32 @@ Campaign / Message Repetition Snapshot
 - `Audience`：如果能从资料看出面向人群，则记录；不能判断则留空或 unknown。
 - `Confidence`：high / medium / low / speculative。
 - `Campaign / message`：采集层标签，不等于最终策略概念。
+- `Brand hard data type`：品牌硬信息类型，例如 slogan、vision、founder statement、product proof 等。
+- `Needs user confirmation`：标记该品牌信息是否需要用户确认。
 - `Related evidence`：说明它和哪些证据属于同一 campaign 或链路。
 - `Limitation / restriction`：平台限制、截图限制、登录限制、版权限制等。
 
-## 12. 社媒与版权边界
+## 12. 下游承接规则
+
+正式流程现在明确为：
+
+```text
+web-evidence-collector
+-> evidence-summary-analysis
+-> insight-strategy
+```
+
+也就是说：
+
+- `web-evidence-collector` 负责收集和控制证据。
+- `evidence-summary-analysis` 负责读 Evidence Pool，做归纳、整理、摘要和结构化总结。
+- `insight-strategy` 再基于总结后的材料做洞察和策略。
+
+即使用户最终想要策略，也不应默认跳过 `evidence-summary-analysis`。
+
+只有当用户明确要求绕过第二个 Skill 时，才可以直接把 Evidence Pool 交给策略层。
+
+## 13. 社媒与版权边界
 
 操作原则：
 
@@ -630,45 +677,37 @@ Campaign / Message Repetition Snapshot
 - 用户能提供截图/导出：按用户提供材料处理，但仍标注来源和 confidence。
 - 明确禁止或技术阻断：停止自动采集。
 
-## 13. 当前结构是否成立
+## 14. 当前结构是否成立
 
-这套 Skill 成立。
+这套 Skill 成立，并且现在边界更清晰。
 
-它成立的原因是：
+成立原因：
 
-- 职责边界清晰：只做证据收集，不做策略判断。
-- 能与总控 Skill、总结 Skill、洞察策略 Skill 分工。
-- Evidence Pool 字段能兼容后续 `evidence-summary-analysis`。
-- 能处理品牌整合营销常见资料：视觉、视频、线下、营销、PR、社媒、报告。
-- 对反爬、登录、版权、动态平台有明确边界。
-- 子代理模式适合大规模、多平台、多维度采集。
+- 它只做证据收集，不做策略判断。
+- 它能承接总控 Skill 的任务包。
+- 它能把多平台、多物料、多来源证据整理成 Evidence Pool。
+- 它保留了视觉、视频、线下、营销、PR、社媒、报告和品牌硬信息候选。
+- 它通过 Source Coverage、Gaps、Campaign Linkage 和 Evidence Pool 支撑第二层总结 Skill。
+- 它明确了前台轻展示和后台完整资料库的区别。
+- 它没有跳过 `evidence-summary-analysis`，因此和后续策略 Skill 的分工更稳。
 
-但当前仍建议做一处结构调整：
+## 15. 本次正式调整已落地
 
-```text
-前台输出应该更轻；
-后台 Evidence Pool 和完整 dossier 应该保留。
-```
+本次已经落地到正式英文文件的六项调整是：
 
-也就是说，不要删掉统计、重复检查和搜索过程，而是不要每次都完整展示给用户。
-
-## 14. 建议下一步调整
-
-建议正式英文文件后续按以下方向调整：
-
-1. 将 `SKILL.md` 的 Output Contract 拆成：
+1. `SKILL.md` 的 Output Contract 已拆成：
    - Default Frontstage Handoff
    - Backend Dossier
-2. 将 `references/09-output-template.md` 改成 Evidence Brief Box 和 Brand Hard Data Track 优先。
-3. 将 `Concept Repetition Check` 改名为 `Campaign / Message Repetition Snapshot`。
-4. 将 `Collection Statistics` 压缩成前台四项：
+2. `references/09-output-template.md` 已改成前台轻量模板优先。
+3. `Concept Repetition Check` 已改名为 `Campaign / Message Repetition Snapshot`。
+4. `Collection Statistics` 在前台压缩为四项：
    - total evidence items
    - source mix
-   - restricted/user-needed items
+   - restricted / user-needed items
    - linked campaign chains
-5. 保留完整 Evidence Pool 作为真正的核心结果。
-6. 明确：第二个 Skill `evidence-summary-analysis` 仍必须承接 Evidence Pool，不应被跳过；默认模式下由总控自动继续，审计模式下先让用户确认 Evidence Brief Box。
+5. 完整 Evidence Pool 被保留为核心结果。
+6. 正式文件已明确：`evidence-summary-analysis` 必须承接 Evidence Pool，不应被默认跳过。
 
-## 15. 一句话总结
+## 16. 一句话总结
 
-`web-evidence-collector` 应该是一个“公开资料采集与证据池控制器”，它的价值不是得出结论，而是让后续分析 Skill 拿到足够多、足够清楚、可追溯、可判断可信度的品牌整合营销证据。
+`web-evidence-collector` 现在是一个“公开资料采集与证据池控制器”：前台给总控和用户快速判断资料是否够用，后台保留完整 Evidence Pool 给第二个总结 Skill 使用。

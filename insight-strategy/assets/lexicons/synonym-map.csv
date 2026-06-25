@@ -1,0 +1,7 @@
+canonical_term,variant,term_type,tension_domain,notes
+安心,放心,emotion,belonging,"Merge trust/safety variants only when context supports it"
+安心,安全感,emotion,belonging,"Use raw quote to decide whether this means safety, trust, or low risk"
+松弛,放松,motive,life_design,"May indicate rest, permission, or low pressure depending on context"
+怕踩雷,怕买错,motive,life_design,"Low-risk purchase anxiety"
+被理解,懂我,motive,belonging,"Feeling understood or seen"
+

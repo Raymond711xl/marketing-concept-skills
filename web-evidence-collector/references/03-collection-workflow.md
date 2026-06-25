@@ -11,7 +11,7 @@ Create a brief working scope:
 - Time range and geography
 - Requested categories and depth
 - Known links, screenshots, exports, or seed keywords
-- Downstream destination: evidence-summary-analysis, insight-strategy, or user review
+- Downstream destination: evidence-summary-analysis, insight-strategy, or user review. Use evidence-summary-analysis before insight-strategy unless the user explicitly overrides the workflow.
 
 Do not repeat broad front-end questioning when a controller skill has already supplied the task packet. Ask only for missing information that blocks collection.
 
@@ -78,7 +78,7 @@ Keep each item focused on a single fact, material, quote, or observation.
 
 ## 6. Link Related Evidence
 
-When evidence belongs to the same campaign, message, concept, hashtag, event, or launch window, assign a shared `Campaign / message` label and add `Related evidence`.
+When evidence belongs to the same campaign, message, hashtag, event, or launch window, assign a shared `Campaign / message` label and add `Related evidence`.
 
 Use `tentative` when the connection is inferred from timing or naming but not explicitly confirmed.
 
@@ -93,3 +93,5 @@ Before output, report:
 - Channel chain completeness
 - Social/platform restrictions
 - Missing evidence that would improve downstream analysis
+
+Default to the compact frontstage handoff in `references/09-output-template.md`. Keep full query plans, shard logs, statistics, repetition snapshots, and the complete Evidence Pool in the backend dossier.
