@@ -1,0 +1,19 @@
+{
+  "name": "marketing-concept-skill",
+  "version": "0.8.9",
+  "description": "Chinese-first evidence, insight strategy, Idea Platform, and Concept workflow for brand and marketing projects.",
+  "author": {
+    "name": "Raymond711xl"
+  },
+  "homepage": "https://github.com/Raymond711xl/marketing-concept-skills",
+  "repository": "https://github.com/Raymond711xl/marketing-concept-skills",
+  "license": "MIT",
+  "keywords": [
+    "brand-strategy",
+    "marketing",
+    "insight",
+    "concept",
+    "chinese"
+  ],
+  "skills": "./skills/"
+}

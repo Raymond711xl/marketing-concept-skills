@@ -1,0 +1,4 @@
+interface:
+  display_name: "Insight Strategy"
+  short_description: "Turn evidence into strategy and Concept Packages"
+  default_prompt: "Use $insight-strategy to turn this Evidence Pool and Strategy Readiness Pack into Level 1-4 insight, an Idea Platform, and an evidence-backed Concept Package."

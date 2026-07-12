@@ -1,4 +1,0 @@
-interface:
-  display_name: "Concept Strategy Controller"
-  short_description: "Route Brief to evidence, strategy, idea, Concept"
-  default_prompt: "Use $concept-strategy-controller to run this brief through evidence preparation, content strips, insight, Idea Platform, and Concept."

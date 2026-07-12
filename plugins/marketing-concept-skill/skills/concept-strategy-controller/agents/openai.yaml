@@ -1,0 +1,4 @@
+interface:
+  display_name: "Concept Strategy Controller"
+  short_description: "Route, resume, and preserve strategy to Concept"
+  default_prompt: "Use $concept-strategy-controller to route installed skills, preserve project state, and develop this brief through evidence, insight, Idea Platform, Concept, and Message House."

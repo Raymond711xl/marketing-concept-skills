@@ -1,0 +1,27 @@
+{
+  "name": "man-ce",
+  "owner": {
+    "name": "Raymond711xl"
+  },
+  "description": "慢策：中文优先的 Marketing Concept Skill 组合包。",
+  "version": "0.8.9",
+  "plugins": [
+    {
+      "name": "marketing-concept-skill",
+      "source": "./plugins/marketing-concept-skill",
+      "description": "从 Brief、证据与洞察推进到 Idea Platform 和 Concept。",
+      "author": {
+        "name": "Raymond711xl"
+      },
+      "homepage": "https://github.com/Raymond711xl/marketing-concept-skills",
+      "repository": "https://github.com/Raymond711xl/marketing-concept-skills",
+      "license": "MIT",
+      "category": "Productivity",
+      "tags": [
+        "brand-strategy",
+        "marketing",
+        "chinese"
+      ]
+    }
+  ]
+}

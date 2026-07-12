@@ -3,12 +3,13 @@
   "display_name": "慢策",
   "english_display_name": "Marketing Concept Skill",
   "slogan": "写方案的前半程，有 AI 陪你慢慢跑。",
-  "version": "0.7.0",
+  "version": "0.8.9",
   "status": "draft-alpha",
   "license": "MIT",
   "default_language": "zh-CN",
   "default_market_context": "China / Chinese web",
   "entry_skill": "concept-strategy-controller",
+  "plugin_root": "plugins/marketing-concept-skill",
   "core_flow": [
     "Brief",
     "Evidence Collection",
@@ -21,22 +22,22 @@
     {
       "name": "concept-strategy-controller",
       "role": "controller",
-      "path": "concept-strategy-controller"
+      "path": "plugins/marketing-concept-skill/skills/concept-strategy-controller"
     },
     {
       "name": "web-evidence-collector",
       "role": "evidence_collection",
-      "path": "web-evidence-collector"
+      "path": "plugins/marketing-concept-skill/skills/web-evidence-collector"
     },
     {
       "name": "evidence-summary-analysis",
       "role": "evidence_summary",
-      "path": "evidence-summary-analysis"
+      "path": "plugins/marketing-concept-skill/skills/evidence-summary-analysis"
     },
     {
       "name": "insight-strategy",
       "role": "insight_strategy",
-      "path": "insight-strategy"
+      "path": "plugins/marketing-concept-skill/skills/insight-strategy"
     }
   ],
   "stage_commands": [
@@ -49,12 +50,21 @@
     "回退到：证据摘要",
     "继续"
   ],
+  "distribution": {
+    "codex_manifest": "plugins/marketing-concept-skill/.codex-plugin/plugin.json",
+    "codex_marketplace": ".agents/plugins/marketplace.json",
+    "claude_manifest": "plugins/marketing-concept-skill/.claude-plugin/plugin.json",
+    "claude_marketplace": ".claude-plugin/marketplace.json",
+    "release_artifact": "dist/marketing-concept-skills-0.8.9.zip"
+  },
+  "validation": {
+    "codex": "extracted-bundle-install-passed",
+    "claude_code": "extracted-bundle-install-passed"
+  },
   "migration": {
     "planned_targets": [
-      "Claude",
       "Chinese IDE / Agent software"
     ],
-    "cloud_validation_status": "not-tested",
     "future_shared_references": [
       "shared-references/chinese-working-protocol.md"
     ]

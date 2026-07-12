@@ -1,0 +1,38 @@
+{
+  "name": "marketing-concept-skill",
+  "version": "0.8.9",
+  "description": "Chinese-first evidence, insight strategy, Idea Platform, and Concept workflow for brand and marketing projects.",
+  "author": {
+    "name": "Raymond711xl",
+    "url": "https://github.com/Raymond711xl"
+  },
+  "homepage": "https://github.com/Raymond711xl/marketing-concept-skills",
+  "repository": "https://github.com/Raymond711xl/marketing-concept-skills",
+  "license": "MIT",
+  "keywords": [
+    "brand-strategy",
+    "marketing",
+    "insight",
+    "concept",
+    "chinese"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "慢策 | Marketing Concept Skill",
+    "shortDescription": "从 Brief、证据与洞察推进到 Idea Platform 和 Concept",
+    "longDescription": "中文优先的品牌与营销策略组合工具。由总控协调证据采集、证据摘要和洞察策略，在保留完整资料池的同时压缩前台进度，最终形成可讨论、可证明的 Idea Platform 与 Concept。",
+    "developerName": "Raymond711xl",
+    "category": "Productivity",
+    "capabilities": [
+      "Research",
+      "Analysis",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/Raymond711xl/marketing-concept-skills",
+    "defaultPrompt": [
+      "用慢策读取我的 brief，判断应该从哪个阶段开始。",
+      "从零开始，为这个品牌完成证据准备与策略洞察。",
+      "整理这些资料，并推进到 Idea Platform 和 Concept。"
+    ]
+  }
+}

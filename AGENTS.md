@@ -7,16 +7,19 @@ This repository is the `慢策 / Marketing Concept Skill` bundle. It contains mu
 - Chinese name: `慢策`
 - English/package name: `Marketing Concept Skill`
 - Slogan: `写方案的前半程，有 AI 陪你慢慢跑。`
-- Version: `0.7.0`
+- Version: `0.8.9`
 - Status: Draft / Alpha
 - License: MIT
 
 ## Skill Bundle Structure
 
-- `concept-strategy-controller/`: entry controller skill.
-- `web-evidence-collector/`: evidence collection skill.
-- `evidence-summary-analysis/`: evidence normalization and summary skill.
-- `insight-strategy/`: insight strategy and Idea Platform skill.
+- `plugins/marketing-concept-skill/`: installable Codex and Claude plugin root.
+- `plugins/marketing-concept-skill/skills/concept-strategy-controller/`: entry controller skill.
+- `plugins/marketing-concept-skill/skills/web-evidence-collector/`: evidence collection skill.
+- `plugins/marketing-concept-skill/skills/evidence-summary-analysis/`: evidence normalization and summary skill.
+- `plugins/marketing-concept-skill/skills/insight-strategy/`: insight strategy and Idea Platform skill.
+- Root-level skill names are compatibility symlinks for existing local conversations.
+- `drafts/`: internal review notes and per-skill update requests; excluded from the installable plugin.
 - `dossiers/`: exported backstage dossiers for real projects.
 
 ## Working Rules For Agents
@@ -43,26 +46,28 @@ This repository is the `慢策 / Marketing Concept Skill` bundle. It contains mu
 - Keep each skill's `SKILL.md` focused on execution behavior.
 - Keep UI metadata in `agents/openai.yaml`.
 - Keep package metadata in `skill-package.json`.
+- Keep Codex packaging metadata in `.codex-plugin/plugin.json` and `.agents/plugins/marketplace.json`.
+- Keep Claude Code packaging metadata in `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`.
+- Treat `plugins/marketing-concept-skill/skills/` as the single source of truth. Do not create duplicate skill copies.
 
 ## Validation
 
-After changing any skill folder, run:
+After changing any skill folder or packaging file, run:
 
 ```bash
-python3 /Users/raymond7/.codex/skills/.system/skill-creator/scripts/quick_validate.py /Users/raymond7/Documents/Vibe一下/concept-strategy-controller
-python3 /Users/raymond7/.codex/skills/.system/skill-creator/scripts/quick_validate.py /Users/raymond7/Documents/Vibe一下/web-evidence-collector
-python3 /Users/raymond7/.codex/skills/.system/skill-creator/scripts/quick_validate.py /Users/raymond7/Documents/Vibe一下/evidence-summary-analysis
-python3 /Users/raymond7/.codex/skills/.system/skill-creator/scripts/quick_validate.py /Users/raymond7/Documents/Vibe一下/insight-strategy
+python3 scripts/validate_package.py
+python3 plugins/marketing-concept-skill/skills/insight-strategy/scripts/smoke_test_prepare_raw_evidence.py
+python3 scripts/build_release.py
 ```
 
-If only root packaging files changed, still check file consistency manually.
+When Codex and Claude CLIs are available, also run their plugin validators before release.
 
 ## Release Notes
 
 Before a public release:
 
 - Confirm license and copyright holder.
-- Clean or move draft review files.
+- Keep draft review files outside `plugins/marketing-concept-skill/`.
 - Add real project examples.
 - Validate migration metadata for the target platform.
 - Decide whether to extract shared language rules into `shared-references/chinese-working-protocol.md`.

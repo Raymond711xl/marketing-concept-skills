@@ -4,13 +4,13 @@
 
 写方案的前半程，有 AI 陪你慢慢跑。
 
-Version: 0.7.9  
-Status: Draft / Alpha  
+Version: 0.8.9
+Status: Draft / Alpha
 License: MIT
 
 慢策是一个面向中文品牌、中文网络环境和营销策略工作的 Skill 组合包。它不是用来直接生成一句广告语，而是帮助你把方案前半程跑扎实：从一个不完整的 brief 出发，经过证据准备、洞察策略、Idea Platform 和 Concept，逐步形成一个有证据、有判断、有可讨论空间的品牌或传播概念。
 
-当前版本 `0.7.9` 重点升级了 `insight-strategy`：围绕 Insight Reality 能力，强化从事实、动机、文化张力到战略选择的推导路径，并加入 Strategy Models Library 与 Message House，使策略不只停在洞察总结，而能继续进入可表达、可证明、可讨论的 Concept 结构。
+当前版本 `0.8.9` 将四个 Skill 正式封装为一个可安装组合包，并为 Codex 与 Claude Code 提供各自的插件清单和 marketplace 入口。策略能力继续基于 Insight Reality、Strategy Models Library 与 Message House，从事实、动机、文化张力推进到可表达、可证明、可讨论的 Concept。
 
 ## 核心路径
 
@@ -31,6 +31,54 @@ Brief
 - `web-evidence-collector`：证据采集。负责从公开网络、中文平台、社媒、竞品、品牌官方内容和 campaign 线索中整理 evidence pool。
 - `evidence-summary-analysis`：证据摘要。负责清洗资料、分类、归纳证据模式、输出 Strategy Readiness Pack，不做最终策略判断。
 - `insight-strategy`：洞察策略。负责从证据进入 human truth、cultural tension、brand truth、proof edge、Idea Platform 和 Concept 前的策略判断。
+
+## 安装
+
+### Codex
+
+从 GitHub marketplace 安装：
+
+```bash
+codex plugin marketplace add Raymond711xl/marketing-concept-skills
+codex plugin add marketing-concept-skill@man-ce
+```
+
+也可以在 Codex App 的 Plugins 中找到 `慢策` 并安装 `marketing-concept-skill`。安装后可以直接输入 brief，也可以显式调用：
+
+```text
+$concept-strategy-controller
+```
+
+如果使用 GitHub 下载的 ZIP，在解压后的仓库目录执行：
+
+```bash
+codex plugin marketplace add /absolute/path/to/marketing-concept-skills
+codex plugin add marketing-concept-skill@man-ce
+```
+
+### Claude Code
+
+在 Claude Code 中执行：
+
+```text
+/plugin marketplace add Raymond711xl/marketing-concept-skills
+/plugin install marketing-concept-skill@man-ce
+/reload-plugins
+```
+
+安装后使用：
+
+```text
+/marketing-concept-skill:concept-strategy-controller
+```
+
+使用下载后的本地插件目录进行临时测试：
+
+```bash
+claude --plugin-dir ./plugins/marketing-concept-skill
+```
+
+Claude Code 中的 Skill 会带有插件命名空间；Codex 中仍使用 `$skill-name`。两端读取的是同一套 Skill 正文、references、templates 和 scripts。
 
 ## 适合什么场景
 
@@ -110,7 +158,7 @@ Brief -> Evidence Summary / Normalize -> Insight Strategy -> Idea Platform -> Co
 
 ## Insight Reality 策略推导
 
-0.7.9 的核心升级是 `insight-strategy`。它把策略推导拆成四层：
+`insight-strategy` 把策略推导拆成四层：
 
 ```text
 Level 1: Fact Layer
@@ -140,7 +188,7 @@ Idea Platform = Cultural Tension x Brand Truth x Proof Edge
 
 ## Strategy Models Library
 
-0.7.9 新增 Strategy Models Library。它不是用来替代默认模型，而是在 Level 4 需要对照、分歧或更清晰路线时，帮助选择推导方式。
+Strategy Models Library 不是用来替代默认模型，而是在 Level 4 需要对照、分歧或更清晰路线时，帮助选择推导方式。
 
 当前可用的策略路线包括：
 
@@ -170,7 +218,7 @@ Idea Platform = Cultural Tension x Brand Truth x Proof Edge
 
 ## Message House
 
-0.7.9 新增 Concept and Message House 工作指南。它用于 Idea Platform 之后，把 Concept 变成更清晰的信息结构。
+Concept and Message House 工作指南用于 Idea Platform 之后，把 Concept 变成更清晰的信息结构。
 
 ```text
 Idea Platform
@@ -213,15 +261,15 @@ Idea Platform
 
 真实项目默认会导出或维护 Markdown 资料池文件，但不会在对话中刷出全文。用户输入 `查看：资料池` 时，可以展开完整资料池或某个部分。
 
-## 0.7.9 新增内容
+## 0.8.9 发布更新
 
-- 升级基于 Insight Reality 能力的策略推导模型，强化从事实层、动机推断、文化张力到战略选择的完整路径。
-- 新增 Strategy Models Library，用于在 Level 4 阶段进行策略模型选择、对照和推导。
-- 新增 Concept and Message House 工作指南，将 Idea Platform 之后的 Concept 展开为 Roof、Pillars、Foundation 和 proof 结构。
-- 扩展 Brand Facts Pack、Idea Platform Record 与 Concept Record 模板，增强策略判断、概念记录和 provisional/final 判断。
-- 增加中文情绪、动机、同义词和平台黑话 starter lexicon，以及真实项目语料扩词说明。
-- 强化 `web-evidence-collector` 的证据准备输出、品牌硬信息线索、来源覆盖统计和下游 handoff。
+- 将四个 Skill 封装为一个标准的 `marketing-concept-skill` 插件。
+- 增加 Codex 和 Claude Code 两套 manifest 与 marketplace 清单。
+- 四个 Skill 共用同一份正式源码，避免双端内容分叉。
+- 将内部审阅稿和 backlog 移出用户安装包。
+- 增加便携式 package validator、release ZIP builder 和 GitHub Actions 校验。
+- 保留 0.7.9 已完成的 Insight Reality、Strategy Models Library、Message House、Brand Facts Pack 与中文 starter lexicon 能力。
 
 ## 当前状态
 
-慢策仍处于 Draft / Alpha 阶段。它已经可以作为内部工作流测试，但正式公开发布前仍建议继续补充真实 Evidence Pool、真实品牌资料包、旧策略卡片样式、真实匿名项目和行业语料。
+慢策仍处于 Draft / Alpha 阶段。0.8.9 的发布 ZIP 已在隔离环境中通过 Codex 与 Claude Code 的 marketplace 添加、插件安装和解压后复验；策略内容仍会继续补充真实 Evidence Pool、真实品牌资料包、旧策略卡片样式、真实匿名项目和行业语料。

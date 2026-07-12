@@ -4,13 +4,13 @@
 
 The first half of proposal writing, paced slowly with AI.
 
-Version: 0.7.9  
-Status: Draft / Alpha  
+Version: 0.8.9
+Status: Draft / Alpha
 License: MIT
 
 Man Ce is a Chinese-first skill bundle for brand strategy and marketing concept development. It helps users move from a rough brief to evidence preparation, insight strategy, Idea Platform, and finally a discussable Concept.
 
-Version `0.7.9` upgrades the `insight-strategy` layer around Insight Reality: fact reading, motive inference, cultural tension, strategic decision, model comparison, and Message House development after the Idea Platform.
+Version `0.8.9` packages the four skills as one installable bundle for Codex and Claude Code. The strategy workflow continues to use Insight Reality, the Strategy Models Library, and Message House development after the Idea Platform.
 
 ## Core Flow
 
@@ -31,6 +31,52 @@ Man Ce covers the first half of proposal work. Copywriting, visual design, KV, s
 - `web-evidence-collector`: collects public web evidence, platform signals, competitor material, brand-owned facts, campaign links, and evidence gaps.
 - `evidence-summary-analysis`: cleans, classifies, and summarizes evidence patterns into a Strategy Readiness Pack.
 - `insight-strategy`: turns prepared evidence into human truths, cultural tensions, brand truth, proof edge, Idea Platform candidates, and Concept-ready strategy.
+
+## Installation
+
+### Codex
+
+Add the GitHub marketplace:
+
+```bash
+codex plugin marketplace add Raymond711xl/marketing-concept-skills
+codex plugin add marketing-concept-skill@man-ce
+```
+
+You can also install it from Plugins in the Codex app under `Man Ce`. Invoke the controller with:
+
+```text
+$concept-strategy-controller
+```
+
+For a downloaded ZIP, add the extracted repository as a local marketplace:
+
+```bash
+codex plugin marketplace add /absolute/path/to/marketing-concept-skills
+codex plugin add marketing-concept-skill@man-ce
+```
+
+### Claude Code
+
+```text
+/plugin marketplace add Raymond711xl/marketing-concept-skills
+/plugin install marketing-concept-skill@man-ce
+/reload-plugins
+```
+
+Invoke the controller with:
+
+```text
+/marketing-concept-skill:concept-strategy-controller
+```
+
+For temporary local testing:
+
+```bash
+claude --plugin-dir ./plugins/marketing-concept-skill
+```
+
+Both platforms load the same skill instructions, references, templates, and scripts. Only the platform manifests and invocation syntax differ.
 
 ## Good For
 
@@ -77,7 +123,7 @@ A strong Idea Platform is not a slogan. It must connect a real cultural tension,
 
 ## Strategy Models Library
 
-Version `0.7.9` adds an optional model-selection library for Level 4. It can compare routes such as Default Idea Platform, Ogilvy Big Ideal, Ogilvy positioning triangle, 3C, The Butterfly, USP / SMP / ESP, Challenger Brand, Cultural Branding, Golden Circle, Brand Key, Jobs To Be Done, and Get / To / By / So.
+The optional model-selection library for Level 4 can compare routes such as Default Idea Platform, Ogilvy Big Ideal, Ogilvy positioning triangle, 3C, The Butterfly, USP / SMP / ESP, Challenger Brand, Cultural Branding, Golden Circle, Brand Key, Jobs To Be Done, and Get / To / By / So.
 
 These models are derivation routes, not separate outputs. Every route is normalized back into the shared `Idea Platform Record`.
 
@@ -119,3 +165,13 @@ Use explicit stage commands instead of `@` mentions:
 - `Backstage Dossier`: structured project memory containing brief, evidence, summaries, insights, strategy candidates, Idea Platform records, Concept records, and open questions.
 
 For real projects, the controller should export or maintain a Markdown dossier by default, but it should not print the whole dossier into chat unless the user asks to view it.
+
+## Version 0.8.9
+
+- Packages all four skills as one installable plugin.
+- Adds Codex and Claude Code manifests and marketplace catalogs.
+- Keeps one shared source for both platforms.
+- Excludes internal review notes and backlog files from the installable plugin.
+- Adds portable package validation, ZIP building, and GitHub Actions checks.
+
+The 0.8.9 ZIP has passed isolated marketplace-add, plugin-install, and post-extraction validation in both Codex and Claude Code. The package remains Draft / Alpha while real evidence pools, anonymized projects, and broader regression cases continue to be added.

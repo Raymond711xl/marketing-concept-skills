@@ -1,0 +1,20 @@
+{
+  "name": "man-ce",
+  "interface": {
+    "displayName": "慢策"
+  },
+  "plugins": [
+    {
+      "name": "marketing-concept-skill",
+      "source": {
+        "source": "local",
+        "path": "./plugins/marketing-concept-skill"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,6 +1,18 @@
 # Changelog
 
-## 0.7.0
+## 0.8.9
+
+- 将四个 Skill 封装为一个标准可安装的 `marketing-concept-skill` 插件。
+- 新增 Codex `.codex-plugin/plugin.json` 与仓库级 marketplace 清单。
+- 新增 Claude Code `.claude-plugin/plugin.json` 与 marketplace 清单，四个 Skill 共用同一份源码。
+- 将正式 Skill 源码统一迁移到 `plugins/marketing-concept-skill/skills/`，并保留根目录兼容入口。
+- 将内部中文审阅稿与 Insight Strategy backlog 移出用户安装包。
+- 新增 Codex、Claude Code 的安装与调用说明。
+- 新增便携式 package validator、release ZIP builder 与 GitHub Actions 校验流程。
+- 在隔离环境中完成 Codex 与 Claude Code 的 marketplace 添加、插件安装和解压后复验。
+- 增加四份独立 Skill 修改需求，供对应工作对话继续完善内容链路。
+
+## 0.7.9
 
 - 完成 `慢策 / Marketing Concept Skill` 组合包的整体结构搭建。
 - 完成前期提案所需的策略结构和策略工具结构，包括总控、证据采集、证据摘要、洞察策略、Idea Platform 和 Concept 路径。
