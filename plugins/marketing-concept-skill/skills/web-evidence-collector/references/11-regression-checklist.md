@@ -84,3 +84,5 @@ Before completion, verify:
 - Every Brand Hard Data candidate points to an existing Evidence ID.
 - The handoff notice explicitly tells `evidence-summary-analysis` not to delete, rename, merge, or overwrite core fields.
 - The output contains no human truth, cultural tension, positioning, Idea Platform, Concept, or strategic recommendation.
+- Any controller/user `Primary Research Lens`, `Supporting Research Lens`, `Delivery Mode`, and `Lens adaptation note` remain unchanged in the collection brief and downstream handoff.
+- Research Lens affects source priority only; material `Category` values remain evidence-form labels and are not renamed to match the lens.

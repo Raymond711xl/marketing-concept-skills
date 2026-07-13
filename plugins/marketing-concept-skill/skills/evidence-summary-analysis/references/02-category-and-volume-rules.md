@@ -3,6 +3,11 @@
 Use this file for category extraction and output volume. Keep category summaries
 descriptive and evidence-bound.
 
+Material `Category` answers what kind of evidence was collected. `Research Lens`
+answers which research question organizes the summary. They are independent:
+do not rename categories to match a lens or remove evidence outside the selected
+lens. Read `05-research-lens-and-delivery-modes.md` for lens selection.
+
 ## Volume Selection
 
 | Category | Light | Standard default | Deep |

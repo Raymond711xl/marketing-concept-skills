@@ -1,6 +1,6 @@
 ---
 name: concept-strategy-controller
-description: Conversational controller for complete brand and marketing concept strategy projects. Use when the user mentions Concept, Concept Strategy Controller, Marketing Concept Skill, 营销概念, 品牌概念, 策略洞察, 证据摘要, 总控 skill, Idea Platform, Message House, concept development, project recovery, or wants one front-stage tool to route installed downstream skills, preserve state in a backstage dossier, resume work, and compress progress across brief intake, evidence collection, evidence summary, insight strategy, Idea Platform, Concept, and Message House. Also use to decide whether to start from zero research, clean supplied materials, deepen one stage without running the full flow, audit an existing direction, or restore a project from a dossier.
+description: Conversational controller for the 慢策 (Marketing Concept Skill) brand and marketing concept strategy workflow. Use when the user mentions 慢策, Concept, Concept Strategy Controller, Marketing Concept Skill, 营销概念, 品牌概念, 品牌策略, 传播策略, 策略洞察, 证据摘要, 总控 skill, Idea Platform, Message House, concept development, project recovery, or hands over a new brand/campaign brief (接 brief、新项目启动、从 brief 开始做策略), or wants one front-stage tool to route installed downstream skills, preserve state in a backstage dossier, resume work, and compress progress across brief intake, evidence collection, evidence summary, insight strategy, Idea Platform, Concept, and Message House. Also use to decide whether to start from zero research, clean supplied materials, deepen one stage without running the full flow, audit an existing direction, or restore a project from a dossier. Do not use for standalone copywriting, KV or visual design, or execution-only asset requests; this workflow ends at Concept.
 ---
 
 # Concept Strategy Controller
@@ -21,7 +21,7 @@ Brief -> Evidence -> Summary -> Insight Strategy -> Idea Platform -> Concept + M
 - 压缩阅读负担，不压缩判断依据。证据来源、置信度、矛盾、品牌事实和开放问题必须保留。
 - 每个阶段都可以被单独讨论。用户可以暂停推进，先深入某个环节。
 - 策略问题要慢。证据、品牌事实或用户判断还薄时，不急着推到 Idea Platform 或 Concept。
-- 下层 skill 各司其职：采集、摘要、洞察策略与 Idea Platform。
+- 下层 skill 各司其职：采集、摘要、洞察策略、Idea Platform 与 Concept Package。
 - 一个请求只能有一个阶段所有者。下层 skill 工作时，总控只负责交接、保存状态和压缩结果，不重复生成同阶段专业产出。
 - 证据采集和证据摘要不合并，但默认作为连续的「证据准备」阶段运行。
 - Level 4 所需的品牌硬信息要前置识别和主动采集，不等到 `insight-strategy` 才第一次发现缺失。
@@ -44,8 +44,9 @@ Brief -> Evidence -> Summary -> Insight Strategy -> Idea Platform -> Concept + M
 2. `起点判断`：从 Route Map 中选择当前属于哪条路径。
 3. `推荐路径`：说明可能会进入哪些阶段、调用哪些下层 skill。
 4. `如何介入`：告诉用户可以使用 `进入：证据采集`、`进入：证据摘要`、`进入：策略洞察`、`进入：Idea Platform`、`进入：Concept`、`查看：资料池` 来暂停并深入某个环节，也可以使用 `恢复项目：<dossier path>` 恢复已有项目。
-5. `证据准备模式`：默认模式或审计模式。
-6. `当前需要补充的信息`：最多问三个问题；如果信息足够，就直接开始。
+5. `Research Configuration`：需要证据准备时，显示 Primary Research Lens、可选 Supporting Research Lens 与 Delivery Mode；未指定时使用 `General Evidence Overview` 和 `Frontstage Brief`。
+6. `证据准备模式`：默认模式或审计模式。
+7. `当前需要补充的信息`：最多问三个问题；如果信息足够，就直接开始。
 
 零资料本身不是阻塞条件。只要研究对象、核心问题和基本市场范围已经明确，必须在同一轮启动反馈后加载 `web-evidence-collector` 并完成真实交接；把品牌名、产品细节或优先场景等非阻塞缺口写成暂定假设或待确认项，不得只留下问题后停止。
 
@@ -75,10 +76,10 @@ Brief -> Evidence -> Summary -> Insight Strategy -> Idea Platform -> Concept + M
 
 阶段所有权规则：
 
-- 总控拥有 brief、路由、阶段状态、dossier、阶段门、Concept 和 Message House。
+- 总控拥有 brief、路由、阶段状态、dossier、阶段门、下层验收和前台压缩。
 - `web-evidence-collector` 只拥有证据采集。
 - `evidence-summary-analysis` 只拥有证据清洗、分类和摘要。
-- `insight-strategy` 只拥有洞察策略与 Idea Platform。
+- `insight-strategy` 拥有洞察策略、Idea Platform、Concept Package 与 Message House 的专业推导。
 - 下层 skill 激活后，总控不得平行生成同阶段结论；只可补齐交接信息、接收结果、做前台压缩并更新 dossier。
 - 下层 skill 不自动推进下一阶段。完成后必须返回总控，由总控检查阶段门和决定下一步。
 - 用户直接深入单阶段时，前台始终保留 `返回总控` 和 `继续` 两个入口。`返回总控` 只汇总状态与选项；`继续` 恢复主流程。
@@ -97,6 +98,7 @@ Brief -> Evidence -> Summary -> Insight Strategy -> Idea Platform -> Concept + M
 | 有结构化 evidence pool 或 social listening 报告 | Brief -> Strategy -> Idea Platform -> Concept | `insight-strategy` |
 | 已有主题或洞察，但没有战略决定 | Strategy Level 3/4 -> Idea Platform -> Concept | `insight-strategy` focused pass |
 | 已有 Idea Platform 或 Concept，想判断是否成立 | 反向审计：Concept -> Strategy fit -> Evidence support -> gaps | 总控组织审计；策略部分加载 `insight-strategy` |
+| 只需要证据调研、资料整理或客户版研究报告 | Brief -> Evidence / Summary -> Stop | `web-evidence-collector`（需要新资料时）-> `evidence-summary-analysis` |
 | Concept 之后还想做执行 | Concept 后停止并整理执行需求 | 暂不纳入本系统，作为未来扩展 |
 
 如果用户只要求单个阶段，不强行跑完整链路。只在该阶段工作，并说明哪些问题仍未解决。
@@ -110,9 +112,10 @@ Brief -> Evidence -> Summary -> Insight Strategy -> Idea Platform -> Concept + M
 当用户没有特别要求先审计证据时，采用默认模式：
 
 1. 调用 `web-evidence-collector` 采集证据和品牌硬信息线索。
-2. 自动把完整 evidence pool 交给 `evidence-summary-analysis`。
-3. 输出证据准备内容条和证据准备简报对话框。
-4. 在简报中提供完整证据池或 backstage dossier 文件入口。
+2. 把启动包中的 Primary Research Lens、Supporting Research Lens 与 Delivery Mode 原样交给采集和摘要；lens 只调整采集优先级与摘要组织方式，不改变证据身份。
+3. 自动把完整 evidence pool 交给 `evidence-summary-analysis`。
+4. 输出证据准备内容条、Research Lens Summary 和证据准备简报对话框。
+5. 在简报中提供完整证据池或 backstage dossier 文件入口。
 
 默认模式的前台结果应像一个可扫读的内容条集合，不展示完整 evidence pool 全文。
 
@@ -150,17 +153,22 @@ Brief -> Evidence -> Summary -> Insight Strategy -> Idea Platform -> Concept + M
 | --- | --- | --- |
 | 证据采集 | `web-evidence-collector` | Evidence Brief、Evidence Pool、Brand Hard Data Track、gaps |
 | 证据摘要 | `evidence-summary-analysis` | content strips、Cleaned Evidence Pool、Strategy Readiness Pack |
-| 策略洞察 | `insight-strategy` | Level 1-4、Insight Map、strategic decision、risks |
+| 策略洞察 | `insight-strategy` focused pass（停在 Level 4） | Level 1-4、Insight Map、strategic decision、risks |
 | Idea Platform | `insight-strategy` focused pass | Idea Platform candidates / record、validation needs |
+| Concept | `insight-strategy` focused pass | Concept Package、recommended / alternative Concepts、Message Houses、proof gaps |
+
+在总控主流程中，必须用这三个明确的 task boundary 分段调用 `insight-strategy`：策略洞察停在 Level 4，Idea Platform 停在平台选择与记录，Concept 才生成 Concept Package。这样用户可以在阶段门之间介入。用户直接调用 `insight-strategy` 且没有要求停点时，仍可遵循该 skill 自身的完整默认流程。
 
 执行顺序：
 
 1. 解析阶段并锁定唯一阶段所有者。
 2. 通过当前平台的 skill 机制加载 canonical skill，并完整读取其执行说明；仅仅提到 skill 名称不算已加载。
-3. 读取 `references/dossier-contract.md`，组装完整 `Downstream Handoff Packet`。
+3. 读取 `references/dossier-contract.md` 和 `references/stage-playbooks.md` 中对应阶段小节，组装完整 `Downstream Handoff Packet`。
 4. 将用户原始 brief、总控判断、相关 dossier 内容和本次任务边界一并交给下层 skill。
 5. 让下层 skill 只完成包内任务，不继续路由，也不越级产出。
 6. 检查返回物是否满足该 skill 的输出契约。满足后才把阶段标记为 `completed` 或 `provisional`，更新 dossier，并由总控压缩前台结果。
+
+状态写回统一映射：`Strategy Readiness Pack: ready` 对应摘要阶段 `completed`，`ready with caveats` 对应 `provisional`；`Insight / Idea Platform / Concept: Final` 对应阶段 `completed`，`Provisional` 对应 `provisional`，`Unavailable` 对应 `waiting_user` 或回退，不得写成完成。
 
 如果平台找不到、无法加载或无法确认已加载对应 skill：
 
@@ -197,141 +205,18 @@ Brief -> Evidence -> Summary -> Insight Strategy -> Idea Platform -> Concept + M
 
 旧版 dossier 缺少状态字段时，可以从 Decision Log、各阶段最新记录和 Next Options 推断，但必须把推断标记为 `inferred`。
 
-## 分层职责
+## 分层职责速览
 
-### 1. Brief 与问题框定
+各阶段的完整职责、前台输出要求、硬边界和 Concept 前台固定输出顺序保存在 `references/stage-playbooks.md`。组装 Downstream Handoff Packet 前和验收下层返回物时，必须先读取该文件中对应阶段的小节，按小节内容执行，不凭记忆复述。
 
-由总控 skill 处理。
-
-输出：
-
-- 工作 brief
-- 已知事实
-- 用户目标
-- 当前要判断的问题
-- 品牌硬信息状态
-- 缺失输入
-- 推荐路线
-
-这一阶段要短。它用于启动和定向，不要变成冗长的 AE 项目文档。
-
-### 2. 证据采集
-
-需要新公开资料时使用 `web-evidence-collector`。
-
-要求它保留完整 evidence pool，但前台输出压缩为：
-
-- 证据是否就绪
-- 来源覆盖
-- 关键 campaign 或竞品链路
-- 品牌硬信息候选
-- 主要缺口与限制
-- 结构化 evidence pool 作为后台资料
-
-采集层不得产出最终洞察、策略、定位、Idea Platform 或 Concept。
-
-### 3. 证据摘要
-
-已有资料但需要清洗、分类、归纳模式时使用 `evidence-summary-analysis`。
-
-摘要层只做证据整理和证据模式，不做人性解释、文化判断或策略判断。它的“模式”是指材料、来源、渠道、话术、视觉、活动机制、PR角度、平台分布等可直接从证据看到的重复结构；不是 `insight-strategy` Level 1 的 insight theme。
-
-要求它区分：
-
-- Fact
-- Observation
-- Low-level source/material inference
-- Unknown
-
-前台输出聚焦：
-
-- 证据准备内容条
-- 证据准备简报
-- Evidence pattern inventory
-- Category summary
-- Strong evidence patterns / weak collection leads
-- Evidence gaps
-- Strategy Readiness Pack
-- Cleaned evidence pool 作为后台资料
-
-摘要层不得产出 insight theme、human truth、cultural tension、最终策略决定、定位、Idea Platform 或 Concept。
-
-### 4. 洞察策略
-
-证据足够进入洞察和策略推导时使用 `insight-strategy`。
-
-必须遵守四层梯子：
-
-```text
-Level 1: Fact Layer
-Level 2: Motive Inference
-Level 3: Cultural Judgment
-Level 4: Strategic Decision
-```
-
-`insight-strategy` 应消费上游的 `Strategy Readiness Pack`。如果 brand truth、proof edge、品牌行为或竞品差异仍然不足，Level 4 可以继续推导，但必须标记为 provisional，并说明需要回到哪条品牌硬信息采集线或用户确认点。
-
-### 5. Idea Platform
-
-`insight-strategy` 产出足够战略依据后，由 `insight-strategy` focused pass 收束 Idea Platform；总控只负责交接、验收、前台压缩和保存。这里沿用 `insight-strategy` 的 Idea Platform 体系；用户若使用旧称 Big Idea，也按 Idea Platform 处理。
-
-Idea Platform 输出包含：
-
-- Idea Platform statement
-- 回应的 cultural tension
-- 使用的 brand truth
-- proof edge
-- 为什么品牌能拥有它
-- 情绪强度
-- 策略含义
-- 风险或薄弱假设
-- 进入 Concept 前必须验证的问题
-
-### 6. Concept
-
-核心链路结束于 Concept。
-
-Concept 输出包含：
-
-- Concept name
-- One-line concept
-- Human / cultural tension
-- Brand belief
-- Audience role
-- Proof mechanism
-- Expression territory
-- 必须保持一致的东西
-- 必须避免的东西
-- Risk
-- Confidence
-- Open questions
-- Message House：`Roof`、`Pillars`、`Foundation`、`Proof gaps`
-
-Message House 不是额外的执行文案，而是 Concept 的可验证信息结构：
-
-- `Roof`：Concept 对受众成立时最核心的一句话承诺或组织性表达。
-- `Pillars`：支撑 Roof 的 2-4 个信息支柱，每个支柱说明其作用与受众意义。
-- `Foundation`：让 Pillars 可信的品牌事实、产品/服务证明、品牌行为和证据来源。
-- `Proof gaps`：Foundation 尚不能支持、仍待用户确认或补证的主张。
-
-Concept 前台结果必须同时展示 Concept 核心字段和紧凑的 Message House。完整版本写入 dossier；证据不足时保留结构并把相应字段标为 provisional，不用漂亮措辞掩盖 Proof gaps。
-
-使用以下固定顺序输出推荐 Concept，不得用相近字段替代或省略：
-
-1. `Concept name`
-2. `One-line concept`
-3. `Audience role`
-4. `Expression territory`
-5. `Risk`
-6. `Confidence`
-7. `Roof`
-8. `Pillars`
-9. `Foundation`
-10. `Proof gaps`
-
-只有这十项都已明确显示，Concept 前台结果才算完成。Human / cultural tension、Brand belief、Proof mechanism、must stay consistent、must avoid 和 open questions 继续保留为扩展字段。
-
-除非用户要求继续，不自动写 campaign copy、KV prompt、脚本、设计系统或 deck 页面。
+| 阶段 | 所有者 | 前台核心产出 | 硬边界 |
+| --- | --- | --- | --- |
+| Brief 与问题框定 | 总控 | 工作 brief、已知事实、目标、缺失输入、推荐路线 | 保持简短，不写成冗长 AE 项目文档 |
+| 证据采集 | `web-evidence-collector` | 证据就绪度、来源覆盖、品牌硬信息候选、缺口与限制 | 不产出洞察、策略、定位、Idea Platform、Concept |
+| 证据摘要 | `evidence-summary-analysis` | 内容条、证据准备简报、证据模式、Strategy Readiness Pack | 只做可见证据模式；不做 insight theme、human truth、文化或策略判断 |
+| 洞察策略 | `insight-strategy`（stop after Level 4） | Level 1-4、Insight Map、战略选择、风险 | 遵守四层梯子；品牌硬信息不足时标 provisional 并指明回补路径 |
+| Idea Platform | `insight-strategy` focused pass | Idea Platform 候选/记录、验证需求 | 兼容旧称 Big Idea；总控只交接、验收、压缩、保存 |
+| Concept | `insight-strategy` focused pass | 推荐 Concept + 紧凑 Message House + 备选方向名称与保留理由 | 按 playbook 十项固定顺序输出；核心链路到此结束，不自动进入文案、视觉、提案或执行 |
 
 ## 压缩契约
 
@@ -339,15 +224,15 @@ Concept 前台结果必须同时展示 Concept 核心字段和紧凑的 Message 
 
 前台输出要短，用于帮助用户决定是否继续、展开、回退或修改。后台资料池可以长，但必须结构化，用于保存证据、摘要、洞察、策略、Idea Platform、Concept 和开放问题。
 
-Concept 阶段的前台压缩不得删除 Message House。至少展示 `Concept name`、`One-line concept`、`Audience role`、`Expression territory`、`Roof`、`Pillars`、`Foundation`、`Proof gaps`、`Risk` 和 `Confidence`。
+Concept 阶段的前台压缩不得删除 Message House，必须按 `references/stage-playbooks.md` 中「Concept 前台固定输出顺序」的十项完整展示，不得用相近字段替代。
 
-证据准备阶段的前台输出必须优先使用内容条。内容条用于呈现分析结果的关键判断，例如：
+证据准备阶段的前台输出必须优先使用内容条。内容条名称与 `evidence-summary-analysis` 的产出保持一致：
 
-- 来源覆盖内容条
-- 强证据模式内容条
-- 品牌硬信息候选内容条
-- 证据缺口内容条
-- 是否进入策略洞察内容条
+- `来源覆盖内容条`
+- `强证据模式内容条`
+- `品牌硬信息内容条`
+- `证据缺口内容条`
+- `进入策略判断内容条`
 
 证据准备完成后，应展示一个独立的证据准备简报对话框；如果平台不支持真正的对话框，就用清晰的 Markdown 区块替代。简报只放来源简要总结、关键缺口、当前判断和完整证据池入口。
 
@@ -403,6 +288,7 @@ Concept 阶段的前台压缩不得删除 Message House。至少展示 `Concept 
 
 - `references/startup-packet.md`：项目启动、新 brief、回到起点、起点诊断和启动包模板。
 - `references/dossier-contract.md`：前台/后台两层输出、后台资料池结构、下层 skill 交接包和更新规则。
+- `references/stage-playbooks.md`：各阶段详细职责、前台输出要求、硬边界和 Concept 前台固定输出顺序；交接组包与验收时读取对应小节。
 
 ## 输出气质
 

@@ -45,11 +45,11 @@ See `sample-evidence-pool-skincare.md` — 14 items, 小红书/天猫/竞品/访
 | Evidence ID | Exact supplied fact | Source | Confidence |
 |---|---|---|---|
 | BF-001 | 主力面霜成分表 9 项；全线无抗老/逆龄/紧致话术 | Brand Facts Pack §2 | confirmed |
-| BF-002 | 客服对抗老问题不过度承诺，只承诺基础养护 | Brand Facts Pack §2; E12 | reported |
-| BF-003 | 详情页不放使用前后对比图与肌龄检测 | Brand Facts Pack §3; E7 | reported |
+| BF-002 | 客服对抗老问题不过度承诺，只承诺基础养护 | Brand Facts Pack §2; WEB-012 | reported |
+| BF-003 | 详情页不放使用前后对比图与肌龄检测 | Brand Facts Pack §3; WEB-007 | reported |
 | BF-004 | 夜间修护被描述为让皮肤休息，而非修复战损 | Evidence Pool, Brand Hard Data Track | reported |
-| CP-001 | 头部竞品将护肤绑定自律与持续优化 | E5 | confirmed in supplied competitor note |
-| CP-002 | 新锐竞品以温和高效稀释松弛差异 | E14 | reported |
+| CP-001 | 头部竞品将护肤绑定自律与持续优化 | WEB-005 | confirmed in supplied competitor note |
+| CP-002 | 新锐竞品以温和高效稀释松弛差异 | WEB-014 | reported |
 
 ---
 
@@ -57,20 +57,20 @@ See `sample-evidence-pool-skincare.md` — 14 items, 小红书/天猫/竞品/访
 
 | Theme | Signal (what evidence shows) | Support |
 |---|---|---|
-| T1 护肤变成自我考核 | 护肤被体验为「给脸做 KPI / 晚上还要卷皮肤」 | E2, E6, E10 |
-| T2 极简=安心而非平庸 | 成分简单被读作「敢闭眼用」、降低烂脸风险 | E3, E9, E10 |
-| T3 反焦虑沟通成为信任驱动 | 「没有前后对比图/不PUA」反而促购 | E1, E7, E12 |
-| T4 价格-功效价值重估 | 不愿为「抗老黑科技」溢价买单 | E4, E10 |
-| T5 怀疑与差异脆弱性 | 「不焦虑也是话术？」+ 竞品「温和高效」抢词 | E11, E14 |
-| T6 社交展示短板 | 包装太素，自用可、送礼弱 | E13 |
+| T1 护肤变成自我考核 | 护肤被体验为「给脸做 KPI / 晚上还要卷皮肤」 | WEB-002, WEB-006, WEB-010 |
+| T2 极简=安心而非平庸 | 成分简单被读作「敢闭眼用」、降低烂脸风险 | WEB-003, WEB-009, WEB-010 |
+| T3 反焦虑沟通成为信任驱动 | 「没有前后对比图/不PUA」反而促购 | WEB-001, WEB-007, WEB-012 |
+| T4 价格-功效价值重估 | 不愿为「抗老黑科技」溢价买单 | WEB-004, WEB-010 |
+| T5 怀疑与差异脆弱性 | 「不焦虑也是话术？」+ 竞品「温和高效」抢词 | WEB-011, WEB-014 |
+| T6 社交展示短板 | 包装太素，自用可、送礼弱 | WEB-013 |
 
-Note: 「简单/安心/不焦虑」是高频**信号**（E9），不直接等于洞察——需经 Level 2 解释。
+Note: 「简单/安心/不焦虑」是高频**信号**（WEB-009），不直接等于洞察——需经 Level 2 解释。
 
 ## Level 2 — Motive Inference (human truths)
 
-- **HT-A (high):** 表面在谈「成分简单、省心」，底层真正渴望的是**被允许「就算今天没护肤、皮肤普通也没关系」的安心**。证据：E8 直述「不是不想变好，是累了」，E1/E9 语言一致。直接支持强。
-- **HT-B (medium):** 表面在挑「温和不刺激」，底层是**对功效营销的不信任与怕踩雷**，把「不制造焦虑」当作风险规避信号。证据：E3、E11；含推断成分。
-- **HT-C (medium→low):** 表面夸「不PUA」，底层是**想从『自我管理叙事』里退出来**，但又怕被新话术再次收割（E11），所以信任脆弱。
+- **HT-A (high):** 表面在谈「成分简单、省心」，底层真正渴望的是**被允许「就算今天没护肤、皮肤普通也没关系」的安心**。证据：WEB-008 直述「不是不想变好，是累了」，WEB-001/WEB-009 语言一致。直接支持强。
+- **HT-B (medium):** 表面在挑「温和不刺激」，底层是**对功效营销的不信任与怕踩雷**，把「不制造焦虑」当作风险规避信号。证据：WEB-003、WEB-011；含推断成分。
+- **HT-C (medium→low):** 表面夸「不PUA」，底层是**想从『自我管理叙事』里退出来**，但又怕被新话术再次收割（WEB-011），所以信任脆弱。
 
 ## Level 3 — Cultural Judgment (tension)
 
@@ -78,7 +78,7 @@ Note: 「简单/安心/不焦虑」是高频**信号**（E9），不直接等于
 
 - What is（现实）：护肤已被绑进「自律=优秀」的自我管理叙事，连晚间护肤都成了第二班的自我考核。
 - What should be（理想）：人们想要一种「被允许停下来、皮肤普通也值得被好好对待」的松弛。
-- Why now（为什么是现在）：职场与社媒双重内卷下，「反 PUA / 松弛感」成为消费语言（E6、E7、E2），出现对「功效军备竞赛」的集体疲劳。
+- Why now（为什么是现在）：职场与社媒双重内卷下，「反 PUA / 松弛感」成为消费语言（WEB-006、WEB-007、WEB-002），出现对「功效军备竞赛」的集体疲劳。
 
 一句话张力：**人们被夹在「必须不断变好的自律压力」与「想被允许已经足够」之间。**
 
@@ -106,7 +106,7 @@ Note: 「简单/安心/不焦虑」是高频**信号**（E9），不直接等于
 聚焦 HT-B：把「极简=低风险」做成承诺。张力较弱（偏功能信任，非文化张力），作为 IP-1 的 proof 支线更合适，不单独承载平台。
 
 **IP-3 — 「不PUA护肤」（反叛话术平台）**
-传播爆点强但脆弱：E11 已显示「反焦虑也可能是话术」的反噬风险，且依赖否定竞品而非建立自身真相。不推荐作为主平台。
+传播爆点强但脆弱：WEB-011 已显示「反焦虑也可能是话术」的反噬风险，且依赖否定竞品而非建立自身真相。不推荐作为主平台。
 
 ### Recommendation
 
@@ -117,7 +117,7 @@ Note: 「简单/安心/不焦虑」是高频**信号**（E9），不直接等于
 2. 「不制造焦虑」行为长期、跨渠道一致性证据；
 3. 客服/服务层 proof 覆盖率。
 
-**守住差异（应对 E14「温和高效」抢词）：** 差异不能靠口号，要靠**可见的行为一致性**（持续不放前后对比图、客服不过度承诺），让「松弛」是被证明的行为而非被宣称的形容词。
+**守住差异（应对 WEB-014「温和高效」抢词）：** 差异不能靠口号，要靠**可见的行为一致性**（持续不放前后对比图、客服不过度承诺），让「松弛」是被证明的行为而非被宣称的形容词。
 
 ## Concept Package
 
@@ -130,68 +130,76 @@ Note: 「简单/安心/不焦虑」是高频**信号**（E9），不直接等于
 - Overall Concept Package status: **Provisional**
 - Decision rationale: C-01 最完整地把「自我考核 vs 被允许停下」转成一个可被产品、客服与详情页共同证明的使用时刻。
 - Critical proof gaps: PG-01 创始人/品牌哲学一手确认；PG-02 跨渠道行为一致性；PG-03 服务 proof 覆盖率。
-- Shared risks: E11 反焦虑也可能被读成新话术；E14 竞品可能复制松弛语言；E13 极简表达可能削弱社交展示。
+- Shared risks: WEB-011 反焦虑也可能被读成新话术；WEB-014 竞品可能复制松弛语言；WEB-013 极简表达可能削弱社交展示。
 - Rollback: brand-facts rollback；不得补写创始人信念来升级 Final。
 
 ### Concept C-01 — 今晚，不用交作业
 
 - Package role: Recommended
 - Concept status: **Provisional**
-- One-sentence concept: 把夜间护肤从第二班自我考核，变成允许自己停下来的基础照顾。
+- Confidence: medium
+- Concept name: 今晚，不用交作业
+- One-line concept: 把夜间护肤从第二班自我考核，变成允许自己停下来的基础照顾。
+- Audience role: 允许自己把夜间护肤当作休息，而不是继续完成自我优化任务。
+- Expression territory: 夜间照顾时刻、卸下任务感、克制而不催促的沟通与体验。
 - Idea Platform source: IP-1
-- Source Evidence IDs: E1, E2, E3, E6, E7, E8, E10, E12, BF-001, BF-002, BF-003, BF-004
+- Source Evidence IDs: WEB-001, WEB-002, WEB-003, WEB-006, WEB-007, WEB-008, WEB-010, WEB-012, BF-001, BF-002, BF-003, BF-004
 
 #### Message House
 
 - Roof: **今晚，护肤不用交作业。**
-- Roof Evidence IDs: E2, E6, E8, BF-004
+- Roof Evidence IDs: WEB-002, WEB-006, WEB-008, BF-004
 
 | Pillar | Supporting message | Evidence IDs |
 |---|---|---|
-| Pillar 1 | 基础照顾已经够，不必把成分叠加变成新的功课 | E3, E10, BF-001 |
-| Pillar 2 | 品牌不以焦虑、逆袭或不够好来催促购买 | E1, E7, E12, BF-002, BF-003 |
-| Pillar 3 | 夜间护理首先是休息时刻，不是继续优化自己的第二班 | E6, E8, BF-004 |
+| Pillar 1 | 基础照顾已经够，不必把成分叠加变成新的功课 | WEB-003, WEB-010, BF-001 |
+| Pillar 2 | 品牌不以焦虑、逆袭或不够好来催促购买 | WEB-001, WEB-007, WEB-012, BF-002, BF-003 |
+| Pillar 3 | 夜间护理首先是休息时刻，不是继续优化自己的第二班 | WEB-006, WEB-008, BF-004 |
 
 | Foundation item | Proof type | Exact fact | Evidence IDs | Confirmation status |
 |---|---|---|---|---|
 | F1 | product | 主力面霜成分表 9 项，且无抗老/逆龄/紧致功效话术 | BF-001 | confirmed |
-| F2 | brand behavior | 详情页不放 28 天逆袭式前后对比图或肌龄检测 | E7, BF-003 | reported |
-| F3 | service | 客服对抗老询问明确只承诺基础养护，不做过度承诺 | E12, BF-002 | reported |
+| F2 | brand behavior | 详情页不放 28 天逆袭式前后对比图或肌龄检测 | WEB-007, BF-003 | reported |
+| F3 | service | 客服对抗老询问明确只承诺基础养护，不做过度承诺 | WEB-012, BF-002 | reported |
 | F4 | product occasion | 夜间修护被定义为让皮肤休息 | BF-004 | reported |
 
-- Evidence support: 人群压力由 E2/E6/E8 支撑；选择驱动由 E1/E3/E7/E10 支撑；品牌 proof 由 BF-001 至 BF-004 支撑。
+- Evidence support: 人群压力由 WEB-002/WEB-006/WEB-008 支撑；选择驱动由 WEB-001/WEB-003/WEB-007/WEB-010 支撑；品牌 proof 由 BF-001 至 BF-004 支撑。
 - Proof gaps: PG-01, PG-02, PG-03。
-- Risks: 若只使用「松弛」语气而不持续证明行为，会触发 E11 的话术怀疑；需防止变成反努力或反功效。
+- Risk: 若只使用「松弛」语气而不持续证明行为，会触发 WEB-011 的话术怀疑；需防止变成反努力或反功效。
 - Why recommended: 同时具有人群情绪、明确使用时刻和可见证明机制，且比单纯产品或反 PUA 话术更可持续。
 
 ### Concept C-02 — 只把基础养好
 
 - Package role: Alternative
 - Concept status: **Provisional**
-- One-sentence concept: 用少而明确的基础养护，替代需要不断研究与叠加的护肤功课。
+- Confidence: medium
+- Concept name: 只把基础养好
+- One-line concept: 用少而明确的基础养护，替代需要不断研究与叠加的护肤功课。
+- Audience role: 从配方研究者和功课执行者，回到能够做简单选择的日常使用者。
+- Expression territory: 少而明确的产品事实、基础养护、低决策负担。
 - Idea Platform source: IP-1
-- Source Evidence IDs: E3, E4, E10, E12, BF-001, BF-002
+- Source Evidence IDs: WEB-003, WEB-004, WEB-010, WEB-012, BF-001, BF-002
 
 #### Message House
 
 - Roof: **基础养好，就已经是一种有效。**
-- Roof Evidence IDs: E3, E10, E12, BF-001
+- Roof Evidence IDs: WEB-003, WEB-010, WEB-012, BF-001
 
 | Pillar | Supporting message | Evidence IDs |
 |---|---|---|
-| Pillar 1 | 少成分与少叠加降低选择和使用负担 | E3, E10, BF-001 |
-| Pillar 2 | 不用为抗老黑科技和复杂 routine 额外付费 | E4, E10 |
-| Pillar 3 | 对做不到的功效保持克制，比夸大承诺更可信 | E12, BF-002 |
+| Pillar 1 | 少成分与少叠加降低选择和使用负担 | WEB-003, WEB-010, BF-001 |
+| Pillar 2 | 不用为抗老黑科技和复杂 routine 额外付费 | WEB-004, WEB-010 |
+| Pillar 3 | 对做不到的功效保持克制，比夸大承诺更可信 | WEB-012, BF-002 |
 
 | Foundation item | Proof type | Exact fact | Evidence IDs | Confirmation status |
 |---|---|---|---|---|
 | F1 | product | 主力面霜成分表 9 项 | BF-001 | confirmed |
-| F2 | audience behavior | 复购用户明确因省心、不用研究叠加而复购 | E10 | reported |
-| F3 | service | 客服不承诺抗老，只承诺基础养护 | E12, BF-002 | reported |
+| F2 | audience behavior | 复购用户明确因省心、不用研究叠加而复购 | WEB-010 | reported |
+| F3 | service | 客服不承诺抗老，只承诺基础养护 | WEB-012, BF-002 | reported |
 
 - Evidence support: 产品选择与复购逻辑清楚，但文化张力承载弱于 C-01。
 - Proof gaps: 缺少与竞品配方/使用复杂度的系统对比；缺真实使用效果边界。
-- Risks: 容易退化为极简成分卖点，被任何基础护肤品牌复制。
+- Risk: 容易退化为极简成分卖点，被任何基础护肤品牌复制。
 - Why retained as alternative: 当项目更接近产品发布或电商转化时，它比 C-01 更直接。
 - Conditions that make it preferable: brief 明确要求产品转化优先，且补齐对比 proof。
 
@@ -199,29 +207,33 @@ Note: 「简单/安心/不焦虑」是高频**信号**（E9），不直接等于
 
 - Package role: Alternative
 - Concept status: **Provisional**
-- One-sentence concept: 把品牌的克制沟通行为变成一套不以焦虑催促消费者的关系原则。
+- Confidence: medium
+- Concept name: 不催你变好
+- One-line concept: 把品牌的克制沟通行为变成一套不以焦虑催促消费者的关系原则。
+- Audience role: 作为被尊重的判断者，在需要时选择照顾，而不是被焦虑推动购买。
+- Expression territory: 非催促式品牌关系、克制承诺、长期一致的沟通行为。
 - Idea Platform source: IP-1
-- Source Evidence IDs: E1, E7, E11, E12, BF-002, BF-003, CP-002
+- Source Evidence IDs: WEB-001, WEB-007, WEB-011, WEB-012, BF-002, BF-003, CP-002
 
 #### Message House
 
 - Roof: **我们不催你变好，只在你需要时好好照顾。**
-- Roof Evidence IDs: E1, E7, E8, E12
+- Roof Evidence IDs: WEB-001, WEB-007, WEB-008, WEB-012
 
 | Pillar | Supporting message | Evidence IDs |
 |---|---|---|
-| Pillar 1 | 不用逆袭对比图提醒消费者哪里还不够好 | E1, E7, BF-003 |
-| Pillar 2 | 不以抗老焦虑换取过度承诺和连带购买 | E12, BF-002 |
-| Pillar 3 | 任何反焦虑主张都必须由长期行为而非语气证明 | E11, E14, CP-002 |
+| Pillar 1 | 不用逆袭对比图提醒消费者哪里还不够好 | WEB-001, WEB-007, BF-003 |
+| Pillar 2 | 不以抗老焦虑换取过度承诺和连带购买 | WEB-012, BF-002 |
+| Pillar 3 | 任何反焦虑主张都必须由长期行为而非语气证明 | WEB-011, WEB-014, CP-002 |
 
 | Foundation item | Proof type | Exact fact | Evidence IDs | Confirmation status |
 |---|---|---|---|---|
-| F1 | brand behavior | 详情页不放逆袭式前后对比图 | E7, BF-003 | reported |
-| F2 | service | 客服拒绝把抗老作为承诺方向 | E12, BF-002 | reported |
+| F1 | brand behavior | 详情页不放逆袭式前后对比图 | WEB-007, BF-003 | reported |
+| F2 | service | 客服拒绝把抗老作为承诺方向 | WEB-012, BF-002 | reported |
 
 - Evidence support: 沟通与服务行为已有两类来源，但长期一致性未证实。
 - Proof gaps: 缺跨渠道内容样本、历史行为记录和客服全量抽样。
-- Risks: E11 已表明「反焦虑」可能被视为新营销话术；竞争者也能复制语气（E14）。
+- Risk: WEB-011 已表明「反焦虑」可能被视为新营销话术；竞争者也能复制语气（WEB-014）。
 - Why retained as alternative: 当 brief 需要品牌关系或内容原则时，它有清晰行为边界。
 - Conditions that make it preferable: 补齐长期跨渠道行为证据，并将承诺写入品牌运营规范。
 
@@ -250,10 +262,10 @@ Final decision: **Provisional**。最弱关键依赖是 BF-002/BF-003 的长期�
 ## Pass/Fail Checks
 
 - [ ] HT-A 出现并正确标注 high
-- [ ] 区分了 E9 高频词 ≠ 洞察
+- [ ] 区分了 WEB-009 高频词 ≠ 洞察
 - [ ] IP 写成 tension×truth×proof，而非口号
 - [ ] 落 Provisional 且给出 brand-facts rollback 三项
-- [ ] 识别 E14 对差异的稀释风险并给出「靠行为守差异」的回应
+- [ ] 识别 WEB-014 对差异的稀释风险并给出「靠行为守差异」的回应
 - [ ] 未虚构创始人信念来凑 Final
 - [ ] 产出推荐 Concept、备选 Concept 与完整 Message House
 - [ ] 每个 Foundation 都是产品/服务/品牌行为/证据事实并回指 Evidence ID

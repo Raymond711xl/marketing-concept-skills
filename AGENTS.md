@@ -7,7 +7,7 @@ This repository is the `慢策 / Marketing Concept Skill` bundle. It contains mu
 - Chinese name: `慢策`
 - English/package name: `Marketing Concept Skill`
 - Slogan: `写方案的前半程，有 AI 陪你慢慢跑。`
-- Version: `0.8.9`
+- Version: `0.9.0`
 - Status: Draft / Alpha
 - License: MIT
 
@@ -57,6 +57,7 @@ After changing any skill folder or packaging file, run:
 ```bash
 python3 scripts/validate_package.py
 python3 plugins/marketing-concept-skill/skills/insight-strategy/scripts/smoke_test_prepare_raw_evidence.py
+python3 plugins/marketing-concept-skill/skills/insight-strategy/scripts/run_regression_checks.py
 python3 scripts/build_release.py
 ```
 

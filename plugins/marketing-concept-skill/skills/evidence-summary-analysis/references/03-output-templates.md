@@ -1,7 +1,19 @@
 # Output Templates
 
 Use these templates for handoff, quick output, Strategy Readiness Pack, and
-collector task fallback.
+collector task fallback. Use `05-research-lens-and-delivery-modes.md` for the
+selected Research Lens module and Delivery Mode wrapper.
+
+## Selection Header
+
+```markdown
+## Research Configuration
+
+- Primary Research Lens:
+- Supporting Research Lens:
+- Delivery Mode: Frontstage Brief / Full Evidence Dossier / Client-facing Research Report
+- Lens adaptation note:
+```
 
 ## Evidence Coverage Check
 
@@ -138,6 +150,9 @@ Status guidance:
 - Geography/platform:
 - Requested categories:
 - Requested volume:
+- Primary Research Lens:
+- Supporting Research Lens:
+- Delivery Mode:
 - Evidence count:
 - Main source types:
 
@@ -157,19 +172,23 @@ Status guidance:
 
 [Use category tables]
 
-## 5. Evidence Pattern Inventory
+## 5. Research Lens Summary
+
+[Use the selected module from references/05-research-lens-and-delivery-modes.md]
+
+## 6. Evidence Pattern Inventory
 
 [Use pattern inventory]
 
-## 6. Strategy Readiness Pack
+## 7. Strategy Readiness Pack
 
 [Use readiness pack table]
 
-## 7. Evidence Gaps
+## 8. Evidence Gaps
 
 [Use evidence gaps table]
 
-## 8. Cleaned Evidence Pool
+## 9. Cleaned Evidence Pool
 
 [Use schema from references/01-evidence-pool-schema.md]
 ```
@@ -180,6 +199,9 @@ Quick output must still include a cleaned pool or clear file entry.
 
 ```markdown
 ## Quick Evidence Summary
+
+- Primary Research Lens:
+- Delivery Mode: Frontstage Brief
 
 ### Frontstage Content Strips
 
@@ -193,6 +215,13 @@ Quick output must still include a cleaned pool or clear file entry.
 
 - Pattern:
   - Evidence IDs:
+  - Confidence:
+
+### Selected Lens Findings
+
+- Finding:
+  - Evidence IDs:
+  - Contradiction / limitation:
   - Confidence:
 
 ### Strategy Readiness Pack
@@ -217,7 +246,9 @@ skill.
 ## Collector Task
 
 - Target:
+- Research Lens:
 - Missing evidence:
+- Missing lens evidence:
 - Priority categories:
 - Source priorities:
 - Required fields:

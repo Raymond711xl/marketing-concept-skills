@@ -2,7 +2,7 @@
 
 写方案的前半程，有 AI 陪你慢慢跑。
 
-Version: 0.8.9
+Version: 0.9.0
 Status: Draft / Alpha
 License: MIT
 

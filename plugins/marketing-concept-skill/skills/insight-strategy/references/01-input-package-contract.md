@@ -22,6 +22,11 @@ Include what is available:
 - `strategy_readiness_pack`: upstream evidence-summary bridge for Level 4,
   including brand truth candidates, proof edge candidates, brand behavior
   evidence, competitor distinction, and user-confirmation needs
+- `research_configuration`: upstream Primary Research Lens, Supporting Research
+  Lens, Delivery Mode, and lens adaptation note; preserve as provenance and do
+  not treat it as a strategic conclusion
+- `research_lens_summary`: evidence-only findings organized by the selected lens,
+  with Evidence IDs, contradictions, and confidence
 - `evidence_pool`: sourced evidence items from research, social platforms,
   interviews, reviews, reports, news, or event feedback
 
@@ -30,21 +35,38 @@ what its absence means.
 
 ## Evidence Item Fields
 
-Each evidence item should contain as many of these fields as possible:
+Prefer the upstream Markdown contract and preserve these core fields exactly:
 
-- `source_type`: news, report, brand-owned, competitor, platform-comment,
-  review, interview, event feedback, survey, forum, customer service, or other
-- `source_name`: publication, platform, company, interviewee group, or dataset
-- `date`: publication, collection, or interview date if known
-- `url_or_citation`: URL, file name, page, interview ID, or other trace
-- `raw_quote`: original wording, observation, or data point
-- `summary`: concise meaning of the item
-- `topic_tag`: initial topic label
-- `insight_lens`: need, pain-point, driver, barrier, risk, opportunity, or
-  other analysis lens
-- `matched_keywords`: important words, phrases, claims, or language markers
-- `audience`: who the evidence represents
-- `confidence`: high, medium, low, or speculative
+- `Evidence ID`
+- `Source type`
+- `Source name`
+- `Date`
+- `URL or citation`
+- `Raw quote`
+- `Observation`
+- `Summary`
+- `Topic tag`
+- `Audience`
+- `Confidence`
+
+Accept equivalent snake_case machine keys such as `evidence_id`, `source_type`,
+`url_or_citation`, `raw_quote`, and `observation`, but normalize them without
+changing values. Preserve collector traceability extensions when present,
+including source level, brand hard-data status, shard IDs, merged evidence IDs,
+and limitations.
+
+`Research Lens` describes how the upstream summary organized evidence.
+`Insight lens` is an optional downstream coding field such as need, pain-point,
+driver, barrier, risk, or opportunity. Never map one to the other automatically.
+
+## Strategy Readiness Pack Shapes
+
+Accept the upstream six-column table and a repeated field-list form as
+semantically equivalent. Prefer preserving the upstream table unchanged. A
+field-list conversion is lossless only when every candidate keeps all six
+values: `Item`, `Candidate`, `Status`, `Evidence ID`, `Confidence`, and
+`Notes / user confirmation needed`, plus the package-level `Readiness status`.
+Do not collapse several candidate rows into one unsupported summary.
 
 ## Acceptance Check
 
@@ -68,14 +90,26 @@ that lacks one:
 - `BR-###`: brief facts or user-stated constraints
 - `BF-###`: brand, product, service, history, or brand-behavior facts
 - `CP-###`: competitor or category facts
-- `E###`: structured evidence-pool items when upstream IDs are absent
+- a source-aware prefix such as `USER-###`, `FILE-###`, `SOC-XHS-###`, or
+  `ECOM-TM-###` for supplied evidence items when upstream IDs are absent
 - `RAW-###`: rows created by the raw-evidence adapter
 
 Keep the source citation beside every local ID. An ID is an index, not proof by
 itself. Do not allow Level 4 or a Message House Foundation to cite only a
 summary without a traceable source item.
 
-## Readiness Outcomes
+## Readiness Status Crosswalk
+
+The three vocabularies describe different layers. Map them explicitly instead
+of treating capitalization or wording as interchangeable:
+
+| Evidence Summary status | Input Readiness outcome | Brand Facts Pack readiness | Insight Strategy behavior |
+|---|---|---|---|
+| `ready` | `Ready` | usually `Ready` | Run the full workflow; Final still depends on evidence quality and unresolved proof gaps. |
+| `ready with caveats` | `Partial` | usually `Partial` | Run the full workflow and carry caveats into a Provisional strategy or Concept where critical dependencies remain. |
+| `needs more evidence` | `Partial` when traceable material can still support Level 1; otherwise `Unavailable` | `Thin` | If Partial, continue exploratorily and keep Level 4/Concept Provisional. If Unavailable, stop before Level 1 and return the missing-input list. |
+
+Use the local outcomes as follows:
 
 - `Ready`: traceable evidence can support Level 1 and the Strategy Readiness
   Pack contains usable brand and competitor facts.
@@ -83,6 +117,9 @@ summary without a traceable source item.
   thin. Carry the gap into a Provisional strategy and Concept Package.
 - `Unavailable`: no traceable evidence or supplied material can support Level
   1. Stop before insight generation and return the missing-input list.
+
+`Thin` describes brand-fact readiness, not automatic workflow unavailability.
+`Ready` never guarantees a Final strategy.
 
 If evidence is thin, continue only with visible caveats. If the package is
 missing source trails, mark the work as exploratory. If brand facts are thin,

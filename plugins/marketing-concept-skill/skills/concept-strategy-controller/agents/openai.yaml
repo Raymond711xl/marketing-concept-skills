@@ -1,4 +1,4 @@
 interface:
   display_name: "Concept Strategy Controller"
-  short_description: "Route, resume, and preserve strategy to Concept"
-  default_prompt: "Use $concept-strategy-controller to route installed skills, preserve project state, and develop this brief through evidence, insight, Idea Platform, Concept, and Message House."
+  short_description: "总控：从 brief 到 Concept 的路由、暂停与恢复"
+  default_prompt: "使用 $concept-strategy-controller 读取我的 brief，判断起点与路线，调度证据采集、证据摘要与洞察策略，把项目状态保存在后台 dossier，并推进到 Idea Platform、Concept 与 Message House。"

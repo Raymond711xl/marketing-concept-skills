@@ -1,2 +1,1 @@
-evidence_id,source_type,source_name,date,url_or_citation,audience,raw_quote,summary,topic_tag,insight_lens,matched_keywords,theme_id,human_truth_id,tension_id,confidence,notes
-
+evidence_id,source_type,source_name,date,url_or_citation,raw_quote,observation,summary,topic_tag,audience,confidence,source_level,limitation_or_restriction,normalized_summary,pattern_label,normalization_note,theme_id,human_truth_id,tension_id,notes

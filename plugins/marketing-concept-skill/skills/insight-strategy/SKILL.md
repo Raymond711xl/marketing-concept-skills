@@ -1,6 +1,6 @@
 ---
 name: insight-strategy
-description: Transform an evidence pool, Strategy Readiness Pack, research notes, interviews, comments, reviews, competitive findings, campaign brief, or other sourced material into Level 1-4 insight strategy, an Idea Platform, and an evidence-backed Concept Package. Use when the user wants themes, signals, human truths, cultural tensions, brand truth, strategy routes, Idea Platform candidates, recommended and alternative Concepts, Message Houses, or a dossier-ready insight-to-concept report. This skill consumes prepared evidence and does not perform open web research.
+description: Transform an evidence pool, Strategy Readiness Pack, research notes, interviews, comments, reviews, competitive findings, campaign brief, or other sourced material into Level 1-4 insight strategy, an Idea Platform, and an evidence-backed Concept Package. Use when the user asks for 洞察策略, 人性洞察, 文化张力, 策略推导, 品牌真相, 概念推导, Big Idea, or wants themes, signals, human truths, cultural tensions, brand truth, strategy routes, Idea Platform candidates, recommended and alternative Concepts, Message Houses, or a dossier-ready insight-to-concept report. This skill consumes prepared evidence and does not perform open web research.
 ---
 
 # Insight Strategy
@@ -33,6 +33,8 @@ inputs as the working package:
 - Brand facts from the user, public brand materials, or upstream research
 - Competitor difference and category context from upstream research
 - A structured evidence pool from a research or competitive-research skill
+- A cleaned Evidence Pool, Strategy Readiness Pack, Research Lens Summary, and
+  evidence gaps from `evidence-summary-analysis`
 - A raw-evidence preparation report with high-frequency signals, language
   markers, and raw consumer voices
 - Interview notes, comments, reviews, survey open ends, event feedback, or
@@ -48,6 +50,11 @@ unindexed supplied material: `BR-###` for brief facts, `BF-###` for brand facts,
 `CP-###` for competitor facts, and `RAW-###` for adapted raw evidence. Never
 leave a major judgment or Message House Foundation supported only by a file name
 or an untraceable summary.
+
+Accept upstream Markdown fields in their stable Title Case form, including
+`Evidence ID`, `Raw quote`, `Observation`, and `Confidence`. Treat upstream
+`Research Lens` as evidence-organization metadata, not as an `Insight lens`,
+theme, motive, or strategic conclusion.
 
 ## Workflow
 
@@ -135,17 +142,11 @@ For the final deliverable, use `references/08-final-report-template.md`.
 - `assets/templates/evidence-matrix-template.csv` - structured evidence index
   for large research packages.
 - `assets/templates/final-strategy-report-template.md` - final report skeleton.
-- `assets/lexicons/` - starter lexicons used only by the optional raw-evidence
-  preparation script.
-- `assets/lexicons/motive-taxonomy.csv` - starter need, fear, desire, pressure,
-  and fatigue markers for Level 2 inference.
-- `assets/lexicons/topic-tag-taxonomy.csv` - starter tags for evidence coding.
-- `assets/lexicons/synonym-map.csv` - starter canonical-term mapping for
-  repeated variants.
-- `assets/lexicons/platform-slang.csv` - starter explanations for platform and
-  category language.
-- `assets/lexicons/README-lexicon-sourcing.md` - rules for expanding lexicons
-  from real project corpora without bundling unclear third-party dictionaries.
+- `assets/lexicons/` - starter lexicons (motive, emotion, topic-tag, synonym,
+  platform-slang, and tension-domain CSVs) used only by the optional
+  raw-evidence preparation script. See
+  `assets/lexicons/README-lexicon-sourcing.md` for rules on expanding them from
+  real project corpora without bundling unclear third-party dictionaries.
 - `references/09-materials-and-licensing.md` - boundary rules for missing
   templates, proprietary references, and third-party lexicons.
 

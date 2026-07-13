@@ -13,7 +13,7 @@ sections.
 - User confirmation needed:
 - Recommended rollback:
 
-## 5. Insight Strategy
+## 6. Insight Strategy
 
 ### Level 1 - Fact Layer
 
@@ -43,12 +43,12 @@ truths, Evidence IDs, confidence, and caveats.
 - Risks / weak assumptions:
 - Rollback path, if Provisional:
 
-## 6. Idea Platform Records
+## 7. Idea Platform Records
 
 Complete `idea-platform-record-template.md` for each retained candidate. Put the
 recommended record first.
 
-## 7. Concept Records
+## 8. Concept Records
 
 Complete `concept-package-template.md`. Include:
 

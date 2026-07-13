@@ -10,6 +10,40 @@ import tempfile
 from pathlib import Path
 
 
+CORE_FIELDS = [
+    "Evidence ID",
+    "Source type",
+    "Source name",
+    "Date",
+    "URL or citation",
+    "Raw quote",
+    "Observation",
+    "Summary",
+    "Topic tag",
+    "Audience",
+    "Confidence",
+]
+
+
+def first_evidence_block(text: str) -> str:
+    block = text.split("### Evidence RAW-001", 1)[1]
+    return block.split("\n### Evidence ", 1)[0]
+
+
+def assert_v1_core(block: str) -> None:
+    fields = [
+        line[2:].split(":", 1)[0]
+        for line in block.splitlines()
+        if line.startswith("- ")
+    ]
+    assert fields[: len(CORE_FIELDS)] == CORE_FIELDS
+    assert "- Source type: social" in block
+    assert "- Observation: not applicable - text-only source" in block
+    assert "Audience / segment:" not in block
+    assert "Insight lens:" not in block
+    assert "Matched keywords:" not in block
+
+
 def run_adapter(script: Path, cwd: Path, input_path: Path, output_path: Path) -> str:
     subprocess.check_call(
         [
@@ -58,6 +92,7 @@ def main() -> None:
         assert "Platform Slang Scan" in csv_text and "闭眼入" in csv_text
         assert "Evidence ID: RAW-001" in csv_text
         assert "Tokenizer: stdlib fallback" in csv_text
+        assert_v1_core(first_evidence_block(csv_text))
 
         tsv_input = tmpdir / "sample.tsv"
         tsv_input.write_text("text\tlikes\n我想简单一点，也怕踩雷\t3\n", encoding="utf-8")
@@ -81,7 +116,7 @@ def main() -> None:
         assert xls_result.returncode != 0
         assert "not supported by openpyxl" in (xls_result.stdout + xls_result.stderr)
 
-    print("smoke test passed: CSV/TSV/TXT, bundled lexicons, cwd independence, .xls guard")
+    print("smoke test passed: CSV/TSV/TXT, Evidence Pool v1, bundled lexicons, cwd independence, .xls guard")
 
 
 if __name__ == "__main__":

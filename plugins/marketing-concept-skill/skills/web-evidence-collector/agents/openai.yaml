@@ -1,4 +1,4 @@
 interface:
   display_name: "Web Evidence Collector"
-  short_description: "Collect traceable evidence pools"
-  default_prompt: "Use $web-evidence-collector to collect sourced evidence, brand hard-data candidates, an evidence brief, and a downstream-ready evidence pool."
+  short_description: "采集可追溯的公开网络证据池"
+  default_prompt: "使用 $web-evidence-collector 采集有来源的公开证据、品牌硬信息候选与证据简报，并产出可无损交接给 evidence-summary-analysis 的 Evidence Pool。"

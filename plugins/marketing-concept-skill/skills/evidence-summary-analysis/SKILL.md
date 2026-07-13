@@ -1,6 +1,6 @@
 ---
 name: evidence-summary-analysis
-description: Summarize, normalize, classify, and prepare an evidence pool produced by web-evidence-collector, messy notes, structured evidence pools, competitive research, visual research, social listening, campaign research, interviews, comments, reviews, screenshots, or user-provided materials. Use when sourced material needs evidence-pattern summaries, category summaries, frontstage content strips, Strategy Readiness Pack, cleaned Evidence Pool, or a compact handoff for downstream strategy. This skill consumes evidence; it does not perform open web research, create insight themes, infer human truths, make cultural judgments, or make strategy decisions.
+description: Summarize, normalize, classify, and prepare an evidence pool produced by web-evidence-collector, messy notes, structured evidence pools, competitive research, visual research, social listening, campaign research, interviews, comments, reviews, screenshots, or user-provided materials. Use when the user asks for 证据摘要, 资料整理, 资料清洗, 调研资料归纳, 证据分类, 客户版研究报告, or when sourced material needs evidence-pattern summaries, category summaries, a selected Research Lens, frontstage content strips, a client-facing evidence report, Strategy Readiness Pack, cleaned Evidence Pool, or a compact handoff for downstream strategy. This skill consumes evidence; it does not perform open web research, create insight themes, infer human truths, make cultural judgments, or make strategy decisions.
 ---
 
 # Evidence Summary Analysis
@@ -44,8 +44,11 @@ Do:
 - Extract evidence patterns: repeated material, source, channel, wording,
   visual, activation, PR-angle, or platform structures directly visible in the
   evidence.
+- Organize the same evidence through a selected `Research Lens` without
+  discarding unrelated items from the cleaned Evidence Pool.
 - Produce frontstage content strips, evidence coverage, evidence gaps, category
-  summaries, Strategy Readiness Pack, and compact downstream handoff.
+  summaries, lens summaries, Strategy Readiness Pack, and compact downstream
+  handoff.
 
 Do not:
 
@@ -54,6 +57,8 @@ Do not:
   restrictions.
 - Copy full articles, full reports, full comment threads, or full social posts.
 - Treat brand-owned claims as consumer truth.
+- Present consumer evidence as a consumer insight, a single dated signal as a
+  trend, or call a case successful without credible outcome evidence.
 - Create insight themes, human truths, motive inferences, cultural tensions,
   strategic recommendations, positioning, Idea Platform, brand strategy, Big
   Idea, or campaign strategy.
@@ -73,6 +78,10 @@ Read these files as needed:
 - `references/04-regression-samples.md` - regression examples for preserving
   `Evidence ID`, `Observation`, contradictory evidence, and brand hard-data
   leads.
+- `references/05-research-lens-and-delivery-modes.md` - canonical Research Lens
+  values, Chinese request aliases, lens-specific modules, selection rules, and
+  Delivery Mode contracts. Read whenever a lens or presentation mode must be
+  selected, inferred, or rendered.
 
 ## Input Adaptation
 
@@ -83,6 +92,8 @@ Accept:
   notes, campaign notes, and social listening drafts
 - Structured Evidence Pool or cleaned Evidence Pool
 - User-provided files or citations with traceable source trails
+- A user or controller request naming one or more `Research Lens` values or a
+  `Delivery Mode`
 
 If the input is structured, preserve the structure and normalize field names.
 If the input is messy, convert it into Evidence Pool items before summarizing.
@@ -100,18 +111,27 @@ Identify:
 - Target brand, campaign, event, product, industry, or competitor set
 - Time range and geography/platform scope
 - Requested categories and volume
+- `Primary Research Lens` and any `Supporting Research Lens`
+- `Delivery Mode`
 - Downstream destination: user review, controller, `insight-strategy`, or audit
 - Whether evidence is collector output, messy notes, or an existing Evidence Pool
 
 If enough context is present, proceed. Ask only when missing scope blocks
 normalization.
 
+Read `references/05-research-lens-and-delivery-modes.md` when the user names a
+report direction, asks for a client-ready report, or leaves lens/mode selection
+implicit. Keep material `Category` and `Research Lens` separate. Use one primary
+lens by default; add supporting lenses only when requested or clearly necessary.
+
 ### 2. Normalize Evidence
 
 Read `references/01-evidence-pool-schema.md`.
 
 Normalize into cleaned Evidence Pool items. Keep required fields first and do
-not drop collector fields. Required preservation:
+not drop collector fields. Preserve collector traceability extensions such as
+`Brand hard data status`, `Shard ID`, `Shard source scope`, and
+`Merged from evidence IDs` whenever present. Required core preservation:
 
 - `Evidence ID`
 - `Source type`
@@ -160,7 +180,9 @@ Use compact strips for controller display:
 - `证据缺口内容条`
 - `进入策略判断内容条`
 
-Keep strips evidence-bound. Do not infer human truths or cultural tensions.
+These five strip names are a shared frontstage contract with
+`concept-strategy-controller`; keep the names exactly stable. Keep strips
+evidence-bound. Do not infer human truths or cultural tensions.
 
 ### 5. Category Summaries
 
@@ -173,7 +195,19 @@ marketing, PR, social, report, market, and competitor evidence.
 If evidence is thinner than requested volume, output available items and mark
 missing items as evidence gaps.
 
-### 6. Evidence Pattern Inventory
+### 6. Research Lens Summary
+
+Before the pattern inventory, produce a `Research Lens Summary` using
+`references/05-research-lens-and-delivery-modes.md`. The lens changes grouping
+and emphasis, not evidence status. Every lens finding must cite Evidence IDs,
+Confidence, and contradictions or limitations.
+
+For requests phrased as industry strategy, consumer insight, platform trend,
+public sentiment, or successful case research, use the evidence-only adapters
+in the reference. Do not supply the strategic, motivational, cultural, trend,
+sentiment, or success claim unless the evidence contract permits it.
+
+### 7. Evidence Pattern Inventory
 
 Inventory observable patterns only:
 
@@ -190,7 +224,7 @@ Inventory observable patterns only:
 Do not name insight themes, infer motives, produce human truths, make cultural
 judgments, or recommend strategy.
 
-### 7. Strategy Readiness Pack
+### 8. Strategy Readiness Pack
 
 Read `references/03-output-templates.md`.
 
@@ -211,19 +245,28 @@ Required rows:
 
 This pack is not strategy. It is the hard-data bridge for `insight-strategy`.
 
-### 8. Output Handoff
+### 9. Output Handoff
 
 Use `references/03-output-templates.md`.
 
 Default handoff order:
 
-1. Frontstage content strips
-2. Evidence coverage check
-3. Category summaries
-4. Evidence Pattern Inventory
-5. Strategy Readiness Pack
-6. Evidence gaps
-7. Cleaned Evidence Pool
+1. Scope, `Research Lens`, and `Delivery Mode`
+2. Frontstage content strips
+3. Evidence coverage check
+4. Category summaries
+5. Research Lens Summary
+6. Evidence Pattern Inventory
+7. Strategy Readiness Pack
+8. Evidence gaps
+9. Cleaned Evidence Pool
+
+Apply the selected `Delivery Mode` from
+`references/05-research-lens-and-delivery-modes.md`. Delivery Mode controls the
+visible presentation, not evidence retention. Every mode must preserve a
+complete cleaned pool in the output or provide its explicit file entry. Keep
+the Strategy Readiness Pack available for downstream handoff even when a
+client-facing body hides internal handoff terminology.
 
 Quick output must still include a usable `Cleaned Evidence Pool` section. If the
 pool is too long and the environment allows file output, provide a clear file
@@ -239,6 +282,10 @@ traceability fields, and confidence.
 - Strategy Readiness Pack candidates all have status, Evidence ID, and
   Confidence, or are explicitly marked `missing`.
 - Contradictory evidence is preserved, not smoothed away.
+- Research Lens findings remain evidence-only and cite Evidence IDs and
+  Confidence.
+- Delivery Mode changes presentation only; it does not remove the cleaned
+  Evidence Pool, source trail, caveats, or downstream handoff artifacts.
 - Restricted social content uses short key phrases plus links, not full copied
   content.
 - If fresh evidence is missing, output collector tasks rather than filling gaps

@@ -15,15 +15,28 @@ Materials below are blocked on the user and can be picked up later.
 
 ## B. Real materials still needed (user busy — defer)
 
-- [ ] **物料 3 — real card sample:** 1 anonymized 旧 Idea Platform / Concept 页, plus
-      preferred field naming (中文字段 like 核心主张/支撑点/RTB? 双语?). Will be
-      folded into the two templates above; current versions are framework-based.
-- [ ] **物料 1 — real upstream output:** 1 real social-listening / research-skill
+- [ ] **物料 3 — real card sample:** 1 anonymized 旧 Idea Platform / Concept 页.
+      (2026-07-13 partial: preferred field naming 已确认并固化进两个模板 §0——
+      Idea Platform 保持英文 / 概念卡 Concept Card / 双语 核心主张(Roof)·支撑点(Pillar)·RTB(Foundation) /
+      概念命名 Campaign 风。旧卡样式样本仍待用户提供，用于 preserve/avoid wording 与单页版式。)
+- [x] **物料 1 — real upstream output:** 1 real social-listening / research-skill
       output to validate the Evidence Pool handoff format against
       `examples/sample-evidence-pool-skincare.md`.
-- [ ] **物料 5 — real regression case:** 1 anonymized real project (brief +
+      (2026-07-13 done: 珀莱雅真实调研包 `drafts/real-materials/proya/` —
+      30 条 Evidence Pool v1 + Strategy Readiness Pack + 128 行小红书/天猫原声经
+      raw adapter 验证；发现记录于 `drafts/review-notes/real-handoff-validation-proya.md`。
+      注意：examples 与 collector 契约的 schema 漂移仍未修复，见该记录第 1 条。)
+- [x] **物料 5 — real regression case:** 1 anonymized real project (brief +
       evidence pool + brand facts + ideal output direction) to sit alongside the
       constructed `examples/golden-case-01-yubai-skincare.md`.
+      (2026-07-13 done: GC-02 真实中标案（跨境支付×网球赛事赞助，全匿名）
+      `drafts/real-materials/case-a/golden-case-02-crossborder-payments.md`。
+      按项目所有者要求**不进 examples/、不随插件分发**，仅本地校准；
+      测试点=「商业成功≠证据充分」，理想输出 Provisional。
+      GC-03 亦完成（2026-07-13）：润滑油×赛事周双轨激活真实比稿案（全匿名）
+      `drafts/real-materials/case-b/golden-case-03-lubricants-summit.md`，
+      测点=双平台候选的决策纪律 + 分层状态判定（Platform Final / Concept Provisional）。
+      待办小尾巴：H 品牌消费者轨另一版材料待用户提供，并入 GC-03 Annex。)
 
 ## D. Strategy models library
 

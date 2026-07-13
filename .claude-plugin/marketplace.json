@@ -4,7 +4,7 @@
     "name": "Raymond711xl"
   },
   "description": "慢策：中文优先的 Marketing Concept Skill 组合包。",
-  "version": "0.8.9",
+  "version": "0.9.0",
   "plugins": [
     {
       "name": "marketing-concept-skill",

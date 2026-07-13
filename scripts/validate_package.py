@@ -44,6 +44,204 @@ def require_text(path: Path, needle: str, errors: list[str]) -> None:
         errors.append(f"{path.relative_to(ROOT)} does not contain {needle!r}")
 
 
+def require_all_text(path: Path, needles: tuple[str, ...], errors: list[str]) -> None:
+    for needle in needles:
+        require_text(path, needle, errors)
+
+
+def section_text(path: Path, heading: str, errors: list[str]) -> str:
+    if not path.is_file():
+        errors.append(f"Missing file: {path.relative_to(ROOT)}")
+        return ""
+    text = path.read_text(encoding="utf-8")
+    match = re.search(
+        rf"^## {re.escape(heading)}\n(.*?)(?=^## |\Z)",
+        text,
+        re.DOTALL | re.MULTILINE,
+    )
+    if not match:
+        errors.append(f"{path.relative_to(ROOT)} is missing section '## {heading}'")
+        return ""
+    return match.group(1)
+
+
+def require_synced_section(
+    path_a: Path, path_b: Path, heading: str, errors: list[str]
+) -> None:
+    """Duplicated contract sections must stay word-identical across skills."""
+    text_a = section_text(path_a, heading, errors)
+    text_b = section_text(path_b, heading, errors)
+    if text_a and text_b and " ".join(text_a.split()) != " ".join(text_b.split()):
+        errors.append(
+            f"Section '## {heading}' has drifted between "
+            f"{path_a.relative_to(ROOT)} and {path_b.relative_to(ROOT)}"
+        )
+
+
+def validate_cross_skill_contracts(errors: list[str]) -> None:
+    controller = SKILLS_ROOT / "concept-strategy-controller"
+    collector = SKILLS_ROOT / "web-evidence-collector"
+    summary = SKILLS_ROOT / "evidence-summary-analysis"
+    insight = SKILLS_ROOT / "insight-strategy"
+
+    research_configuration = (
+        "Primary Research Lens",
+        "Supporting Research Lens",
+        "Delivery Mode",
+    )
+    for path in (
+        controller / "references" / "startup-packet.md",
+        controller / "references" / "dossier-contract.md",
+        collector / "references" / "09-output-template.md",
+        summary / "SKILL.md",
+    ):
+        require_all_text(path, research_configuration, errors)
+
+    collector_traceability_fields = (
+        "Evidence ID",
+        "Source type",
+        "Source name",
+        "Date",
+        "URL or citation",
+        "Raw quote",
+        "Observation",
+        "Summary",
+        "Topic tag",
+        "Audience",
+        "Confidence",
+        "Brand hard data status",
+        "Shard ID",
+        "Shard source scope",
+        "Merged from evidence IDs",
+    )
+    require_all_text(
+        summary / "references" / "01-evidence-pool-schema.md",
+        collector_traceability_fields,
+        errors,
+    )
+    require_all_text(
+        insight / "assets" / "templates" / "input-package-template.md",
+        ("Evidence ID", "Raw quote", "Observation", "Confidence"),
+        errors,
+    )
+    require_all_text(
+        insight / "assets" / "templates" / "concept-record-template.md",
+        (
+            "Concept name",
+            "One-line concept",
+            "Audience role",
+            "Expression territory",
+            "Risk",
+            "Confidence",
+            "Roof",
+            "Pillar",
+            "Foundation",
+            "Proof gaps",
+        ),
+        errors,
+    )
+    require_all_text(
+        insight / "assets" / "templates" / "idea-platform-record-template.md",
+        (
+            "Idea Platform Statement",
+            "Statement",
+            "Cultural Tension",
+            "Cultural tension answered",
+            "Brand Truth",
+            "Brand truth used",
+            "Proof Edge",
+            "Why the brand can own it",
+            "Emotional charge",
+            "Strategic implications",
+            "Risks / weak assumptions",
+            "Validation needed",
+        ),
+        errors,
+    )
+
+    dossier_sections = (
+        "## 6. Insight Strategy",
+        "## 7. Idea Platform Records",
+        "## 8. Concept Records",
+    )
+    require_all_text(
+        controller / "references" / "dossier-contract.md",
+        dossier_sections,
+        errors,
+    )
+    require_all_text(
+        controller / "references" / "dossier-contract.md",
+        (
+            "Concept Package Decision",
+            "Recommended Concept",
+            "Alternative Concepts",
+            "Concept Comparison",
+        ),
+        errors,
+    )
+    require_all_text(
+        insight / "assets" / "templates" / "final-strategy-report-template.md",
+        dossier_sections,
+        errors,
+    )
+    require_all_text(
+        insight / "references" / "08-final-report-template.md",
+        dossier_sections,
+        errors,
+    )
+    require_text(
+        controller / "SKILL.md",
+        "`insight-strategy` 拥有洞察策略、Idea Platform、Concept Package 与 Message House 的专业推导。",
+        errors,
+    )
+
+    # The Evidence Pool schema is intentionally duplicated in the collector and
+    # summary skills so each loads standalone; these blocks must never drift.
+    for heading in ("Allowed Values", "Confidence Rules"):
+        require_synced_section(
+            collector / "references" / "04-evidence-pool-contract.md",
+            summary / "references" / "01-evidence-pool-schema.md",
+            heading,
+            errors,
+        )
+
+    # Frontstage strip names are a display contract between summary and controller.
+    frontstage_strips = (
+        "来源覆盖内容条",
+        "强证据模式内容条",
+        "品牌硬信息内容条",
+        "证据缺口内容条",
+        "进入策略判断内容条",
+    )
+    require_all_text(controller / "SKILL.md", frontstage_strips, errors)
+    require_all_text(summary / "SKILL.md", frontstage_strips, errors)
+
+    # startup-packet.md points at this canonical first-response text block.
+    require_text(
+        controller / "SKILL.md",
+        "你可以随时输入阶段指令来单独深入讨论",
+        errors,
+    )
+
+    # Concept frontstage fixed output order now lives in stage-playbooks.md.
+    require_all_text(
+        controller / "references" / "stage-playbooks.md",
+        (
+            "Concept name",
+            "One-line concept",
+            "Audience role",
+            "Expression territory",
+            "Risk",
+            "Confidence",
+            "Roof",
+            "Pillars",
+            "Foundation",
+            "Proof gaps",
+        ),
+        errors,
+    )
+
+
 def validate_skill(skill_root: Path, errors: list[str], warnings: list[str]) -> None:
     skill_md = skill_root / "SKILL.md"
     if not skill_md.is_file():
@@ -64,6 +262,18 @@ def validate_skill(skill_root: Path, errors: list[str], warnings: list[str]) -> 
         errors.append(f"Skill name does not match folder: {skill_md.relative_to(ROOT)}")
     if not description_match or not description_match.group(1).strip():
         errors.append(f"Missing skill description: {skill_md.relative_to(ROOT)}")
+    else:
+        description = description_match.group(1).strip()
+        if len(description) > 1024:
+            errors.append(
+                f"Skill description exceeds 1024 characters ({len(description)}): "
+                f"{skill_md.relative_to(ROOT)}"
+            )
+        if not re.search(r"[一-鿿]", description):
+            warnings.append(
+                f"{skill_md.relative_to(ROOT)} description has no Chinese trigger "
+                "terms; Chinese-first users may fail to trigger this skill."
+            )
 
     if not (skill_root / "agents" / "openai.yaml").is_file():
         errors.append(f"Missing agents/openai.yaml: {skill_root.relative_to(ROOT)}")
@@ -79,6 +289,12 @@ def validate_skill(skill_root: Path, errors: list[str], warnings: list[str]) -> 
     if line_count >= 500:
         warnings.append(
             f"{skill_md.relative_to(ROOT)} has {line_count} lines; move detail to references."
+        )
+    byte_count = len(text.encode("utf-8"))
+    if byte_count > 24_000:
+        warnings.append(
+            f"{skill_md.relative_to(ROOT)} is {byte_count} bytes; the whole body "
+            "loads on every trigger - move stage detail into references/."
         )
 
 
@@ -140,6 +356,8 @@ def main() -> int:
             errors.append(f"Missing packaged skill: {skill_name}")
             continue
         validate_skill(skill_root, errors, warnings)
+
+    validate_cross_skill_contracts(errors)
 
     if errors:
         print("Package validation failed:")

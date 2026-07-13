@@ -36,6 +36,18 @@ TEXT_COLUMNS = [
 
 LIKE_COLUMNS = ["like", "likes", "upvotes", "赞", "点赞", "点赞数"]
 
+SOURCE_TYPES = (
+    "social",
+    "review",
+    "ecommerce",
+    "forum",
+    "event feedback",
+    "survey",
+    "interview",
+    "user provided",
+    "other",
+)
+
 
 def read_dict_rows(path: Path, delimiter: str) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8-sig", errors="ignore", newline="") as f:
@@ -271,6 +283,12 @@ def main() -> None:
     parser.add_argument("input_file")
     parser.add_argument("output_file")
     parser.add_argument("--source", default="unknown")
+    parser.add_argument(
+        "--source-type",
+        choices=SOURCE_TYPES,
+        default="social",
+        help="Evidence Pool v1 source type for the supplied rows",
+    )
     parser.add_argument("--brand", default="unknown brand")
     parser.add_argument("--stopwords", default="")
     parser.add_argument(
@@ -446,16 +464,15 @@ def main() -> None:
         text = str(item["text"]).replace("\n", " ")
         output.append(f"### Evidence {item['id']}")
         output.append(f"- Evidence ID: {item['id']}")
-        output.append("- Source type: platform-comment")
+        output.append(f"- Source type: {args.source_type}")
         output.append(f"- Source name: {args.source}")
-        output.append("- Date: unknown")
+        output.append("- Date: date unknown")
         output.append(f"- URL or citation: {input_path.name} row {item['row']}")
-        output.append("- Audience / segment: unknown")
         output.append(f"- Raw quote: \"{text}\"")
+        output.append("- Observation: not applicable - text-only source")
         output.append("- Summary: To be interpreted in Level 1")
         output.append("- Topic tag: to-be-coded")
-        output.append("- Insight lens: to-be-coded")
-        output.append("- Matched keywords: see marker scans; verify in context")
+        output.append("- Audience: audience unknown")
         output.append("- Confidence: medium")
         output.append("")
 

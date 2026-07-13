@@ -30,12 +30,25 @@
 
 ## Strategy Readiness Pack
 
-- Brand truth candidates and Evidence IDs:
-- Proof edge candidates and Evidence IDs:
-- Brand behavior evidence and Evidence IDs:
-- Competitor distinction and Evidence IDs:
-- User confirmation needed:
-- Readiness status:
+The upstream six-column table and a repeated field-list form are lossless
+equivalents only when all candidate fields are preserved. Prefer the table:
+
+| Item | Candidate | Status | Evidence ID | Confidence | Notes / user confirmation needed |
+|---|---|---|---|---|---|
+| Brand truth candidate | | confirmed / reported / inferred / missing | | high / medium / low / speculative | |
+| Proof edge | | confirmed / reported / inferred / missing | | high / medium / low / speculative | |
+| Brand behavior | | confirmed / reported / inferred / missing | | high / medium / low / speculative | |
+| Competitor distinction | | confirmed / reported / inferred / missing | | high / medium / low / speculative | |
+
+- Readiness status: ready / ready with caveats / needs more evidence
+
+## Research Configuration
+
+- Primary Research Lens:
+- Supporting Research Lens:
+- Delivery Mode:
+- Lens adaptation note:
+- Research Lens Summary and Evidence IDs:
 
 ## Competitor Context
 
@@ -48,15 +61,16 @@
 
 ### Evidence 1
 
-- Evidence ID:
+- Evidence ID: WEB-001
 - Source type:
 - Source name:
 - Date:
 - URL or citation:
-- Audience / segment:
 - Raw quote:
+- Observation:
 - Summary:
 - Topic tag:
-- Insight lens:
-- Matched keywords:
+- Audience:
 - Confidence:
+- Source level:
+- Limitation / restriction:

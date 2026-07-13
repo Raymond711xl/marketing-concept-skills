@@ -9,3 +9,6 @@ __pycache__/
 dist/
 *.zip
 *.sha256
+
+# real client/brand materials — never distribute or commit
+drafts/real-materials/

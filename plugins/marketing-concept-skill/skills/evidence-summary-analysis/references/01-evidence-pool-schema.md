@@ -38,10 +38,14 @@ If a machine export is requested, use this mapping:
 | Evidence value | evidence_value |
 | Brand hard data type | brand_hard_data_type |
 | Needs user confirmation | needs_user_confirmation |
+| Brand hard data status | brand_hard_data_status |
 | Related evidence | related_evidence |
 | Linkage status | linkage_status |
 | Metric / count | metric_count |
 | Limitation / restriction | limitation_restriction |
+| Shard ID | shard_id |
+| Shard source scope | shard_source_scope |
+| Merged from evidence IDs | merged_from_evidence_ids |
 
 ## Required Core Fields
 
@@ -69,8 +73,12 @@ Rules:
 - Preserve `Observation` when supplied. If missing and the evidence is visual,
   event, page, packaging, video, screenshot, or activity material, add a concise
   observation based only on the visible/source-provided material.
-- If `Raw quote` is unavailable, leave it empty or mark `not available`; do not
-  fabricate quotes. Use `Observation` for non-text evidence.
+- If `Raw quote` is unavailable, use `Raw quote: not available`; do not leave the
+  collector core field blank or fabricate quotes. Use `Observation` for non-text
+  evidence.
+- Preserve every collector extension field verbatim when present. Normalization
+  may add fields, but must not delete, rename, merge, translate, or overwrite
+  collector values.
 - Keep source trails even when evidence is weak.
 
 ## Extension Fields
@@ -93,10 +101,14 @@ Add these when available:
 - Evidence value:
 - Brand hard data type:
 - Needs user confirmation:
+- Brand hard data status:
 - Related evidence:
 - Linkage status:
 - Metric / count:
 - Limitation / restriction:
+- Shard ID:
+- Shard source scope:
+- Merged from evidence IDs:
 ```
 
 ## Allowed Values
@@ -143,6 +155,12 @@ Needs user confirmation:
 yes / no / unknown
 ```
 
+Brand hard data status:
+
+```text
+user-provided official / public official candidate / independently corroborated / conflicting / incomplete / not applicable
+```
+
 ## Source Levels
 
 | Level | Source | Handling |
@@ -163,8 +181,8 @@ yes / no / unknown
 - Medium: credible source but partial context, or repeated evidence with limited
   source diversity.
 - Low: thin evidence, platform access limits, unclear date, limited trace, or
-  one weak source.
-- Speculative: useful lead but unconfirmed; pass downstream only with caveat.
+  only one weak source.
+- Speculative: useful lead but not confirmed; pass downstream only with caveat.
 
 ## Cleaned Evidence Pool Template
 
@@ -198,8 +216,12 @@ yes / no / unknown
 - Evidence value:
 - Brand hard data type:
 - Needs user confirmation:
+- Brand hard data status:
 - Related evidence:
 - Linkage status:
 - Metric / count:
 - Limitation / restriction:
+- Shard ID:
+- Shard source scope:
+- Merged from evidence IDs:
 ```

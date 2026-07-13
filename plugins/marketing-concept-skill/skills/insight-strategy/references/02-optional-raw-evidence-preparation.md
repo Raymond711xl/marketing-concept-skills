@@ -51,7 +51,7 @@ Do not assume the caller is in the plugin root:
 
 ```bash
 python3 <insight-strategy-skill-dir>/scripts/prepare_raw_evidence.py \
-  input.csv output.md --source "小红书" --brand "品牌名" \
+  input.csv output.md --source "小红书" --source-type social --brand "品牌名" \
   --stopwords "额外停用词1,额外停用词2"
 ```
 
@@ -77,7 +77,7 @@ The output Markdown should include:
 3. Bundled lexicon load summary
 4. Emotion, motive, synonym, tension-domain, and platform-slang scans
 5. Raw voice excerpts with `RAW-###` Evidence IDs
-6. Evidence pool draft
+6. Evidence Pool v1 draft with all 11 core fields in canonical order
 7. Known limitations
 
 After this file is produced, enter `03-level1-fact-layer.md`.

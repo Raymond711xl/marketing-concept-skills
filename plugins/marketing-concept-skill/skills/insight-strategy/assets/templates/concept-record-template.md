@@ -7,18 +7,18 @@ Foundation of proof.
 
 ## 0. Card Naming Preferences
 
-Use this section to capture old-card wording and the user's preferred field
-names.
+User decisions confirmed 2026-07-13（珀莱雅真实案例跑通后逐项确认）。
+Remaining open items await 物料 3（旧卡样式）。
 
-- Preferred card title: Concept Record / Concept Card / Concept Platform / 创意概念 / 传播概念 / other:
-- Preferred Chinese name for `Concept`:
-- Preferred Chinese name for `Roof`:
-- Preferred Chinese name for `Pillar`:
-- Preferred Chinese name for `Foundation / RTB`:
-- Should the card use bilingual labels? Yes / No
-- Should concept names be campaign-like, strategic, or neutral?
-- Any old-card wording to preserve:
-- Any wording to avoid:
+- Preferred card title: **概念卡 Concept Card**（中英并用）[confirmed 2026-07-13]
+- Preferred Chinese name for `Concept`: 概念 [confirmed]
+- Preferred Chinese name for `Roof`: **核心主张 (Roof)** [confirmed]
+- Preferred Chinese name for `Pillar`: **支撑点 (Pillar)** [confirmed]
+- Preferred Chinese name for `Foundation / RTB`: **RTB (Foundation)**——直接用 RTB 作为中文语境字段名 [confirmed]
+- Should the card use bilingual labels? **Yes**（中文为主、英文术语括号保留）[confirmed]
+- Should concept names be campaign-like, strategic, or neutral? **Campaign 风**（如「经得起查」——有传播感、可延展成 slogan）[confirmed]
+- Any old-card wording to preserve: 待物料 3（旧卡样式）
+- Any wording to avoid: 待物料 3
 
 ## 1. Metadata
 
@@ -30,12 +30,14 @@ names.
 - Source evidence IDs:
 - Package role: Recommended / Alternative / Reject
 - Concept status: Final / Provisional / Reject
+- Confidence: high / medium / low / speculative
 
 ## 2. Concept Role
 
 - What part of the Idea Platform this Concept expresses:
 - What this Concept adds that other Concepts do not:
 - Audience problem or moment:
+- Audience role:
 - Desired audience response:
 - One-line concept:
 
@@ -63,12 +65,13 @@ Foundation must contain facts, not adjectives:
 
 - Promise:
 - Emotional hook:
+- Expression territory:
 - Key message in audience language:
 - Tone:
 - Experience or execution outline:
 - Channels / touchpoints:
 - Mandatory elements:
-- Risks:
+- Risk:
 - What this Concept should not become:
 
 ## 5. Evidence And Proof

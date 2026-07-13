@@ -3,6 +3,14 @@
 Use these samples when checking that normalization remains lossless and
 strategy-boundary-safe.
 
+Run the sample with:
+
+```text
+Primary Research Lens: Brand Assets & Marketing
+Supporting Research Lens: Competitive Intelligence
+Delivery Mode: Client-facing Research Report
+```
+
 ## Sample Input
 
 ```markdown
@@ -82,6 +90,32 @@ The cleaned output must preserve:
 - Competitor distinction lead from `C-03`
 - Source separation: brand-owned, event feedback, competitor, review
 
+## Expected Research Lens Checks
+
+The client-facing body may organize the evidence like this:
+
+```markdown
+## Brand Assets & Marketing
+
+| Finding | Evidence ID | Source spread | Contradiction / limitation | Confidence |
+| --- | --- | --- | --- | --- |
+| The campaign makes lightness visible through page copy and a blue product-led KV. | V-01 | Brand landing page | Buyer evidence R-04 disputes the sensory claim. | medium |
+| The pop-up extends the campaign into a photo-oriented physical touchpoint. | A-02 | User-provided event notes | Queue friction is reported; broader event documentation is missing. | medium |
+
+## Competitive Intelligence
+
+| Competitor | Visible claim or behavior | Evidence ID | Difference visible in evidence | Confidence |
+| --- | --- | --- | --- | --- |
+| Competitor | Efficiency and self-discipline framing | C-03 | Different wording from the brand's lightness claim; strategic ownership is not established. | medium |
+```
+
+This is allowed because it reorganizes traceable evidence. Do not turn the
+difference into a positioning recommendation.
+
+For `Delivery Mode: Client-facing Research Report`, the visible report must
+still provide an Evidence Index or explicit Cleaned Evidence Pool file entry.
+The backstage handoff must retain the Strategy Readiness Pack.
+
 ## Expected Evidence Pattern Inventory Excerpt
 
 ```markdown
@@ -116,3 +150,9 @@ truth or cultural tension.
 - [ ] Brand hard information is preserved but not upgraded to strategy.
 - [ ] Strategy Readiness Pack includes Evidence ID and Confidence for each row.
 - [ ] Missing or weak evidence is marked as missing / caveat / collector task.
+- [ ] Primary and supporting Research Lens values remain visible in report metadata.
+- [ ] Lens findings cite Evidence ID, Confidence, and contradictions / limitations.
+- [ ] Client-facing delivery keeps an Evidence Index or explicit Cleaned Evidence Pool entry.
+- [ ] Consumer evidence is not renamed as Human Truth or consumer insight.
+- [ ] One dated platform signal is labeled `current signal`, not `trend`.
+- [ ] A case is not called successful without evidence-supported results.

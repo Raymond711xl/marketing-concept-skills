@@ -23,6 +23,7 @@ Use this for user-facing progress:
 
 - Current conclusion
 - Content strips for the current stage
+- Research configuration and selected-lens findings during evidence preparation
 - Evidence brief box when evidence preparation finishes
 - Concept card and Message House when Concept finishes
 - Why it matters
@@ -49,6 +50,7 @@ Use this for downstream work and user inspection:
 - Evidence preparation brief
 - Brand hard data track
 - Category summaries
+- Research configuration and research-lens summary
 - Evidence pattern inventory
 - Strategy readiness pack
 - Insight map
@@ -77,6 +79,9 @@ Compression should reduce reading burden, not remove evidence, uncertainty, sour
 - Dossier path:
 - Current route:
 - Entry mode: new project / direct stage / reverse audit / restored
+- Primary Research Lens:
+- Supporting Research Lens:
+- Delivery Mode:
 - Current stage:
 - Stage status: not_started / active / waiting_user / handoff_only / completed / provisional
 - Stage owner: controller / web-evidence-collector / evidence-summary-analysis / insight-strategy
@@ -102,6 +107,13 @@ Compression should reduce reading burden, not remove evidence, uncertainty, sour
 - Open questions:
 
 ## 4. Evidence Base
+
+### Research Configuration
+
+- Primary Research Lens: General Evidence Overview / [selected canonical lens]
+- Supporting Research Lens: none / [selected canonical lens]
+- Delivery Mode: Frontstage Brief / Full Evidence Dossier / Client-facing Research Report
+- Lens adaptation note:
 
 ### Evidence Preparation Brief
 
@@ -139,6 +151,8 @@ Compression should reduce reading burden, not remove evidence, uncertainty, sour
 - Strategy readiness strip:
 
 ### Category Summaries
+
+### Research Lens Summary
 
 ### Evidence Pattern Inventory
 
@@ -179,8 +193,21 @@ Compression should reduce reading burden, not remove evidence, uncertainty, sour
 
 ## 8. Concept Records
 
-### Concept 1
+### Concept Package Decision
 
+- Selected Idea Platform Record ID:
+- Recommended Concept Record ID:
+- Alternative Concept Record IDs:
+- Overall Concept Package status: Final / Provisional
+- Decision rationale:
+- Critical proof gaps:
+- Shared risks:
+- Rollback or user confirmation needed:
+
+### Recommended Concept
+
+- Record ID:
+- Package role: Recommended
 - Concept name:
 - One-line concept:
 - Human / cultural tension:
@@ -206,6 +233,20 @@ Compression should reduce reading burden, not remove evidence, uncertainty, sour
     - Support:
 - Foundation:
 - Proof gaps:
+
+### Alternative Concepts
+
+For each retained alternative, preserve its complete Concept Record and Message House, plus:
+
+- Record ID:
+- Why it remains viable:
+- What it expresses differently:
+- What would make it preferable to the recommendation:
+
+### Concept Comparison
+
+| Concept Record ID | Package role | Idea Platform fit | Distinction | Proof strength | Key risk | Status | Decision |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 
 ## 9. Downstream Handoff Log
 
@@ -281,6 +322,9 @@ Preserve the user's wording, links, constraints, preferences, doubts, and exclus
 - Current route:
 - Current stage:
 - Task goal:
+- Primary Research Lens:
+- Supporting Research Lens:
+- Delivery Mode:
 - What to do:
 - What not to do:
 - Desired output depth:
@@ -309,10 +353,13 @@ Use `loaded` only after the platform has actually opened the canonical skill ins
 
 - Add new evidence to the evidence base, not to strategy sections.
 - Add cleaned and summarized material to evidence summary, not directly to insights.
+- Preserve Primary Research Lens, Supporting Research Lens, Delivery Mode, and Lens adaptation note from startup through collection, summary, dossier writeback, and rollback. A lens changes evidence organization, not evidence status.
 - Add brand hard data candidates to `Brand Hard Data Track` and mark whether they are user-supplied, publicly collected, or still need confirmation.
 - Add evidence-preparation content strips and the evidence brief box to frontstage sections, not as a substitute for the full evidence pool.
 - Add Level 1-4 thinking only after `insight-strategy` or a focused strategy pass.
+- Add Idea Platform, Concept Package, and Message House records only after `insight-strategy` or its focused pass; the controller may compress and accept them but must not create a parallel professional result.
 - Mark provisional strategy when brand truth, proof edge, brand behavior, or competitor difference are thin.
+- Normalize downstream status on writeback: summary `ready` -> `completed`, summary `ready with caveats` -> `provisional`, Insight/Idea/Concept `Final` -> `completed`, `Provisional` -> `provisional`, and `Unavailable` -> `waiting_user` or rollback.
 - Add `Roof`, `Pillars`, `Foundation`, and `Proof gaps` to every completed or provisional Concept record and retain them in the frontstage Concept summary.
 - Do not mark a Concept frontstage result complete unless it explicitly displays Concept name, One-line concept, Audience role, Expression territory, Risk, Confidence, Roof, Pillars, Foundation, and Proof gaps.
 - Update `Controller Session State` after every route change, user confirmation, downstream return, rollback, and recovery.

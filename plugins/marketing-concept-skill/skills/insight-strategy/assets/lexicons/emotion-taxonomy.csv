@@ -37,3 +37,9 @@ term,emotion,tension_domain,weight
 满足,satisfaction,life_design,1
 骄傲,pride,self_identity,2
 被尊重,respected,social_position,2
+不敢用,fear_of_harm,self_identity,2
+纠结,decision_anxiety,life_design,2
+郁闷,frustration,self_identity,2
+吐了,disgust,self_identity,2
+恨,betrayal_anger,belonging,3
+救救,helplessness,self_identity,2

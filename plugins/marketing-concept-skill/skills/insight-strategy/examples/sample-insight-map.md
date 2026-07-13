@@ -6,6 +6,7 @@
 
 - Evidence says: People value brands that acknowledge emotional fatigue.
 - Raw voices: "不想再被催着变优秀"
+- Evidence IDs: SOC-001, COMP-001
 - Source spread: platform comments, competitor archive
 - Confidence: medium
 
@@ -17,6 +18,9 @@
 - Underlying emotion: fatigue, desire for recognition
 - Need / fear / desire: desire to be seen without needing to perform
 - Human truth sentence: 表面上，他们在谈论的是选择一个产品，但在底层，他们真正渴望的是不用再证明自己也能被理解。
+- Evidence IDs: SOC-001
+- Direct support vs inference: emotional recognition is direct; permission to
+  stop performing is an inference.
 - Confidence: medium
 
 ## Level 3 - Cultural Judgment
@@ -27,4 +31,6 @@
 - What should be: People want permission to live with softness and dignity.
 - Why now: Optimization culture has become emotionally expensive.
 - Source themes: 被理解, 效率叙事
+- Source human truths: 想被允许停下
+- Evidence IDs: SOC-001, COMP-001
 - Confidence: medium

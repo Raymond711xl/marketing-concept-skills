@@ -4,13 +4,13 @@
 
 The first half of proposal writing, paced slowly with AI.
 
-Version: 0.8.9
+Version: 0.9.0
 Status: Draft / Alpha
 License: MIT
 
 Man Ce is a Chinese-first skill bundle for brand strategy and marketing concept development. It helps users move from a rough brief to evidence preparation, insight strategy, Idea Platform, and finally a discussable Concept.
 
-Version `0.8.9` packages the four skills as one installable bundle for Codex and Claude Code. The strategy workflow continues to use Insight Reality, the Strategy Models Library, and Message House development after the Idea Platform.
+Version `0.9.0` tunes the 0.8.9 bundle as a whole: a slimmer controller with stage playbooks, Chinese trigger terms in every skill description, unified cross-skill contract wording, and a drift-guarding package validator. The strategy workflow continues to use Insight Reality, the Strategy Models Library, and Message House development after the Idea Platform.
 
 ## Core Flow
 
@@ -29,8 +29,8 @@ Man Ce covers the first half of proposal work. Copywriting, visual design, KV, s
 
 - `concept-strategy-controller`: front-stage controller. It reads the brief, chooses the route, compresses stage progress, and maintains the backstage dossier.
 - `web-evidence-collector`: collects public web evidence, platform signals, competitor material, brand-owned facts, campaign links, and evidence gaps.
-- `evidence-summary-analysis`: cleans, classifies, and summarizes evidence patterns into a Strategy Readiness Pack.
-- `insight-strategy`: turns prepared evidence into human truths, cultural tensions, brand truth, proof edge, Idea Platform candidates, and Concept-ready strategy.
+- `evidence-summary-analysis`: preserves and normalizes evidence, then organizes it through a selected Research Lens and Delivery Mode into an evidence report and Strategy Readiness Pack.
+- `insight-strategy`: turns prepared evidence into human truths, cultural tensions, brand truth, proof edge, Idea Platform candidates, and an evidence-backed Concept Package with Message Houses.
 
 ## Installation
 
@@ -86,6 +86,8 @@ Both platforms load the same skill instructions, references, templates, and scri
 - Deriving audience motives, cultural tensions, brand stance, and Idea Platform.
 - Turning an Idea Platform into a discussable Concept and Message House.
 - Pausing, deepening, revising, or returning to a specific stage.
+
+Evidence preparation can use one primary Research Lens, optional supporting lenses, and one of three Delivery Modes: Frontstage Brief, Full Evidence Dossier, or Client-facing Research Report. These choices change collection priority and presentation, not evidence status or strategy conclusions.
 
 ## Not For
 
@@ -166,12 +168,13 @@ Use explicit stage commands instead of `@` mentions:
 
 For real projects, the controller should export or maintain a Markdown dossier by default, but it should not print the whole dossier into chat unless the user asks to view it.
 
-## Version 0.8.9
+## Version 0.9.0
 
-- Packages all four skills as one installable plugin.
-- Adds Codex and Claude Code manifests and marketplace catalogs.
-- Keeps one shared source for both platforms.
-- Excludes internal review notes and backlog files from the installable plugin.
-- Adds portable package validation, ZIP building, and GitHub Actions checks.
+- Slims the controller SKILL.md by moving stage details, the fixed Concept output order, and Message House definitions into `references/stage-playbooks.md`.
+- Adds Chinese trigger terms to all four skill descriptions for Chinese-first triggering.
+- Removes cross-skill contract drift: strip names, Confidence wording, subagent consent text, and the first-response intervention text now each have a single canonical source.
+- Upgrades the package validator into a drift guard: synced-section comparison, contract anchors, description length and Chinese-term checks, and SKILL.md size warnings.
+- Localizes the four `agents/openai.yaml` interface texts to Chinese.
+- Keeps the 0.8.9 plugin packaging structure unchanged.
 
-The 0.8.9 ZIP has passed isolated marketplace-add, plugin-install, and post-extraction validation in both Codex and Claude Code. The package remains Draft / Alpha while real evidence pools, anonymized projects, and broader regression cases continue to be added.
+The 0.9.0 source passes package validation, eight strategy regression checks, and the smoke test. Install-side revalidation (marketplace add, plugin install, post-extraction check) follows the 0.8.9 procedure and should be rerun in an isolated environment before a public release. The package remains Draft / Alpha while real evidence pools, anonymized projects, and broader regression cases continue to be added.

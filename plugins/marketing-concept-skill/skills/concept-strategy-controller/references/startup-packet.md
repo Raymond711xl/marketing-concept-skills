@@ -41,6 +41,10 @@ Project recovery is not a new startup. When the user provides `恢复项目：<d
 - Brand hard data leads: philosophy / vision / slogan / chronology / founder statement / product proof / service proof / brand behavior / competitor distinction
 - Priority platforms or source types:
 - Forbidden sources or constraints:
+- Primary Research Lens: General Evidence Overview / [selected canonical lens]
+- Supporting Research Lens: none / [selected canonical lens]
+- Delivery Mode: Frontstage Brief / Full Evidence Dossier / Client-facing Research Report
+- Lens adaptation note:
 - Desired endpoint: evidence / insight strategy / Idea Platform / Concept
 - Current task boundary:
 - Recommended route:
@@ -58,6 +62,9 @@ Project recovery is not a new startup. When the user provides `恢复项目：<d
 - Resolve `Dossier path` from the user's current project workspace, never from the installed skill or plugin directory.
 - Use Chinese as the default output language unless the user asks otherwise.
 - Keep route names and structural labels stable enough for downstream handoff.
+- Keep `Category` separate from `Research Lens`: category describes material form; lens describes the research question used to organize evidence.
+- When no research direction is specified, use `Primary Research Lens: General Evidence Overview`, `Supporting Research Lens: none`, and `Delivery Mode: Frontstage Brief`.
+- Use `Client-facing Research Report` only when the user explicitly asks for a client-ready report. A delivery mode changes presentation, not evidence retention or strategic status.
 - Treat `Existing evidence status: none` as a routing signal, not a reason to stop. When the object, problem, and basic market scope are clear, hand off to `web-evidence-collector` in the same turn and keep non-blocking gaps as assumptions or pending confirmations.
 
 ## Starting Point Diagnosis
@@ -78,15 +85,12 @@ The first response should include:
 1. `Brief 快照`
 2. `起点判断`
 3. `推荐路径`
-4. `证据准备模式`
-5. `如何介入`
-6. `当前需要补充的信息`
+4. `Research Configuration`（需要证据准备时）
+5. `证据准备模式`
+6. `如何介入`
+7. `当前需要补充的信息`
 
-Include this intervention explanation in the first response:
-
-```text
-你可以随时输入阶段指令来单独深入讨论，例如「进入：证据摘要」「进入：策略洞察」「进入：Idea Platform」「进入：Concept」「查看：资料池」。总控会暂停推进，把用户原话、当前判断和完整资料池一起带入该环节，不会只转发压缩摘要。已有项目可以用「恢复项目：<dossier path>」继续。
-```
+Include the fixed intervention explanation from SKILL.md section 「第一次 Brief 反馈」 verbatim in the first response. SKILL.md holds the single canonical copy of that text; do not paraphrase it or maintain a second copy here.
 
 Ask at most three questions. If the missing information is not blocking, state a default and proceed.
 

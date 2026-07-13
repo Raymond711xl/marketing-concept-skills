@@ -20,6 +20,9 @@ Use this compact Markdown structure for normal user/controller display.
 - Scope:
 - Collection date:
 - Requested categories:
+- Primary Research Lens: General Evidence Overview / [selected canonical lens]
+- Supporting Research Lens: none / [selected canonical lens]
+- Delivery Mode: Frontstage Brief / Full Evidence Dossier / Client-facing Research Report
 - Requested depth:
 - Evidence count:
 - Source mix:
@@ -36,17 +39,28 @@ Include this subsection only when collection is partial or not collected because
 | --- | --- | --- | --- |
 | | | not executed / partially executed | |
 
-## 2. Evidence Brief Box
+## 2. Research Configuration
+
+- Primary Research Lens:
+- Supporting Research Lens:
+- Delivery Mode:
+- Lens adaptation note:
+- Collection-priority effect:
+
+Research Lens changes source priorities only. It does not change evidence status, rename material categories, or authorize strategy conclusions.
+
+## 3. Evidence Brief Box
 
 - Evidence readiness:
 - Source coverage summary:
+- Research Lens / Delivery Mode:
 - Most reliable source groups:
 - Brand hard-data candidates:
 - Major restrictions:
 - Missing evidence:
 - Evidence pool status: included below / attached in backend dossier / unavailable
 
-## 3. Source Coverage
+## 4. Source Coverage
 
 | Area | Collected count | Source spread | Strongest source level | Confidence | Notes |
 | --- | ---: | --- | --- | --- | --- |
@@ -58,7 +72,7 @@ Include this subsection only when collection is partial or not collected because
 | Social | | | | | |
 | Reports / context | | | | | |
 
-## 4. Brand Hard Data Track
+## 5. Brand Hard Data Track
 
 Include one row per actual candidate. Put absent hard-data types in `Gaps And Restrictions`.
 
@@ -66,22 +80,25 @@ Include one row per actual candidate. Put absent hard-data types in `Gaps And Re
 | --- | --- | --- | --- | --- | --- | --- |
 | | | | | user-provided official / public official candidate / independently corroborated / conflicting / incomplete | | yes / no / unknown |
 
-## 5. Key Campaign / Competitor Linkage
+## 6. Key Campaign / Competitor Linkage
 
 | Campaign / message | Linkage status | Related evidence IDs | Channels represented | Missing channels |
 | --- | --- | --- | --- | --- |
 
-## 6. Gaps And Restrictions
+## 7. Gaps And Restrictions
 
 | Gap / restriction | Why it matters | Suggested next action |
 | --- | --- | --- |
 
-## 7. Evidence Pool Handoff
+## 8. Evidence Pool Handoff
 
 - Evidence pool: included below / stored in backend dossier / not created - capability unavailable
 - Evidence Pool schema: Evidence Pool v1
 - Handoff preservation: preserve Evidence ID and all core field names and values; keep Observation even when Raw quote is unavailable
 - Core schema compatibility: evidence-summary-analysis
+- Primary Research Lens:
+- Supporting Research Lens:
+- Delivery Mode:
 - Do not skip next skill: evidence-summary-analysis should normalize and summarize this pool before insight-strategy
 - Recommended next skill: evidence-summary-analysis
 ```
@@ -100,6 +117,10 @@ Use this full structure when the user asks for the full dossier, when collection
 - Time range:
 - Geography / platform scope:
 - Requested categories:
+- Primary Research Lens: General Evidence Overview / [selected canonical lens]
+- Supporting Research Lens: none / [selected canonical lens]
+- Delivery Mode: Frontstage Brief / Full Evidence Dossier / Client-facing Research Report
+- Lens adaptation note:
 - Requested depth:
 - Collection date:
 - Downstream destination: evidence-summary-analysis
@@ -112,7 +133,17 @@ Use this full structure when the user asks for the full dossier, when collection
 - Capabilities used:
 - Unavailable or restricted capabilities:
 
-## 2. Depth And Query Plan
+## 2. Research Configuration
+
+- Primary Research Lens:
+- Supporting Research Lens:
+- Delivery Mode:
+- Lens adaptation note:
+- Collection-priority effect:
+
+Keep `Category` independent from `Research Lens`. Preserve this block unchanged in the downstream handoff.
+
+## 3. Depth And Query Plan
 
 | Category | Target volume | Query / source strategy | Execution status | Notes |
 | --- | ---: | --- | --- | --- |
@@ -132,7 +163,7 @@ Include only when collection is partial or not collected.
 | --- | --- | --- |
 | | | |
 
-## 3. Subagent Collection Plan
+## 4. Subagent Collection Plan
 
 | Shard ID | Split type | Platform / source scope | Material focus | Target count | Output prefix | Status |
 | --- | --- | --- | --- | ---: | --- | --- |
@@ -143,7 +174,7 @@ Include only when collection is partial or not collected.
 | VISUAL | mixed | image search / creative archives / campaign pages | posters, KV, landing pages, packaging | | VIS | proposed / running / complete |
 | REPORT | platform | PDFs / white papers / report summaries | reports, market context | | RPT | proposed / running / complete |
 
-## 4. Evidence Shards
+## 5. Evidence Shards
 
 ### Shard [ID]: [Scope]
 
@@ -157,35 +188,36 @@ Include only when collection is partial or not collected.
 - Evidence IDs produced:
 - Evidence IDs merged as duplicates:
 
-## 5. Evidence Brief Box
+## 6. Evidence Brief Box
 
 - Evidence readiness: ready / partial / weak
 - Source coverage summary:
+- Research Lens / Delivery Mode:
 - Most reliable source groups:
 - Brand hard-data candidates:
 - Major restrictions:
 - Missing evidence:
 - Evidence pool status:
 
-## 6. Source Coverage
+## 7. Source Coverage
 
 | Area | Target count | Collected count | Source spread | Strongest source level | Confidence | Notes |
 | --- | ---: | ---: | --- | --- | --- | --- |
 
-## 7. Brand Hard Data Track
+## 8. Brand Hard Data Track
 
-Include one row per actual candidate. Every source Evidence ID must exist in section 13.
+Include one row per actual candidate. Every source Evidence ID must exist in section 14.
 
 | Hard data type | Candidate evidence | Source Evidence ID(s) | Source / URL | Source type | Candidate status | Confidence | Needs user confirmation |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | | | | | | user-provided official / public official candidate / independently corroborated / conflicting / incomplete | | yes / no / unknown |
 
-## 8. Campaign Linkage Map
+## 9. Campaign Linkage Map
 
 | Campaign / message | Linkage status | Related evidence IDs | Channels represented | Missing channels | Notes |
 | --- | --- | --- | --- | --- | --- |
 
-## 9. Collection Statistics
+## 10. Collection Statistics
 
 | Metric | Value | Evidence basis |
 | --- | ---: | --- |
@@ -203,12 +235,12 @@ Include one row per actual candidate. Every source Evidence ID must exist in sec
 | Standalone items | | |
 | Restricted / user-needed items | | |
 
-## 10. Campaign / Message Repetition Snapshot
+## 11. Campaign / Message Repetition Snapshot
 
 | Campaign / message | Evidence count | Channels | Brands | Repetition pattern | Completeness |
 | --- | ---: | --- | --- | --- | --- |
 
-## 11. Skew And Completeness Check
+## 12. Skew And Completeness Check
 
 | Check | Status | Evidence | Risk for downstream analysis | Suggested next collection |
 | --- | --- | --- | --- | --- |
@@ -220,12 +252,12 @@ Include one row per actual candidate. Every source Evidence ID must exist in sec
 | Visual evidence coverage | | | | |
 | Campaign linkage completeness | | | | |
 
-## 12. Gaps And Restrictions
+## 13. Gaps And Restrictions
 
 | Gap / restriction | Why it matters | Suggested next action |
 | --- | --- | --- |
 
-## 13. Evidence Pool
+## 14. Evidence Pool
 
 Handoff preservation: Evidence Pool v1. Preserve Evidence ID and all core field names and values. Keep Observation even when Raw quote is unavailable.
 

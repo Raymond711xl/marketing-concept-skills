@@ -1,7 +1,7 @@
 # Concept Package
 
 Use this package after one Idea Platform has been selected. It is the complete
-output for the controller's `## 7. Concept Records` dossier section.
+output for the controller's `## 8. Concept Records` dossier section.
 
 ## Package Decision
 
@@ -23,15 +23,17 @@ Complete one `concept-record-template.md`.
 
 Minimum required fields:
 
-- Concept name and one-sentence concept
+- Concept name and One-line concept
+- Audience role and Expression territory
 - Package role: Recommended
 - Concept status: Final / Provisional
+- Confidence: high / medium / low / speculative
 - Roof plus Evidence IDs
 - 2-3 Pillars, each with Evidence IDs
 - Foundation facts with proof type, Evidence IDs, and confirmation status
 - evidence support summary
 - proof gaps
-- risks
+- Risk
 - reason for recommendation
 
 ## Alternative Concept 1

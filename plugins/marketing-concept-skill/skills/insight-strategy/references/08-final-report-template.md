@@ -3,9 +3,9 @@
 Use `assets/templates/final-strategy-report-template.md`. Its section names
 match the controller's backstage dossier, so write the result directly into:
 
-- `## 5. Insight Strategy`
-- `## 6. Idea Platform Records`
-- `## 7. Concept Records`
+- `## 6. Insight Strategy`
+- `## 7. Idea Platform Records`
+- `## 8. Concept Records`
 
 Do not replace the evidence pool or other dossier sections. Preserve existing
 IDs and update only the strategy, platform, Concept, confidence, and decision

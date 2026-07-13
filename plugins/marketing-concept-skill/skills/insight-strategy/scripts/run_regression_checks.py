@@ -10,6 +10,20 @@ from pathlib import Path
 SKILL_DIR = Path(__file__).resolve().parents[1]
 EXAMPLES_DIR = SKILL_DIR / "examples"
 
+EVIDENCE_POOL_V1_CORE = [
+    "Evidence ID",
+    "Source type",
+    "Source name",
+    "Date",
+    "URL or citation",
+    "Raw quote",
+    "Observation",
+    "Summary",
+    "Topic tag",
+    "Audience",
+    "Confidence",
+]
+
 
 def read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
@@ -36,6 +50,12 @@ def check_message_house(block: str) -> None:
     require(
         block,
         "#### Message House",
+        "- Concept name:",
+        "- One-line concept:",
+        "- Audience role:",
+        "- Expression territory:",
+        "- Risk:",
+        "- Confidence:",
         "- Roof:",
         "- Roof Evidence IDs:",
         "| Pillar 1 |",
@@ -43,10 +63,9 @@ def check_message_house(block: str) -> None:
         "| Foundation item |",
         "| F1 |",
         "- Proof gaps:",
-        "- Risks:",
         "Concept status: **Provisional**",
     )
-    evidence_id = re.compile(r"\b(?:E\d+|BF-\d+|CP-\d+|BR-\d+|RAW-\d+)\b")
+    evidence_id = re.compile(r"\b[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*-\d{3}\b")
     pillar_rows = [line for line in block.splitlines() if re.match(r"\| Pillar [123]", line)]
     if len(pillar_rows) not in {2, 3}:
         raise AssertionError(f"Expected 2-3 Pillars, found {len(pillar_rows)}")
@@ -86,7 +105,7 @@ def check_thin_evidence() -> None:
         "Recommended Concept status: Provisional",
         "Alternative Concept status: Provisional",
         "Rollback path: evidence and competitor",
-        "Evidence ID E001",
+        "Evidence ID USER-001",
         "Brand fact BF-001",
     )
     if "- Overall status: Final" in text:
@@ -128,12 +147,92 @@ def check_dossier_contract_shape() -> None:
     template = read(SKILL_DIR / "assets" / "templates" / "final-strategy-report-template.md")
     require(
         template,
-        "## 5. Insight Strategy",
-        "## 6. Idea Platform Records",
-        "## 7. Concept Records",
+        "## 6. Insight Strategy",
+        "## 7. Idea Platform Records",
+        "## 8. Concept Records",
         "one recommended Concept",
         "alternative Concepts",
         "Evidence IDs for every Roof, Pillar, and Foundation item",
+    )
+
+
+def evidence_blocks(text: str) -> list[str]:
+    starts = list(re.finditer(r"^##+ Evidence \d+\s*$", text, flags=re.MULTILINE))
+    blocks = []
+    for index, match in enumerate(starts):
+        end = starts[index + 1].start() if index + 1 < len(starts) else len(text)
+        blocks.append(text[match.end():end])
+    return blocks
+
+
+def check_evidence_pool_v1_alignment() -> None:
+    paths = [
+        SKILL_DIR / "assets" / "templates" / "evidence-pool-template.md",
+        SKILL_DIR / "assets" / "templates" / "input-package-template.md",
+        EXAMPLES_DIR / "sample-evidence-pool.md",
+        EXAMPLES_DIR / "sample-evidence-pool-skincare.md",
+    ]
+    id_pattern = re.compile(r"^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*-\d{3}$")
+    for path in paths:
+        text = read(path)
+        blocks = evidence_blocks(text)
+        if not blocks:
+            raise AssertionError(f"No evidence items found in {path.name}")
+        for block in blocks:
+            rows = [line[2:] for line in block.splitlines() if line.startswith("- ")]
+            fields = [row.split(":", 1)[0] for row in rows]
+            if fields[: len(EVIDENCE_POOL_V1_CORE)] != EVIDENCE_POOL_V1_CORE:
+                raise AssertionError(
+                    f"Evidence Pool v1 core field drift in {path.name}: "
+                    f"{fields[:len(EVIDENCE_POOL_V1_CORE)]}"
+                )
+            evidence_id = rows[0].split(":", 1)[1].strip()
+            if not id_pattern.fullmatch(evidence_id):
+                raise AssertionError(f"Unstable or unprefixed Evidence ID in {path.name}: {evidence_id}")
+        for obsolete in ("Audience / segment:", "Insight lens:", "Matched keywords:"):
+            if obsolete in text:
+                raise AssertionError(f"Obsolete handoff field in {path.name}: {obsolete}")
+
+    pool_ids = set(
+        re.findall(
+            r"^- Evidence ID: (WEB-\d{3})$",
+            read(EXAMPLES_DIR / "sample-evidence-pool-skincare.md"),
+            flags=re.MULTILINE,
+        )
+    )
+    for filename in ("golden-case-01-yubai-skincare.md", "sample-final-strategy-report.md"):
+        referenced = set(re.findall(r"\bWEB-\d{3}\b", read(EXAMPLES_DIR / filename)))
+        missing = sorted(referenced - pool_ids)
+        if missing:
+            raise AssertionError(f"{filename} references missing Evidence IDs: {missing}")
+
+
+def check_readiness_crosswalk() -> None:
+    contract = read(SKILL_DIR / "references" / "01-input-package-contract.md")
+    require(
+        contract,
+        "## Readiness Status Crosswalk",
+        "`ready with caveats` | `Partial` | usually `Partial`",
+        "`needs more evidence` | `Partial` when traceable material can still support Level 1; otherwise `Unavailable` | `Thin`",
+        "`Thin` describes brand-fact readiness, not automatic workflow unavailability.",
+        "`Ready` never guarantees a Final strategy.",
+    )
+
+
+def check_readiness_pack_shape_equivalence() -> None:
+    contract = read(SKILL_DIR / "references" / "01-input-package-contract.md")
+    template = read(SKILL_DIR / "assets" / "templates" / "input-package-template.md")
+    require(
+        contract,
+        "## Strategy Readiness Pack Shapes",
+        "semantically equivalent",
+        "`Item`, `Candidate`, `Status`, `Evidence ID`, `Confidence`, and",
+    )
+    require(
+        template,
+        "The upstream six-column table and a repeated field-list form are lossless",
+        "| Item | Candidate | Status | Evidence ID | Confidence | Notes / user confirmation needed |",
+        "Readiness status: ready / ready with caveats / needs more evidence",
     )
 
 
@@ -144,6 +243,9 @@ def main() -> None:
         ("end-to-end-level1-to-concept", check_golden_end_to_end),
         ("strategy-model-route-coverage", check_model_route_coverage),
         ("dossier-writeback-shape", check_dossier_contract_shape),
+        ("evidence-pool-v1-alignment", check_evidence_pool_v1_alignment),
+        ("readiness-status-crosswalk", check_readiness_crosswalk),
+        ("readiness-pack-shape-equivalence", check_readiness_pack_shape_equivalence),
     ]
     for name, check in checks:
         check()

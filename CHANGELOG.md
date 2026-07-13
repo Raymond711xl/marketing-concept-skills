@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.9.0
+
+- 版本升级：`skill-package.json`、双端 plugin manifest、根 marketplace 清单、README 中英双份与 AGENTS.md 同步升至 0.9.0；`release_artifact` 指向 0.9.0 ZIP。
+- 四份 `agents/openai.yaml` 的 `short_description` 与 `default_prompt` 改为中文优先（display_name 保持 canonical 英文名）。
+- description 触发实测：以四份 name+description 做路由判别测试并按结果微调。
+- 总控 SKILL.md 瘦身：将「分层职责」六个阶段细则、Concept 十项固定输出顺序与 Message House 定义下沉到新增的 `references/stage-playbooks.md`，SKILL.md 保留阶段速览表与读取指令（422 行 / 25.3KB 降至约 295 行 / 22.1KB）。
+- 消除重复维护的固定文案：startup-packet 的介入说明改为指向 SKILL.md 单一来源；采集 skill 的 subagent 同意话术改为指向 `10-subagent-collection-mode.md` 单一来源（此前两份副本已出现措辞漂移）。
+- 对齐跨 skill 契约漂移：前台五个内容条名称统一为 `evidence-summary-analysis` 版本；`01-evidence-pool-schema.md` 的 Confidence Rules 措辞对齐 `Evidence Pool v1` 规范文本。
+- 四个 skill 的 description 增补中文触发词（慢策、证据采集、竞品调研、资料整理、洞察策略、文化张力等），改善中文语境下的触发率。
+- 采集 SKILL.md 的 23 项扩展字段清单收敛为要点加指针，完整清单以 `04-evidence-pool-contract.md` 为准。
+- validator 升级为防漂移守护：新增 Allowed Values / Confidence Rules 双份 schema 同步检查、内容条名称跨 skill 检查、介入说明与 Concept 十项锚点检查、description 长度（≤1024）与中文触发词检查、SKILL.md 字节数预警。
+- Insight Strategy 完成 Evidence Pool v1 对齐：统一 Audience、Observation、稳定 ID、Readiness 状态映射与 Strategy Readiness Pack 双形态等价规则，强化基于 Insight Reality 的策略推导链路。
+- 使用真实公开品牌证据包和 128 行中文平台原声完成上游交接验证，补充 Unavailable / Provisional / Final 判断锚点与 8 项自动回归检查。
+- 基于真实语料扩充中文停用词、同义词、情绪、动机和平台俚语词库，并强化 CSV / TSV / TXT、词库加载、工作目录无关性与 `.xls` 防误用 smoke test。
+- 固化 Idea Platform 与 Concept Card 的命名偏好、Message House 三层双语字段，以及推荐 Concept、备选方向和 proof gaps 的 dossier 写回合同。
+- 新增包级触发测试工具与同步报告；真实客户或品牌的校准原始材料继续保留在被忽略的 `drafts/real-materials/` 中，不进入插件和仓库。
+
 ## 0.8.9
 
 - 将四个 Skill 封装为一个标准可安装的 `marketing-concept-skill` 插件。
@@ -11,6 +28,7 @@
 - 新增便携式 package validator、release ZIP builder 与 GitHub Actions 校验流程。
 - 在隔离环境中完成 Codex 与 Claude Code 的 marketplace 添加、插件安装和解压后复验。
 - 增加四份独立 Skill 修改需求，供对应工作对话继续完善内容链路。
+- 统一四个 Skill 的跨阶段合同：Research Lens 与 Delivery Mode 从启动包贯穿到证据摘要，Evidence Pool 追踪字段无损交接，Insight Strategy 负责 Idea Platform 后的 Concept Package，并按总控 dossier 的固定章节写回。
 
 ## 0.7.9
 

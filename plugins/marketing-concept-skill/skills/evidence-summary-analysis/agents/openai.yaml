@@ -1,4 +1,4 @@
 interface:
   display_name: "Evidence Summary Analysis"
-  short_description: "Normalize evidence into patterns and handoff"
-  default_prompt: "Use $evidence-summary-analysis to turn this evidence pool into content strips, evidence patterns, and a Strategy Readiness Pack."
+  short_description: "按 Research Lens 整理证据并产出策略就绪包"
+  default_prompt: "使用 $evidence-summary-analysis 无损清洗并归一化这份证据池，按合适的 Research Lens 与 Delivery Mode 组织证据，产出内容条与 Strategy Readiness Pack。"

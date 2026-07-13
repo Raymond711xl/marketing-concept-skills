@@ -61,7 +61,12 @@ it or record the missing proof as a gap; never use adjectives such as
 8. Choose one recommended Concept and 1-2 alternatives. Explain why each
    alternative was retained and what would make it preferable.
 9. Assemble `assets/templates/concept-package-template.md` and write it into the
-   dossier's `## 7. Concept Records` section.
+   dossier's `## 8. Concept Records` section.
+
+For every retained Concept, keep these controller-facing fields explicit:
+`Concept name`, `One-line concept`, `Audience role`, `Expression territory`,
+`Risk`, and `Confidence`. Do not expect the controller to infer them from longer
+articulation paragraphs.
 
 ## Mini Example
 
